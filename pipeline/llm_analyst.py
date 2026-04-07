@@ -31,6 +31,9 @@ FALLBACK_NARRATIVE = (
     "LLM narrative unavailable at this time."
 )
 
+# Key names llama3.2 has been observed to use instead of "narrative"
+_CANDIDATE_KEYS = ("narrative", "response", "insight", "analysis", "text", "content", "message")
+
 
 # ── Output schema ──────────────────────────────────────────────────────────────
 class LLMResponse(BaseModel):
@@ -41,6 +44,35 @@ class LLMResponse(BaseModel):
     """
 
     narrative: str
+
+
+def _extract_narrative(parsed: dict) -> str:
+    """
+    Pull a narrative string out of the LLM's parsed JSON dict.
+
+    llama3.2 sometimes ignores the requested key name and returns things like
+    {"response": "..."} or {"insight": "..."} instead of {"narrative": "..."}.
+    This function tries a list of common candidate keys first, then falls back
+    to the first string-valued entry it finds anywhere in the dict.
+
+    Raises ValueError if no usable string value can be found at all.
+    """
+    # 1. Try each known candidate key in priority order
+    for key in _CANDIDATE_KEYS:
+        value = parsed.get(key)
+        if isinstance(value, str) and value.strip():
+            if key != "narrative":
+                logger.warning("LLM used key '%s' instead of 'narrative' — extracted anyway.", key)
+            return value.strip()
+
+    # 2. Fallback: scan all top-level values for the first non-empty string
+    for key, value in parsed.items():
+        if isinstance(value, str) and value.strip():
+            logger.warning("LLM used unexpected key '%s' — extracted first string value.", key)
+            return value.strip()
+
+    # 3. Nothing usable found
+    raise ValueError(f"No string value found in LLM JSON. Keys present: {list(parsed.keys())}")
 
 
 # ── Core function ──────────────────────────────────────────────────────────────
@@ -128,9 +160,13 @@ def generate_micro_narrative(
         # Ollama wraps the model's output in {"response": "<text>", ...}
         raw_text: str = response.json().get("response", "")
 
-        # Parse the LLM's output as JSON, then validate shape with Pydantic
+        # Parse the LLM's output as JSON, then extract the narrative string.
+        # _extract_narrative handles the case where llama3.2 uses a different
+        # key name (e.g. "response", "insight") instead of "narrative".
+        # LLMResponse then validates that the extracted value is a non-empty string.
         parsed: dict = json.loads(raw_text)
-        validated = LLMResponse(**parsed)
+        narrative_text: str = _extract_narrative(parsed)
+        validated = LLMResponse(narrative=narrative_text)
         return validated.narrative
 
     except requests.exceptions.ConnectionError:
