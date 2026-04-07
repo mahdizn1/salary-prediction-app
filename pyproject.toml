@@ -1,0 +1,22 @@
+[project]
+name = "salary-prediction-app"
+version = "0.1.0"
+description = "End-to-end ML pipeline for data science salary prediction"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "pydantic",
+    "scikit-learn==1.6.1",
+    "pandas",
+    "numpy",
+    "requests",
+    "supabase",
+    "ollama",
+    "joblib",
+]
+
+[tool.uv]
+# This is a scripts project, not an installable library.
+# Setting package = false tells uv not to attempt to build/install it.
+package = false
