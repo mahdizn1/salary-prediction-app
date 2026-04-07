@@ -15,6 +15,7 @@ Failure modes handled gracefully:
 
 import json
 import logging
+import os
 
 import requests
 from pydantic import BaseModel, ValidationError
@@ -22,7 +23,11 @@ from pydantic import BaseModel, ValidationError
 logger = logging.getLogger(__name__)
 
 # ── Constants ──────────────────────────────────────────────────────────────────
-OLLAMA_URL = "http://localhost:11434/api/generate"
+# Ollama runs on Windows. WSL2 reaches it via the default gateway IP,
+# which can change on restart. Set OLLAMA_HOST in your .env to override.
+# Default falls back to the current WSL2→Windows gateway.
+_OLLAMA_HOST = os.environ.get("OLLAMA_HOST", "172.21.80.1")
+OLLAMA_URL = f"http://{_OLLAMA_HOST}:11434/api/generate"
 OLLAMA_MODEL = "llama3.2"
 OLLAMA_TIMEOUT = 60  # seconds — LLM inference can be slow on CPU
 
