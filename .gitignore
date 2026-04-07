@@ -29,5 +29,5 @@ build/
 # Zone identifiers (Windows WSL artifact)
 *.Zone.Identifier
 
-# Claude AI settings
-.claude/
+# Claude AI settings — track claude.md (project docs), ignore local tool config
+.claude/*.json
