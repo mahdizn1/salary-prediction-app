@@ -28,3 +28,6 @@ build/
 
 # Zone identifiers (Windows WSL artifact)
 *.Zone.Identifier
+
+# Claude AI settings
+.claude/
