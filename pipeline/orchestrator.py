@@ -381,6 +381,7 @@ def run_full_pipeline(combinations: list[dict], push: bool = True) -> None:
             "country_code": country_code,
             "region": COUNTRY_REGION.get(country_code, "Other"),
             "location_tier": inputs["location_tier"],
+            "remote_ratio": inputs["remote_ratio"],
             "predicted_salary": salary,
             "narrative": narrative,
             "chart_data": None,

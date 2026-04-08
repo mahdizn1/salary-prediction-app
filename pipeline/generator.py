@@ -104,11 +104,11 @@ COUNTRY_MAP: dict[str, dict[str, str]] = {
 # ── Cartesian product dimensions ──────────────────────────────────────────────
 EXPERIENCE_LEVELS = ["EN", "MI", "SE", "EX"]
 COMPANY_SIZES = ["S", "M", "L"]
+REMOTE_RATIOS = [0, 50, 100]
 IS_SAME_COUNTRY_VALUES = [1, 0]
 
-# ── API-only parameters (required by FastAPI but not stored in Supabase) ──────
+# ── API-only parameter (required by FastAPI but not stored in Supabase) ───────
 _WORK_YEAR = 2024
-_REMOTE_RATIO = {1: 50, 0: 100}  # same-country → hybrid, cross-border → fully remote
 
 # For is_same_country=0, the API needs employee_residence ≠ company_location.
 # We use a fixed dummy residence that is a valid code in the API's tier_map.
@@ -130,13 +130,13 @@ def is_valid_combination(
 
     Rules applied:
         1. EX + S filtered out (rare/noisy in the dataset).
-        2. Cross-border (is_same_country=0) + remote_ratio=0 filtered out.
+        2. Cross-border (is_same_country=0) must be 100% remote.
     Employment pruning (FT only) is handled upstream.
     """
     if experience_level == "EX" and company_size == "S":
         return False
 
-    if is_same_country == 0 and remote_ratio == 0:
+    if is_same_country == 0 and remote_ratio != 100:
         return False
 
     return True
@@ -174,15 +174,14 @@ def generate_combinations(country_filter: str | None = None) -> list[dict]:
     job_categories = sorted(CATEGORY_REPRESENTATIVE.keys())
     combinations: list[dict] = []
 
-    for job_cat, exp, size, country, same in product(
+    for job_cat, exp, size, country, remote_ratio, same in product(
         job_categories,
         EXPERIENCE_LEVELS,
         COMPANY_SIZES,
         countries,
+        REMOTE_RATIOS,
         IS_SAME_COUNTRY_VALUES,
     ):
-        remote_ratio = _REMOTE_RATIO[same]
-
         if not is_valid_combination(exp, size, same, remote_ratio):
             continue
 
@@ -236,11 +235,11 @@ if __name__ == "__main__":
     # Single country preview
     us_combos = generate_combinations(country_filter="US")
     print(f"\nUS combinations: {len(us_combos)}\n")
-    for c in us_combos[:5]:
+    for c in us_combos[:8]:
         print(
             f"  {c['job_category']:30s} | {c['experience_level']} | "
-            f"{c['company_size']} | same={c['is_same_country']} | "
-            f"res={c['employee_residence']}"
+            f"{c['company_size']} | remote={c['remote_ratio']:3d} | "
+            f"same={c['is_same_country']} | res={c['employee_residence']}"
         )
 
     # Full count

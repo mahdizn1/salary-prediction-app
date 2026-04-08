@@ -153,6 +153,7 @@ salary-prediction-app/
 | country_code     | text    | e.g., US, FR                           |
 | region           | text    | e.g., North America, Europe            |
 | location_tier    | text    | Hidden ML mapping                      |
+| remote_ratio     | int     | 0 / 50 / 100                           |
 | predicted_salary | numeric |                                        |
 | narrative        | text    | LLM generated text                     |
 | chart_data       | jsonb   | Optional JSON for Streamlit rendering  |
