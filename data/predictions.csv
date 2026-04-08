@@ -1,2113 +1,2641 @@
 job_category,experience_level,company_size,employment_type,is_same_country,country_code,region,location_tier,remote_ratio,predicted_salary
 Data Analyst,EN,S,FT,1,US,North America,High_Tier,0,75804.56
 Data Analyst,EN,S,FT,1,US,North America,High_Tier,50,75804.56
+Data Analyst,EN,S,FT,0,US,North America,High_Tier,50,75804.56
 Data Analyst,EN,S,FT,1,US,North America,High_Tier,100,75804.56
 Data Analyst,EN,S,FT,0,US,North America,High_Tier,100,75804.56
 Data Analyst,EN,S,FT,1,GB,Europe,High_Tier,0,75804.56
 Data Analyst,EN,S,FT,1,GB,Europe,High_Tier,50,75804.56
+Data Analyst,EN,S,FT,0,GB,Europe,High_Tier,50,75804.56
 Data Analyst,EN,S,FT,1,GB,Europe,High_Tier,100,75804.56
 Data Analyst,EN,S,FT,0,GB,Europe,High_Tier,100,75804.56
 Data Analyst,EN,S,FT,1,CA,North America,High_Tier,0,75804.56
 Data Analyst,EN,S,FT,1,CA,North America,High_Tier,50,75804.56
+Data Analyst,EN,S,FT,0,CA,North America,High_Tier,50,75804.56
 Data Analyst,EN,S,FT,1,CA,North America,High_Tier,100,75804.56
 Data Analyst,EN,S,FT,0,CA,North America,High_Tier,100,75804.56
 Data Analyst,EN,S,FT,1,DE,Europe,High_Tier,0,75804.56
 Data Analyst,EN,S,FT,1,DE,Europe,High_Tier,50,75804.56
+Data Analyst,EN,S,FT,0,DE,Europe,High_Tier,50,75804.56
 Data Analyst,EN,S,FT,1,DE,Europe,High_Tier,100,75804.56
 Data Analyst,EN,S,FT,0,DE,Europe,High_Tier,100,75804.56
 Data Analyst,EN,S,FT,1,FR,Europe,Mid_Tier,0,31994.08
 Data Analyst,EN,S,FT,1,FR,Europe,Mid_Tier,50,31994.08
+Data Analyst,EN,S,FT,0,FR,Europe,Mid_Tier,50,31994.08
 Data Analyst,EN,S,FT,1,FR,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,S,FT,0,FR,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,S,FT,1,ES,Europe,Mid_Tier,0,31994.08
 Data Analyst,EN,S,FT,1,ES,Europe,Mid_Tier,50,31994.08
+Data Analyst,EN,S,FT,0,ES,Europe,Mid_Tier,50,31994.08
 Data Analyst,EN,S,FT,1,ES,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,S,FT,0,ES,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,S,FT,1,GR,Europe,Mid_Tier,0,31994.08
 Data Analyst,EN,S,FT,1,GR,Europe,Mid_Tier,50,31994.08
+Data Analyst,EN,S,FT,0,GR,Europe,Mid_Tier,50,31994.08
 Data Analyst,EN,S,FT,1,GR,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,S,FT,0,GR,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,S,FT,1,NL,Europe,Mid_Tier,0,31994.08
 Data Analyst,EN,S,FT,1,NL,Europe,Mid_Tier,50,31994.08
+Data Analyst,EN,S,FT,0,NL,Europe,Mid_Tier,50,31994.08
 Data Analyst,EN,S,FT,1,NL,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,S,FT,0,NL,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,S,FT,1,IN,Asia,Low_Tier,0,18850.7
 Data Analyst,EN,S,FT,1,IN,Asia,Low_Tier,50,18850.7
+Data Analyst,EN,S,FT,0,IN,Asia,Low_Tier,50,18850.7
 Data Analyst,EN,S,FT,1,IN,Asia,Low_Tier,100,18850.7
 Data Analyst,EN,S,FT,0,IN,Asia,Low_Tier,100,18850.7
 Data Analyst,EN,S,FT,1,PK,Asia,Low_Tier,0,18850.7
 Data Analyst,EN,S,FT,1,PK,Asia,Low_Tier,50,18850.7
+Data Analyst,EN,S,FT,0,PK,Asia,Low_Tier,50,18850.7
 Data Analyst,EN,S,FT,1,PK,Asia,Low_Tier,100,18850.7
 Data Analyst,EN,S,FT,0,PK,Asia,Low_Tier,100,18850.7
 Data Analyst,EN,S,FT,1,MX,North America,Low_Tier,0,18850.7
 Data Analyst,EN,S,FT,1,MX,North America,Low_Tier,50,18850.7
+Data Analyst,EN,S,FT,0,MX,North America,Low_Tier,50,18850.7
 Data Analyst,EN,S,FT,1,MX,North America,Low_Tier,100,18850.7
 Data Analyst,EN,S,FT,0,MX,North America,Low_Tier,100,18850.7
 Data Analyst,EN,S,FT,1,BR,South America,Low_Tier,0,18850.7
 Data Analyst,EN,S,FT,1,BR,South America,Low_Tier,50,18850.7
+Data Analyst,EN,S,FT,0,BR,South America,Low_Tier,50,18850.7
 Data Analyst,EN,S,FT,1,BR,South America,Low_Tier,100,18850.7
 Data Analyst,EN,S,FT,0,BR,South America,Low_Tier,100,18850.7
 Data Analyst,EN,M,FT,1,US,North America,High_Tier,0,66478.36
 Data Analyst,EN,M,FT,1,US,North America,High_Tier,50,66478.36
+Data Analyst,EN,M,FT,0,US,North America,High_Tier,50,66478.36
 Data Analyst,EN,M,FT,1,US,North America,High_Tier,100,66478.36
 Data Analyst,EN,M,FT,0,US,North America,High_Tier,100,66478.36
 Data Analyst,EN,M,FT,1,GB,Europe,High_Tier,0,66478.36
 Data Analyst,EN,M,FT,1,GB,Europe,High_Tier,50,66478.36
+Data Analyst,EN,M,FT,0,GB,Europe,High_Tier,50,66478.36
 Data Analyst,EN,M,FT,1,GB,Europe,High_Tier,100,66478.36
 Data Analyst,EN,M,FT,0,GB,Europe,High_Tier,100,66478.36
 Data Analyst,EN,M,FT,1,CA,North America,High_Tier,0,66478.36
 Data Analyst,EN,M,FT,1,CA,North America,High_Tier,50,66478.36
+Data Analyst,EN,M,FT,0,CA,North America,High_Tier,50,66478.36
 Data Analyst,EN,M,FT,1,CA,North America,High_Tier,100,66478.36
 Data Analyst,EN,M,FT,0,CA,North America,High_Tier,100,66478.36
 Data Analyst,EN,M,FT,1,DE,Europe,High_Tier,0,66478.36
 Data Analyst,EN,M,FT,1,DE,Europe,High_Tier,50,66478.36
+Data Analyst,EN,M,FT,0,DE,Europe,High_Tier,50,66478.36
 Data Analyst,EN,M,FT,1,DE,Europe,High_Tier,100,66478.36
 Data Analyst,EN,M,FT,0,DE,Europe,High_Tier,100,66478.36
 Data Analyst,EN,M,FT,1,FR,Europe,Mid_Tier,0,31994.08
 Data Analyst,EN,M,FT,1,FR,Europe,Mid_Tier,50,31994.08
+Data Analyst,EN,M,FT,0,FR,Europe,Mid_Tier,50,31994.08
 Data Analyst,EN,M,FT,1,FR,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,M,FT,0,FR,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,M,FT,1,ES,Europe,Mid_Tier,0,31994.08
 Data Analyst,EN,M,FT,1,ES,Europe,Mid_Tier,50,31994.08
+Data Analyst,EN,M,FT,0,ES,Europe,Mid_Tier,50,31994.08
 Data Analyst,EN,M,FT,1,ES,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,M,FT,0,ES,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,M,FT,1,GR,Europe,Mid_Tier,0,31994.08
 Data Analyst,EN,M,FT,1,GR,Europe,Mid_Tier,50,31994.08
+Data Analyst,EN,M,FT,0,GR,Europe,Mid_Tier,50,31994.08
 Data Analyst,EN,M,FT,1,GR,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,M,FT,0,GR,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,M,FT,1,NL,Europe,Mid_Tier,0,31994.08
 Data Analyst,EN,M,FT,1,NL,Europe,Mid_Tier,50,31994.08
+Data Analyst,EN,M,FT,0,NL,Europe,Mid_Tier,50,31994.08
 Data Analyst,EN,M,FT,1,NL,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,M,FT,0,NL,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,M,FT,1,IN,Asia,Low_Tier,0,18850.7
 Data Analyst,EN,M,FT,1,IN,Asia,Low_Tier,50,18850.7
+Data Analyst,EN,M,FT,0,IN,Asia,Low_Tier,50,18850.7
 Data Analyst,EN,M,FT,1,IN,Asia,Low_Tier,100,18850.7
 Data Analyst,EN,M,FT,0,IN,Asia,Low_Tier,100,18850.7
 Data Analyst,EN,M,FT,1,PK,Asia,Low_Tier,0,18850.7
 Data Analyst,EN,M,FT,1,PK,Asia,Low_Tier,50,18850.7
+Data Analyst,EN,M,FT,0,PK,Asia,Low_Tier,50,18850.7
 Data Analyst,EN,M,FT,1,PK,Asia,Low_Tier,100,18850.7
 Data Analyst,EN,M,FT,0,PK,Asia,Low_Tier,100,18850.7
 Data Analyst,EN,M,FT,1,MX,North America,Low_Tier,0,18850.7
 Data Analyst,EN,M,FT,1,MX,North America,Low_Tier,50,18850.7
+Data Analyst,EN,M,FT,0,MX,North America,Low_Tier,50,18850.7
 Data Analyst,EN,M,FT,1,MX,North America,Low_Tier,100,18850.7
 Data Analyst,EN,M,FT,0,MX,North America,Low_Tier,100,18850.7
 Data Analyst,EN,M,FT,1,BR,South America,Low_Tier,0,18850.7
 Data Analyst,EN,M,FT,1,BR,South America,Low_Tier,50,18850.7
+Data Analyst,EN,M,FT,0,BR,South America,Low_Tier,50,18850.7
 Data Analyst,EN,M,FT,1,BR,South America,Low_Tier,100,18850.7
 Data Analyst,EN,M,FT,0,BR,South America,Low_Tier,100,18850.7
 Data Analyst,EN,L,FT,1,US,North America,High_Tier,0,98113.0
 Data Analyst,EN,L,FT,1,US,North America,High_Tier,50,98113.0
+Data Analyst,EN,L,FT,0,US,North America,High_Tier,50,98113.0
 Data Analyst,EN,L,FT,1,US,North America,High_Tier,100,98113.0
 Data Analyst,EN,L,FT,0,US,North America,High_Tier,100,98113.0
 Data Analyst,EN,L,FT,1,GB,Europe,High_Tier,0,98113.0
 Data Analyst,EN,L,FT,1,GB,Europe,High_Tier,50,98113.0
+Data Analyst,EN,L,FT,0,GB,Europe,High_Tier,50,98113.0
 Data Analyst,EN,L,FT,1,GB,Europe,High_Tier,100,98113.0
 Data Analyst,EN,L,FT,0,GB,Europe,High_Tier,100,98113.0
 Data Analyst,EN,L,FT,1,CA,North America,High_Tier,0,98113.0
 Data Analyst,EN,L,FT,1,CA,North America,High_Tier,50,98113.0
+Data Analyst,EN,L,FT,0,CA,North America,High_Tier,50,98113.0
 Data Analyst,EN,L,FT,1,CA,North America,High_Tier,100,98113.0
 Data Analyst,EN,L,FT,0,CA,North America,High_Tier,100,98113.0
 Data Analyst,EN,L,FT,1,DE,Europe,High_Tier,0,98113.0
 Data Analyst,EN,L,FT,1,DE,Europe,High_Tier,50,98113.0
+Data Analyst,EN,L,FT,0,DE,Europe,High_Tier,50,98113.0
 Data Analyst,EN,L,FT,1,DE,Europe,High_Tier,100,98113.0
 Data Analyst,EN,L,FT,0,DE,Europe,High_Tier,100,98113.0
 Data Analyst,EN,L,FT,1,FR,Europe,Mid_Tier,0,31994.08
 Data Analyst,EN,L,FT,1,FR,Europe,Mid_Tier,50,31994.08
+Data Analyst,EN,L,FT,0,FR,Europe,Mid_Tier,50,31994.08
 Data Analyst,EN,L,FT,1,FR,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,L,FT,0,FR,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,L,FT,1,ES,Europe,Mid_Tier,0,31994.08
 Data Analyst,EN,L,FT,1,ES,Europe,Mid_Tier,50,31994.08
+Data Analyst,EN,L,FT,0,ES,Europe,Mid_Tier,50,31994.08
 Data Analyst,EN,L,FT,1,ES,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,L,FT,0,ES,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,L,FT,1,GR,Europe,Mid_Tier,0,31994.08
 Data Analyst,EN,L,FT,1,GR,Europe,Mid_Tier,50,31994.08
+Data Analyst,EN,L,FT,0,GR,Europe,Mid_Tier,50,31994.08
 Data Analyst,EN,L,FT,1,GR,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,L,FT,0,GR,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,L,FT,1,NL,Europe,Mid_Tier,0,31994.08
 Data Analyst,EN,L,FT,1,NL,Europe,Mid_Tier,50,31994.08
+Data Analyst,EN,L,FT,0,NL,Europe,Mid_Tier,50,31994.08
 Data Analyst,EN,L,FT,1,NL,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,L,FT,0,NL,Europe,Mid_Tier,100,31994.08
 Data Analyst,EN,L,FT,1,IN,Asia,Low_Tier,0,35913.44
 Data Analyst,EN,L,FT,1,IN,Asia,Low_Tier,50,35913.44
+Data Analyst,EN,L,FT,0,IN,Asia,Low_Tier,50,35913.44
 Data Analyst,EN,L,FT,1,IN,Asia,Low_Tier,100,35913.44
 Data Analyst,EN,L,FT,0,IN,Asia,Low_Tier,100,35913.44
 Data Analyst,EN,L,FT,1,PK,Asia,Low_Tier,0,35913.44
 Data Analyst,EN,L,FT,1,PK,Asia,Low_Tier,50,35913.44
+Data Analyst,EN,L,FT,0,PK,Asia,Low_Tier,50,35913.44
 Data Analyst,EN,L,FT,1,PK,Asia,Low_Tier,100,35913.44
 Data Analyst,EN,L,FT,0,PK,Asia,Low_Tier,100,35913.44
 Data Analyst,EN,L,FT,1,MX,North America,Low_Tier,0,35913.44
 Data Analyst,EN,L,FT,1,MX,North America,Low_Tier,50,35913.44
+Data Analyst,EN,L,FT,0,MX,North America,Low_Tier,50,35913.44
 Data Analyst,EN,L,FT,1,MX,North America,Low_Tier,100,35913.44
 Data Analyst,EN,L,FT,0,MX,North America,Low_Tier,100,35913.44
 Data Analyst,EN,L,FT,1,BR,South America,Low_Tier,0,35913.44
 Data Analyst,EN,L,FT,1,BR,South America,Low_Tier,50,35913.44
+Data Analyst,EN,L,FT,0,BR,South America,Low_Tier,50,35913.44
 Data Analyst,EN,L,FT,1,BR,South America,Low_Tier,100,35913.44
 Data Analyst,EN,L,FT,0,BR,South America,Low_Tier,100,35913.44
 Data Analyst,MI,S,FT,1,US,North America,High_Tier,0,59608.31
 Data Analyst,MI,S,FT,1,US,North America,High_Tier,50,59608.31
+Data Analyst,MI,S,FT,0,US,North America,High_Tier,50,59608.31
 Data Analyst,MI,S,FT,1,US,North America,High_Tier,100,59608.31
 Data Analyst,MI,S,FT,0,US,North America,High_Tier,100,59608.31
 Data Analyst,MI,S,FT,1,GB,Europe,High_Tier,0,59608.31
 Data Analyst,MI,S,FT,1,GB,Europe,High_Tier,50,59608.31
+Data Analyst,MI,S,FT,0,GB,Europe,High_Tier,50,59608.31
 Data Analyst,MI,S,FT,1,GB,Europe,High_Tier,100,59608.31
 Data Analyst,MI,S,FT,0,GB,Europe,High_Tier,100,59608.31
 Data Analyst,MI,S,FT,1,CA,North America,High_Tier,0,59608.31
 Data Analyst,MI,S,FT,1,CA,North America,High_Tier,50,59608.31
+Data Analyst,MI,S,FT,0,CA,North America,High_Tier,50,59608.31
 Data Analyst,MI,S,FT,1,CA,North America,High_Tier,100,59608.31
 Data Analyst,MI,S,FT,0,CA,North America,High_Tier,100,59608.31
 Data Analyst,MI,S,FT,1,DE,Europe,High_Tier,0,59608.31
 Data Analyst,MI,S,FT,1,DE,Europe,High_Tier,50,59608.31
+Data Analyst,MI,S,FT,0,DE,Europe,High_Tier,50,59608.31
 Data Analyst,MI,S,FT,1,DE,Europe,High_Tier,100,59608.31
 Data Analyst,MI,S,FT,0,DE,Europe,High_Tier,100,59608.31
 Data Analyst,MI,S,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Data Analyst,MI,S,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Data Analyst,MI,S,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Data Analyst,MI,S,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,S,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,S,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Data Analyst,MI,S,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Data Analyst,MI,S,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Data Analyst,MI,S,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,S,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,S,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Data Analyst,MI,S,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Data Analyst,MI,S,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Data Analyst,MI,S,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,S,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,S,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Data Analyst,MI,S,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Data Analyst,MI,S,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Data Analyst,MI,S,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,S,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,S,FT,1,IN,Asia,Low_Tier,0,18850.7
 Data Analyst,MI,S,FT,1,IN,Asia,Low_Tier,50,18850.7
+Data Analyst,MI,S,FT,0,IN,Asia,Low_Tier,50,18850.7
 Data Analyst,MI,S,FT,1,IN,Asia,Low_Tier,100,18850.7
 Data Analyst,MI,S,FT,0,IN,Asia,Low_Tier,100,18850.7
 Data Analyst,MI,S,FT,1,PK,Asia,Low_Tier,0,18850.7
 Data Analyst,MI,S,FT,1,PK,Asia,Low_Tier,50,18850.7
+Data Analyst,MI,S,FT,0,PK,Asia,Low_Tier,50,18850.7
 Data Analyst,MI,S,FT,1,PK,Asia,Low_Tier,100,18850.7
 Data Analyst,MI,S,FT,0,PK,Asia,Low_Tier,100,18850.7
 Data Analyst,MI,S,FT,1,MX,North America,Low_Tier,0,18850.7
 Data Analyst,MI,S,FT,1,MX,North America,Low_Tier,50,18850.7
+Data Analyst,MI,S,FT,0,MX,North America,Low_Tier,50,18850.7
 Data Analyst,MI,S,FT,1,MX,North America,Low_Tier,100,18850.7
 Data Analyst,MI,S,FT,0,MX,North America,Low_Tier,100,18850.7
 Data Analyst,MI,S,FT,1,BR,South America,Low_Tier,0,18850.7
 Data Analyst,MI,S,FT,1,BR,South America,Low_Tier,50,18850.7
+Data Analyst,MI,S,FT,0,BR,South America,Low_Tier,50,18850.7
 Data Analyst,MI,S,FT,1,BR,South America,Low_Tier,100,18850.7
 Data Analyst,MI,S,FT,0,BR,South America,Low_Tier,100,18850.7
 Data Analyst,MI,M,FT,1,US,North America,High_Tier,0,88855.88
 Data Analyst,MI,M,FT,1,US,North America,High_Tier,50,88855.88
+Data Analyst,MI,M,FT,0,US,North America,High_Tier,50,88855.88
 Data Analyst,MI,M,FT,1,US,North America,High_Tier,100,97351.22
 Data Analyst,MI,M,FT,0,US,North America,High_Tier,100,97351.22
 Data Analyst,MI,M,FT,1,GB,Europe,High_Tier,0,88855.88
 Data Analyst,MI,M,FT,1,GB,Europe,High_Tier,50,88855.88
+Data Analyst,MI,M,FT,0,GB,Europe,High_Tier,50,88855.88
 Data Analyst,MI,M,FT,1,GB,Europe,High_Tier,100,97351.22
 Data Analyst,MI,M,FT,0,GB,Europe,High_Tier,100,97351.22
 Data Analyst,MI,M,FT,1,CA,North America,High_Tier,0,88855.88
 Data Analyst,MI,M,FT,1,CA,North America,High_Tier,50,88855.88
+Data Analyst,MI,M,FT,0,CA,North America,High_Tier,50,88855.88
 Data Analyst,MI,M,FT,1,CA,North America,High_Tier,100,97351.22
 Data Analyst,MI,M,FT,0,CA,North America,High_Tier,100,97351.22
 Data Analyst,MI,M,FT,1,DE,Europe,High_Tier,0,88855.88
 Data Analyst,MI,M,FT,1,DE,Europe,High_Tier,50,88855.88
+Data Analyst,MI,M,FT,0,DE,Europe,High_Tier,50,88855.88
 Data Analyst,MI,M,FT,1,DE,Europe,High_Tier,100,97351.22
 Data Analyst,MI,M,FT,0,DE,Europe,High_Tier,100,97351.22
 Data Analyst,MI,M,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Data Analyst,MI,M,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Data Analyst,MI,M,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Data Analyst,MI,M,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,M,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,M,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Data Analyst,MI,M,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Data Analyst,MI,M,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Data Analyst,MI,M,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,M,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,M,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Data Analyst,MI,M,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Data Analyst,MI,M,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Data Analyst,MI,M,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,M,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,M,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Data Analyst,MI,M,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Data Analyst,MI,M,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Data Analyst,MI,M,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,M,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,M,FT,1,IN,Asia,Low_Tier,0,18850.7
 Data Analyst,MI,M,FT,1,IN,Asia,Low_Tier,50,18850.7
+Data Analyst,MI,M,FT,0,IN,Asia,Low_Tier,50,18850.7
 Data Analyst,MI,M,FT,1,IN,Asia,Low_Tier,100,18850.7
 Data Analyst,MI,M,FT,0,IN,Asia,Low_Tier,100,18850.7
 Data Analyst,MI,M,FT,1,PK,Asia,Low_Tier,0,18850.7
 Data Analyst,MI,M,FT,1,PK,Asia,Low_Tier,50,18850.7
+Data Analyst,MI,M,FT,0,PK,Asia,Low_Tier,50,18850.7
 Data Analyst,MI,M,FT,1,PK,Asia,Low_Tier,100,18850.7
 Data Analyst,MI,M,FT,0,PK,Asia,Low_Tier,100,18850.7
 Data Analyst,MI,M,FT,1,MX,North America,Low_Tier,0,18850.7
 Data Analyst,MI,M,FT,1,MX,North America,Low_Tier,50,18850.7
+Data Analyst,MI,M,FT,0,MX,North America,Low_Tier,50,18850.7
 Data Analyst,MI,M,FT,1,MX,North America,Low_Tier,100,18850.7
 Data Analyst,MI,M,FT,0,MX,North America,Low_Tier,100,18850.7
 Data Analyst,MI,M,FT,1,BR,South America,Low_Tier,0,18850.7
 Data Analyst,MI,M,FT,1,BR,South America,Low_Tier,50,18850.7
+Data Analyst,MI,M,FT,0,BR,South America,Low_Tier,50,18850.7
 Data Analyst,MI,M,FT,1,BR,South America,Low_Tier,100,18850.7
 Data Analyst,MI,M,FT,0,BR,South America,Low_Tier,100,18850.7
 Data Analyst,MI,L,FT,1,US,North America,High_Tier,0,88855.88
 Data Analyst,MI,L,FT,1,US,North America,High_Tier,50,88855.88
+Data Analyst,MI,L,FT,0,US,North America,High_Tier,50,88855.88
 Data Analyst,MI,L,FT,1,US,North America,High_Tier,100,137936.86
 Data Analyst,MI,L,FT,0,US,North America,High_Tier,100,137936.86
 Data Analyst,MI,L,FT,1,GB,Europe,High_Tier,0,88855.88
 Data Analyst,MI,L,FT,1,GB,Europe,High_Tier,50,88855.88
+Data Analyst,MI,L,FT,0,GB,Europe,High_Tier,50,88855.88
 Data Analyst,MI,L,FT,1,GB,Europe,High_Tier,100,137936.86
 Data Analyst,MI,L,FT,0,GB,Europe,High_Tier,100,137936.86
 Data Analyst,MI,L,FT,1,CA,North America,High_Tier,0,88855.88
 Data Analyst,MI,L,FT,1,CA,North America,High_Tier,50,88855.88
+Data Analyst,MI,L,FT,0,CA,North America,High_Tier,50,88855.88
 Data Analyst,MI,L,FT,1,CA,North America,High_Tier,100,137936.86
 Data Analyst,MI,L,FT,0,CA,North America,High_Tier,100,137936.86
 Data Analyst,MI,L,FT,1,DE,Europe,High_Tier,0,88855.88
 Data Analyst,MI,L,FT,1,DE,Europe,High_Tier,50,88855.88
+Data Analyst,MI,L,FT,0,DE,Europe,High_Tier,50,88855.88
 Data Analyst,MI,L,FT,1,DE,Europe,High_Tier,100,137936.86
 Data Analyst,MI,L,FT,0,DE,Europe,High_Tier,100,137936.86
 Data Analyst,MI,L,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Data Analyst,MI,L,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Data Analyst,MI,L,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Data Analyst,MI,L,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,L,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,L,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Data Analyst,MI,L,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Data Analyst,MI,L,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Data Analyst,MI,L,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,L,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,L,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Data Analyst,MI,L,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Data Analyst,MI,L,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Data Analyst,MI,L,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,L,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,L,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Data Analyst,MI,L,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Data Analyst,MI,L,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Data Analyst,MI,L,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,L,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Data Analyst,MI,L,FT,1,IN,Asia,Low_Tier,0,35913.44
 Data Analyst,MI,L,FT,1,IN,Asia,Low_Tier,50,35913.44
+Data Analyst,MI,L,FT,0,IN,Asia,Low_Tier,50,35913.44
 Data Analyst,MI,L,FT,1,IN,Asia,Low_Tier,100,35913.44
 Data Analyst,MI,L,FT,0,IN,Asia,Low_Tier,100,35913.44
 Data Analyst,MI,L,FT,1,PK,Asia,Low_Tier,0,35913.44
 Data Analyst,MI,L,FT,1,PK,Asia,Low_Tier,50,35913.44
+Data Analyst,MI,L,FT,0,PK,Asia,Low_Tier,50,35913.44
 Data Analyst,MI,L,FT,1,PK,Asia,Low_Tier,100,35913.44
 Data Analyst,MI,L,FT,0,PK,Asia,Low_Tier,100,35913.44
 Data Analyst,MI,L,FT,1,MX,North America,Low_Tier,0,35913.44
 Data Analyst,MI,L,FT,1,MX,North America,Low_Tier,50,35913.44
+Data Analyst,MI,L,FT,0,MX,North America,Low_Tier,50,35913.44
 Data Analyst,MI,L,FT,1,MX,North America,Low_Tier,100,35913.44
 Data Analyst,MI,L,FT,0,MX,North America,Low_Tier,100,35913.44
 Data Analyst,MI,L,FT,1,BR,South America,Low_Tier,0,35913.44
 Data Analyst,MI,L,FT,1,BR,South America,Low_Tier,50,35913.44
+Data Analyst,MI,L,FT,0,BR,South America,Low_Tier,50,35913.44
 Data Analyst,MI,L,FT,1,BR,South America,Low_Tier,100,35913.44
 Data Analyst,MI,L,FT,0,BR,South America,Low_Tier,100,35913.44
 Data Analyst,SE,S,FT,1,US,North America,High_Tier,0,119679.57
 Data Analyst,SE,S,FT,1,US,North America,High_Tier,50,119679.57
+Data Analyst,SE,S,FT,0,US,North America,High_Tier,50,119679.57
 Data Analyst,SE,S,FT,1,US,North America,High_Tier,100,119679.57
 Data Analyst,SE,S,FT,0,US,North America,High_Tier,100,119679.57
 Data Analyst,SE,S,FT,1,GB,Europe,High_Tier,0,119679.57
 Data Analyst,SE,S,FT,1,GB,Europe,High_Tier,50,119679.57
+Data Analyst,SE,S,FT,0,GB,Europe,High_Tier,50,119679.57
 Data Analyst,SE,S,FT,1,GB,Europe,High_Tier,100,119679.57
 Data Analyst,SE,S,FT,0,GB,Europe,High_Tier,100,119679.57
 Data Analyst,SE,S,FT,1,CA,North America,High_Tier,0,119679.57
 Data Analyst,SE,S,FT,1,CA,North America,High_Tier,50,119679.57
+Data Analyst,SE,S,FT,0,CA,North America,High_Tier,50,119679.57
 Data Analyst,SE,S,FT,1,CA,North America,High_Tier,100,119679.57
 Data Analyst,SE,S,FT,0,CA,North America,High_Tier,100,119679.57
 Data Analyst,SE,S,FT,1,DE,Europe,High_Tier,0,119679.57
 Data Analyst,SE,S,FT,1,DE,Europe,High_Tier,50,119679.57
+Data Analyst,SE,S,FT,0,DE,Europe,High_Tier,50,119679.57
 Data Analyst,SE,S,FT,1,DE,Europe,High_Tier,100,119679.57
 Data Analyst,SE,S,FT,0,DE,Europe,High_Tier,100,119679.57
 Data Analyst,SE,S,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Data Analyst,SE,S,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Data Analyst,SE,S,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Data Analyst,SE,S,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,S,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,S,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Data Analyst,SE,S,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Data Analyst,SE,S,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Data Analyst,SE,S,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,S,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,S,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Data Analyst,SE,S,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Data Analyst,SE,S,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Data Analyst,SE,S,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,S,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,S,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Data Analyst,SE,S,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Data Analyst,SE,S,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Data Analyst,SE,S,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,S,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,S,FT,1,IN,Asia,Low_Tier,0,18850.7
 Data Analyst,SE,S,FT,1,IN,Asia,Low_Tier,50,18850.7
+Data Analyst,SE,S,FT,0,IN,Asia,Low_Tier,50,18850.7
 Data Analyst,SE,S,FT,1,IN,Asia,Low_Tier,100,18850.7
 Data Analyst,SE,S,FT,0,IN,Asia,Low_Tier,100,18850.7
 Data Analyst,SE,S,FT,1,PK,Asia,Low_Tier,0,18850.7
 Data Analyst,SE,S,FT,1,PK,Asia,Low_Tier,50,18850.7
+Data Analyst,SE,S,FT,0,PK,Asia,Low_Tier,50,18850.7
 Data Analyst,SE,S,FT,1,PK,Asia,Low_Tier,100,18850.7
 Data Analyst,SE,S,FT,0,PK,Asia,Low_Tier,100,18850.7
 Data Analyst,SE,S,FT,1,MX,North America,Low_Tier,0,18850.7
 Data Analyst,SE,S,FT,1,MX,North America,Low_Tier,50,18850.7
+Data Analyst,SE,S,FT,0,MX,North America,Low_Tier,50,18850.7
 Data Analyst,SE,S,FT,1,MX,North America,Low_Tier,100,18850.7
 Data Analyst,SE,S,FT,0,MX,North America,Low_Tier,100,18850.7
 Data Analyst,SE,S,FT,1,BR,South America,Low_Tier,0,18850.7
 Data Analyst,SE,S,FT,1,BR,South America,Low_Tier,50,18850.7
+Data Analyst,SE,S,FT,0,BR,South America,Low_Tier,50,18850.7
 Data Analyst,SE,S,FT,1,BR,South America,Low_Tier,100,18850.7
 Data Analyst,SE,S,FT,0,BR,South America,Low_Tier,100,18850.7
 Data Analyst,SE,M,FT,1,US,North America,High_Tier,0,119679.57
 Data Analyst,SE,M,FT,1,US,North America,High_Tier,50,119679.57
+Data Analyst,SE,M,FT,0,US,North America,High_Tier,50,119679.57
 Data Analyst,SE,M,FT,1,US,North America,High_Tier,100,119679.57
 Data Analyst,SE,M,FT,0,US,North America,High_Tier,100,119679.57
 Data Analyst,SE,M,FT,1,GB,Europe,High_Tier,0,119679.57
 Data Analyst,SE,M,FT,1,GB,Europe,High_Tier,50,119679.57
+Data Analyst,SE,M,FT,0,GB,Europe,High_Tier,50,119679.57
 Data Analyst,SE,M,FT,1,GB,Europe,High_Tier,100,119679.57
 Data Analyst,SE,M,FT,0,GB,Europe,High_Tier,100,119679.57
 Data Analyst,SE,M,FT,1,CA,North America,High_Tier,0,119679.57
 Data Analyst,SE,M,FT,1,CA,North America,High_Tier,50,119679.57
+Data Analyst,SE,M,FT,0,CA,North America,High_Tier,50,119679.57
 Data Analyst,SE,M,FT,1,CA,North America,High_Tier,100,119679.57
 Data Analyst,SE,M,FT,0,CA,North America,High_Tier,100,119679.57
 Data Analyst,SE,M,FT,1,DE,Europe,High_Tier,0,119679.57
 Data Analyst,SE,M,FT,1,DE,Europe,High_Tier,50,119679.57
+Data Analyst,SE,M,FT,0,DE,Europe,High_Tier,50,119679.57
 Data Analyst,SE,M,FT,1,DE,Europe,High_Tier,100,119679.57
 Data Analyst,SE,M,FT,0,DE,Europe,High_Tier,100,119679.57
 Data Analyst,SE,M,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Data Analyst,SE,M,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Data Analyst,SE,M,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Data Analyst,SE,M,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,M,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,M,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Data Analyst,SE,M,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Data Analyst,SE,M,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Data Analyst,SE,M,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,M,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,M,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Data Analyst,SE,M,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Data Analyst,SE,M,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Data Analyst,SE,M,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,M,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,M,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Data Analyst,SE,M,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Data Analyst,SE,M,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Data Analyst,SE,M,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,M,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,M,FT,1,IN,Asia,Low_Tier,0,18850.7
 Data Analyst,SE,M,FT,1,IN,Asia,Low_Tier,50,18850.7
+Data Analyst,SE,M,FT,0,IN,Asia,Low_Tier,50,18850.7
 Data Analyst,SE,M,FT,1,IN,Asia,Low_Tier,100,18850.7
 Data Analyst,SE,M,FT,0,IN,Asia,Low_Tier,100,18850.7
 Data Analyst,SE,M,FT,1,PK,Asia,Low_Tier,0,18850.7
 Data Analyst,SE,M,FT,1,PK,Asia,Low_Tier,50,18850.7
+Data Analyst,SE,M,FT,0,PK,Asia,Low_Tier,50,18850.7
 Data Analyst,SE,M,FT,1,PK,Asia,Low_Tier,100,18850.7
 Data Analyst,SE,M,FT,0,PK,Asia,Low_Tier,100,18850.7
 Data Analyst,SE,M,FT,1,MX,North America,Low_Tier,0,18850.7
 Data Analyst,SE,M,FT,1,MX,North America,Low_Tier,50,18850.7
+Data Analyst,SE,M,FT,0,MX,North America,Low_Tier,50,18850.7
 Data Analyst,SE,M,FT,1,MX,North America,Low_Tier,100,18850.7
 Data Analyst,SE,M,FT,0,MX,North America,Low_Tier,100,18850.7
 Data Analyst,SE,M,FT,1,BR,South America,Low_Tier,0,18850.7
 Data Analyst,SE,M,FT,1,BR,South America,Low_Tier,50,18850.7
+Data Analyst,SE,M,FT,0,BR,South America,Low_Tier,50,18850.7
 Data Analyst,SE,M,FT,1,BR,South America,Low_Tier,100,18850.7
 Data Analyst,SE,M,FT,0,BR,South America,Low_Tier,100,18850.7
 Data Analyst,SE,L,FT,1,US,North America,High_Tier,0,119679.57
 Data Analyst,SE,L,FT,1,US,North America,High_Tier,50,119679.57
+Data Analyst,SE,L,FT,0,US,North America,High_Tier,50,119679.57
 Data Analyst,SE,L,FT,1,US,North America,High_Tier,100,119679.57
 Data Analyst,SE,L,FT,0,US,North America,High_Tier,100,119679.57
 Data Analyst,SE,L,FT,1,GB,Europe,High_Tier,0,119679.57
 Data Analyst,SE,L,FT,1,GB,Europe,High_Tier,50,119679.57
+Data Analyst,SE,L,FT,0,GB,Europe,High_Tier,50,119679.57
 Data Analyst,SE,L,FT,1,GB,Europe,High_Tier,100,119679.57
 Data Analyst,SE,L,FT,0,GB,Europe,High_Tier,100,119679.57
 Data Analyst,SE,L,FT,1,CA,North America,High_Tier,0,119679.57
 Data Analyst,SE,L,FT,1,CA,North America,High_Tier,50,119679.57
+Data Analyst,SE,L,FT,0,CA,North America,High_Tier,50,119679.57
 Data Analyst,SE,L,FT,1,CA,North America,High_Tier,100,119679.57
 Data Analyst,SE,L,FT,0,CA,North America,High_Tier,100,119679.57
 Data Analyst,SE,L,FT,1,DE,Europe,High_Tier,0,119679.57
 Data Analyst,SE,L,FT,1,DE,Europe,High_Tier,50,119679.57
+Data Analyst,SE,L,FT,0,DE,Europe,High_Tier,50,119679.57
 Data Analyst,SE,L,FT,1,DE,Europe,High_Tier,100,119679.57
 Data Analyst,SE,L,FT,0,DE,Europe,High_Tier,100,119679.57
 Data Analyst,SE,L,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Data Analyst,SE,L,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Data Analyst,SE,L,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Data Analyst,SE,L,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,L,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,L,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Data Analyst,SE,L,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Data Analyst,SE,L,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Data Analyst,SE,L,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,L,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,L,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Data Analyst,SE,L,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Data Analyst,SE,L,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Data Analyst,SE,L,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,L,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,L,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Data Analyst,SE,L,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Data Analyst,SE,L,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Data Analyst,SE,L,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,L,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Data Analyst,SE,L,FT,1,IN,Asia,Low_Tier,0,35913.44
 Data Analyst,SE,L,FT,1,IN,Asia,Low_Tier,50,35913.44
+Data Analyst,SE,L,FT,0,IN,Asia,Low_Tier,50,35913.44
 Data Analyst,SE,L,FT,1,IN,Asia,Low_Tier,100,35913.44
 Data Analyst,SE,L,FT,0,IN,Asia,Low_Tier,100,35913.44
 Data Analyst,SE,L,FT,1,PK,Asia,Low_Tier,0,35913.44
 Data Analyst,SE,L,FT,1,PK,Asia,Low_Tier,50,35913.44
+Data Analyst,SE,L,FT,0,PK,Asia,Low_Tier,50,35913.44
 Data Analyst,SE,L,FT,1,PK,Asia,Low_Tier,100,35913.44
 Data Analyst,SE,L,FT,0,PK,Asia,Low_Tier,100,35913.44
 Data Analyst,SE,L,FT,1,MX,North America,Low_Tier,0,35913.44
 Data Analyst,SE,L,FT,1,MX,North America,Low_Tier,50,35913.44
+Data Analyst,SE,L,FT,0,MX,North America,Low_Tier,50,35913.44
 Data Analyst,SE,L,FT,1,MX,North America,Low_Tier,100,35913.44
 Data Analyst,SE,L,FT,0,MX,North America,Low_Tier,100,35913.44
 Data Analyst,SE,L,FT,1,BR,South America,Low_Tier,0,35913.44
 Data Analyst,SE,L,FT,1,BR,South America,Low_Tier,50,35913.44
+Data Analyst,SE,L,FT,0,BR,South America,Low_Tier,50,35913.44
 Data Analyst,SE,L,FT,1,BR,South America,Low_Tier,100,35913.44
 Data Analyst,SE,L,FT,0,BR,South America,Low_Tier,100,35913.44
 Data Analyst,EX,M,FT,1,US,North America,High_Tier,0,231948.17
 Data Analyst,EX,M,FT,1,US,North America,High_Tier,50,231948.17
+Data Analyst,EX,M,FT,0,US,North America,High_Tier,50,231948.17
 Data Analyst,EX,M,FT,1,US,North America,High_Tier,100,231948.17
 Data Analyst,EX,M,FT,0,US,North America,High_Tier,100,231948.17
 Data Analyst,EX,M,FT,1,GB,Europe,High_Tier,0,231948.17
 Data Analyst,EX,M,FT,1,GB,Europe,High_Tier,50,231948.17
+Data Analyst,EX,M,FT,0,GB,Europe,High_Tier,50,231948.17
 Data Analyst,EX,M,FT,1,GB,Europe,High_Tier,100,231948.17
 Data Analyst,EX,M,FT,0,GB,Europe,High_Tier,100,231948.17
 Data Analyst,EX,M,FT,1,CA,North America,High_Tier,0,231948.17
 Data Analyst,EX,M,FT,1,CA,North America,High_Tier,50,231948.17
+Data Analyst,EX,M,FT,0,CA,North America,High_Tier,50,231948.17
 Data Analyst,EX,M,FT,1,CA,North America,High_Tier,100,231948.17
 Data Analyst,EX,M,FT,0,CA,North America,High_Tier,100,231948.17
 Data Analyst,EX,M,FT,1,DE,Europe,High_Tier,0,231948.17
 Data Analyst,EX,M,FT,1,DE,Europe,High_Tier,50,231948.17
+Data Analyst,EX,M,FT,0,DE,Europe,High_Tier,50,231948.17
 Data Analyst,EX,M,FT,1,DE,Europe,High_Tier,100,231948.17
 Data Analyst,EX,M,FT,0,DE,Europe,High_Tier,100,231948.17
 Data Analyst,EX,M,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Data Analyst,EX,M,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Data Analyst,EX,M,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Data Analyst,EX,M,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Data Analyst,EX,M,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Data Analyst,EX,M,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Data Analyst,EX,M,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Data Analyst,EX,M,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Data Analyst,EX,M,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Data Analyst,EX,M,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Data Analyst,EX,M,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Data Analyst,EX,M,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Data Analyst,EX,M,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Data Analyst,EX,M,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Data Analyst,EX,M,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Data Analyst,EX,M,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Data Analyst,EX,M,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Data Analyst,EX,M,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Data Analyst,EX,M,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Data Analyst,EX,M,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Data Analyst,EX,M,FT,1,IN,Asia,Low_Tier,0,18850.7
 Data Analyst,EX,M,FT,1,IN,Asia,Low_Tier,50,18850.7
+Data Analyst,EX,M,FT,0,IN,Asia,Low_Tier,50,18850.7
 Data Analyst,EX,M,FT,1,IN,Asia,Low_Tier,100,18850.7
 Data Analyst,EX,M,FT,0,IN,Asia,Low_Tier,100,18850.7
 Data Analyst,EX,M,FT,1,PK,Asia,Low_Tier,0,18850.7
 Data Analyst,EX,M,FT,1,PK,Asia,Low_Tier,50,18850.7
+Data Analyst,EX,M,FT,0,PK,Asia,Low_Tier,50,18850.7
 Data Analyst,EX,M,FT,1,PK,Asia,Low_Tier,100,18850.7
 Data Analyst,EX,M,FT,0,PK,Asia,Low_Tier,100,18850.7
 Data Analyst,EX,M,FT,1,MX,North America,Low_Tier,0,18850.7
 Data Analyst,EX,M,FT,1,MX,North America,Low_Tier,50,18850.7
+Data Analyst,EX,M,FT,0,MX,North America,Low_Tier,50,18850.7
 Data Analyst,EX,M,FT,1,MX,North America,Low_Tier,100,18850.7
 Data Analyst,EX,M,FT,0,MX,North America,Low_Tier,100,18850.7
 Data Analyst,EX,M,FT,1,BR,South America,Low_Tier,0,18850.7
 Data Analyst,EX,M,FT,1,BR,South America,Low_Tier,50,18850.7
+Data Analyst,EX,M,FT,0,BR,South America,Low_Tier,50,18850.7
 Data Analyst,EX,M,FT,1,BR,South America,Low_Tier,100,18850.7
 Data Analyst,EX,M,FT,0,BR,South America,Low_Tier,100,18850.7
 Data Analyst,EX,L,FT,1,US,North America,High_Tier,0,231948.17
 Data Analyst,EX,L,FT,1,US,North America,High_Tier,50,231948.17
+Data Analyst,EX,L,FT,0,US,North America,High_Tier,50,231948.17
 Data Analyst,EX,L,FT,1,US,North America,High_Tier,100,231948.17
 Data Analyst,EX,L,FT,0,US,North America,High_Tier,100,231948.17
 Data Analyst,EX,L,FT,1,GB,Europe,High_Tier,0,231948.17
 Data Analyst,EX,L,FT,1,GB,Europe,High_Tier,50,231948.17
+Data Analyst,EX,L,FT,0,GB,Europe,High_Tier,50,231948.17
 Data Analyst,EX,L,FT,1,GB,Europe,High_Tier,100,231948.17
 Data Analyst,EX,L,FT,0,GB,Europe,High_Tier,100,231948.17
 Data Analyst,EX,L,FT,1,CA,North America,High_Tier,0,231948.17
 Data Analyst,EX,L,FT,1,CA,North America,High_Tier,50,231948.17
+Data Analyst,EX,L,FT,0,CA,North America,High_Tier,50,231948.17
 Data Analyst,EX,L,FT,1,CA,North America,High_Tier,100,231948.17
 Data Analyst,EX,L,FT,0,CA,North America,High_Tier,100,231948.17
 Data Analyst,EX,L,FT,1,DE,Europe,High_Tier,0,231948.17
 Data Analyst,EX,L,FT,1,DE,Europe,High_Tier,50,231948.17
+Data Analyst,EX,L,FT,0,DE,Europe,High_Tier,50,231948.17
 Data Analyst,EX,L,FT,1,DE,Europe,High_Tier,100,231948.17
 Data Analyst,EX,L,FT,0,DE,Europe,High_Tier,100,231948.17
 Data Analyst,EX,L,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Data Analyst,EX,L,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Data Analyst,EX,L,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Data Analyst,EX,L,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Data Analyst,EX,L,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Data Analyst,EX,L,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Data Analyst,EX,L,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Data Analyst,EX,L,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Data Analyst,EX,L,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Data Analyst,EX,L,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Data Analyst,EX,L,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Data Analyst,EX,L,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Data Analyst,EX,L,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Data Analyst,EX,L,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Data Analyst,EX,L,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Data Analyst,EX,L,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Data Analyst,EX,L,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Data Analyst,EX,L,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Data Analyst,EX,L,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Data Analyst,EX,L,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Data Analyst,EX,L,FT,1,IN,Asia,Low_Tier,0,35913.44
 Data Analyst,EX,L,FT,1,IN,Asia,Low_Tier,50,35913.44
+Data Analyst,EX,L,FT,0,IN,Asia,Low_Tier,50,35913.44
 Data Analyst,EX,L,FT,1,IN,Asia,Low_Tier,100,35913.44
 Data Analyst,EX,L,FT,0,IN,Asia,Low_Tier,100,35913.44
 Data Analyst,EX,L,FT,1,PK,Asia,Low_Tier,0,35913.44
 Data Analyst,EX,L,FT,1,PK,Asia,Low_Tier,50,35913.44
+Data Analyst,EX,L,FT,0,PK,Asia,Low_Tier,50,35913.44
 Data Analyst,EX,L,FT,1,PK,Asia,Low_Tier,100,35913.44
 Data Analyst,EX,L,FT,0,PK,Asia,Low_Tier,100,35913.44
 Data Analyst,EX,L,FT,1,MX,North America,Low_Tier,0,35913.44
 Data Analyst,EX,L,FT,1,MX,North America,Low_Tier,50,35913.44
+Data Analyst,EX,L,FT,0,MX,North America,Low_Tier,50,35913.44
 Data Analyst,EX,L,FT,1,MX,North America,Low_Tier,100,35913.44
 Data Analyst,EX,L,FT,0,MX,North America,Low_Tier,100,35913.44
 Data Analyst,EX,L,FT,1,BR,South America,Low_Tier,0,35913.44
 Data Analyst,EX,L,FT,1,BR,South America,Low_Tier,50,35913.44
+Data Analyst,EX,L,FT,0,BR,South America,Low_Tier,50,35913.44
 Data Analyst,EX,L,FT,1,BR,South America,Low_Tier,100,35913.44
 Data Analyst,EX,L,FT,0,BR,South America,Low_Tier,100,35913.44
 Data Engineer,EN,S,FT,1,US,North America,High_Tier,0,75804.56
 Data Engineer,EN,S,FT,1,US,North America,High_Tier,50,75804.56
+Data Engineer,EN,S,FT,0,US,North America,High_Tier,50,75804.56
 Data Engineer,EN,S,FT,1,US,North America,High_Tier,100,75804.56
 Data Engineer,EN,S,FT,0,US,North America,High_Tier,100,75804.56
 Data Engineer,EN,S,FT,1,GB,Europe,High_Tier,0,75804.56
 Data Engineer,EN,S,FT,1,GB,Europe,High_Tier,50,75804.56
+Data Engineer,EN,S,FT,0,GB,Europe,High_Tier,50,75804.56
 Data Engineer,EN,S,FT,1,GB,Europe,High_Tier,100,75804.56
 Data Engineer,EN,S,FT,0,GB,Europe,High_Tier,100,75804.56
 Data Engineer,EN,S,FT,1,CA,North America,High_Tier,0,75804.56
 Data Engineer,EN,S,FT,1,CA,North America,High_Tier,50,75804.56
+Data Engineer,EN,S,FT,0,CA,North America,High_Tier,50,75804.56
 Data Engineer,EN,S,FT,1,CA,North America,High_Tier,100,75804.56
 Data Engineer,EN,S,FT,0,CA,North America,High_Tier,100,75804.56
 Data Engineer,EN,S,FT,1,DE,Europe,High_Tier,0,75804.56
 Data Engineer,EN,S,FT,1,DE,Europe,High_Tier,50,75804.56
+Data Engineer,EN,S,FT,0,DE,Europe,High_Tier,50,75804.56
 Data Engineer,EN,S,FT,1,DE,Europe,High_Tier,100,75804.56
 Data Engineer,EN,S,FT,0,DE,Europe,High_Tier,100,75804.56
 Data Engineer,EN,S,FT,1,FR,Europe,Mid_Tier,0,31994.08
 Data Engineer,EN,S,FT,1,FR,Europe,Mid_Tier,50,31994.08
+Data Engineer,EN,S,FT,0,FR,Europe,Mid_Tier,50,31994.08
 Data Engineer,EN,S,FT,1,FR,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,S,FT,0,FR,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,S,FT,1,ES,Europe,Mid_Tier,0,31994.08
 Data Engineer,EN,S,FT,1,ES,Europe,Mid_Tier,50,31994.08
+Data Engineer,EN,S,FT,0,ES,Europe,Mid_Tier,50,31994.08
 Data Engineer,EN,S,FT,1,ES,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,S,FT,0,ES,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,S,FT,1,GR,Europe,Mid_Tier,0,31994.08
 Data Engineer,EN,S,FT,1,GR,Europe,Mid_Tier,50,31994.08
+Data Engineer,EN,S,FT,0,GR,Europe,Mid_Tier,50,31994.08
 Data Engineer,EN,S,FT,1,GR,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,S,FT,0,GR,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,S,FT,1,NL,Europe,Mid_Tier,0,31994.08
 Data Engineer,EN,S,FT,1,NL,Europe,Mid_Tier,50,31994.08
+Data Engineer,EN,S,FT,0,NL,Europe,Mid_Tier,50,31994.08
 Data Engineer,EN,S,FT,1,NL,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,S,FT,0,NL,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,S,FT,1,IN,Asia,Low_Tier,0,18850.7
 Data Engineer,EN,S,FT,1,IN,Asia,Low_Tier,50,18850.7
+Data Engineer,EN,S,FT,0,IN,Asia,Low_Tier,50,18850.7
 Data Engineer,EN,S,FT,1,IN,Asia,Low_Tier,100,18850.7
 Data Engineer,EN,S,FT,0,IN,Asia,Low_Tier,100,18850.7
 Data Engineer,EN,S,FT,1,PK,Asia,Low_Tier,0,18850.7
 Data Engineer,EN,S,FT,1,PK,Asia,Low_Tier,50,18850.7
+Data Engineer,EN,S,FT,0,PK,Asia,Low_Tier,50,18850.7
 Data Engineer,EN,S,FT,1,PK,Asia,Low_Tier,100,18850.7
 Data Engineer,EN,S,FT,0,PK,Asia,Low_Tier,100,18850.7
 Data Engineer,EN,S,FT,1,MX,North America,Low_Tier,0,18850.7
 Data Engineer,EN,S,FT,1,MX,North America,Low_Tier,50,18850.7
+Data Engineer,EN,S,FT,0,MX,North America,Low_Tier,50,18850.7
 Data Engineer,EN,S,FT,1,MX,North America,Low_Tier,100,18850.7
 Data Engineer,EN,S,FT,0,MX,North America,Low_Tier,100,18850.7
 Data Engineer,EN,S,FT,1,BR,South America,Low_Tier,0,18850.7
 Data Engineer,EN,S,FT,1,BR,South America,Low_Tier,50,18850.7
+Data Engineer,EN,S,FT,0,BR,South America,Low_Tier,50,18850.7
 Data Engineer,EN,S,FT,1,BR,South America,Low_Tier,100,18850.7
 Data Engineer,EN,S,FT,0,BR,South America,Low_Tier,100,18850.7
 Data Engineer,EN,M,FT,1,US,North America,High_Tier,0,66478.36
 Data Engineer,EN,M,FT,1,US,North America,High_Tier,50,66478.36
+Data Engineer,EN,M,FT,0,US,North America,High_Tier,50,66478.36
 Data Engineer,EN,M,FT,1,US,North America,High_Tier,100,66478.36
 Data Engineer,EN,M,FT,0,US,North America,High_Tier,100,66478.36
 Data Engineer,EN,M,FT,1,GB,Europe,High_Tier,0,66478.36
 Data Engineer,EN,M,FT,1,GB,Europe,High_Tier,50,66478.36
+Data Engineer,EN,M,FT,0,GB,Europe,High_Tier,50,66478.36
 Data Engineer,EN,M,FT,1,GB,Europe,High_Tier,100,66478.36
 Data Engineer,EN,M,FT,0,GB,Europe,High_Tier,100,66478.36
 Data Engineer,EN,M,FT,1,CA,North America,High_Tier,0,66478.36
 Data Engineer,EN,M,FT,1,CA,North America,High_Tier,50,66478.36
+Data Engineer,EN,M,FT,0,CA,North America,High_Tier,50,66478.36
 Data Engineer,EN,M,FT,1,CA,North America,High_Tier,100,66478.36
 Data Engineer,EN,M,FT,0,CA,North America,High_Tier,100,66478.36
 Data Engineer,EN,M,FT,1,DE,Europe,High_Tier,0,66478.36
 Data Engineer,EN,M,FT,1,DE,Europe,High_Tier,50,66478.36
+Data Engineer,EN,M,FT,0,DE,Europe,High_Tier,50,66478.36
 Data Engineer,EN,M,FT,1,DE,Europe,High_Tier,100,66478.36
 Data Engineer,EN,M,FT,0,DE,Europe,High_Tier,100,66478.36
 Data Engineer,EN,M,FT,1,FR,Europe,Mid_Tier,0,31994.08
 Data Engineer,EN,M,FT,1,FR,Europe,Mid_Tier,50,31994.08
+Data Engineer,EN,M,FT,0,FR,Europe,Mid_Tier,50,31994.08
 Data Engineer,EN,M,FT,1,FR,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,M,FT,0,FR,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,M,FT,1,ES,Europe,Mid_Tier,0,31994.08
 Data Engineer,EN,M,FT,1,ES,Europe,Mid_Tier,50,31994.08
+Data Engineer,EN,M,FT,0,ES,Europe,Mid_Tier,50,31994.08
 Data Engineer,EN,M,FT,1,ES,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,M,FT,0,ES,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,M,FT,1,GR,Europe,Mid_Tier,0,31994.08
 Data Engineer,EN,M,FT,1,GR,Europe,Mid_Tier,50,31994.08
+Data Engineer,EN,M,FT,0,GR,Europe,Mid_Tier,50,31994.08
 Data Engineer,EN,M,FT,1,GR,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,M,FT,0,GR,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,M,FT,1,NL,Europe,Mid_Tier,0,31994.08
 Data Engineer,EN,M,FT,1,NL,Europe,Mid_Tier,50,31994.08
+Data Engineer,EN,M,FT,0,NL,Europe,Mid_Tier,50,31994.08
 Data Engineer,EN,M,FT,1,NL,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,M,FT,0,NL,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,M,FT,1,IN,Asia,Low_Tier,0,18850.7
 Data Engineer,EN,M,FT,1,IN,Asia,Low_Tier,50,18850.7
+Data Engineer,EN,M,FT,0,IN,Asia,Low_Tier,50,18850.7
 Data Engineer,EN,M,FT,1,IN,Asia,Low_Tier,100,18850.7
 Data Engineer,EN,M,FT,0,IN,Asia,Low_Tier,100,18850.7
 Data Engineer,EN,M,FT,1,PK,Asia,Low_Tier,0,18850.7
 Data Engineer,EN,M,FT,1,PK,Asia,Low_Tier,50,18850.7
+Data Engineer,EN,M,FT,0,PK,Asia,Low_Tier,50,18850.7
 Data Engineer,EN,M,FT,1,PK,Asia,Low_Tier,100,18850.7
 Data Engineer,EN,M,FT,0,PK,Asia,Low_Tier,100,18850.7
 Data Engineer,EN,M,FT,1,MX,North America,Low_Tier,0,18850.7
 Data Engineer,EN,M,FT,1,MX,North America,Low_Tier,50,18850.7
+Data Engineer,EN,M,FT,0,MX,North America,Low_Tier,50,18850.7
 Data Engineer,EN,M,FT,1,MX,North America,Low_Tier,100,18850.7
 Data Engineer,EN,M,FT,0,MX,North America,Low_Tier,100,18850.7
 Data Engineer,EN,M,FT,1,BR,South America,Low_Tier,0,18850.7
 Data Engineer,EN,M,FT,1,BR,South America,Low_Tier,50,18850.7
+Data Engineer,EN,M,FT,0,BR,South America,Low_Tier,50,18850.7
 Data Engineer,EN,M,FT,1,BR,South America,Low_Tier,100,18850.7
 Data Engineer,EN,M,FT,0,BR,South America,Low_Tier,100,18850.7
 Data Engineer,EN,L,FT,1,US,North America,High_Tier,0,98113.0
 Data Engineer,EN,L,FT,1,US,North America,High_Tier,50,98113.0
+Data Engineer,EN,L,FT,0,US,North America,High_Tier,50,98113.0
 Data Engineer,EN,L,FT,1,US,North America,High_Tier,100,98113.0
 Data Engineer,EN,L,FT,0,US,North America,High_Tier,100,98113.0
 Data Engineer,EN,L,FT,1,GB,Europe,High_Tier,0,98113.0
 Data Engineer,EN,L,FT,1,GB,Europe,High_Tier,50,98113.0
+Data Engineer,EN,L,FT,0,GB,Europe,High_Tier,50,98113.0
 Data Engineer,EN,L,FT,1,GB,Europe,High_Tier,100,98113.0
 Data Engineer,EN,L,FT,0,GB,Europe,High_Tier,100,98113.0
 Data Engineer,EN,L,FT,1,CA,North America,High_Tier,0,98113.0
 Data Engineer,EN,L,FT,1,CA,North America,High_Tier,50,98113.0
+Data Engineer,EN,L,FT,0,CA,North America,High_Tier,50,98113.0
 Data Engineer,EN,L,FT,1,CA,North America,High_Tier,100,98113.0
 Data Engineer,EN,L,FT,0,CA,North America,High_Tier,100,98113.0
 Data Engineer,EN,L,FT,1,DE,Europe,High_Tier,0,98113.0
 Data Engineer,EN,L,FT,1,DE,Europe,High_Tier,50,98113.0
+Data Engineer,EN,L,FT,0,DE,Europe,High_Tier,50,98113.0
 Data Engineer,EN,L,FT,1,DE,Europe,High_Tier,100,98113.0
 Data Engineer,EN,L,FT,0,DE,Europe,High_Tier,100,98113.0
 Data Engineer,EN,L,FT,1,FR,Europe,Mid_Tier,0,31994.08
 Data Engineer,EN,L,FT,1,FR,Europe,Mid_Tier,50,31994.08
+Data Engineer,EN,L,FT,0,FR,Europe,Mid_Tier,50,31994.08
 Data Engineer,EN,L,FT,1,FR,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,L,FT,0,FR,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,L,FT,1,ES,Europe,Mid_Tier,0,31994.08
 Data Engineer,EN,L,FT,1,ES,Europe,Mid_Tier,50,31994.08
+Data Engineer,EN,L,FT,0,ES,Europe,Mid_Tier,50,31994.08
 Data Engineer,EN,L,FT,1,ES,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,L,FT,0,ES,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,L,FT,1,GR,Europe,Mid_Tier,0,31994.08
 Data Engineer,EN,L,FT,1,GR,Europe,Mid_Tier,50,31994.08
+Data Engineer,EN,L,FT,0,GR,Europe,Mid_Tier,50,31994.08
 Data Engineer,EN,L,FT,1,GR,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,L,FT,0,GR,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,L,FT,1,NL,Europe,Mid_Tier,0,31994.08
 Data Engineer,EN,L,FT,1,NL,Europe,Mid_Tier,50,31994.08
+Data Engineer,EN,L,FT,0,NL,Europe,Mid_Tier,50,31994.08
 Data Engineer,EN,L,FT,1,NL,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,L,FT,0,NL,Europe,Mid_Tier,100,31994.08
 Data Engineer,EN,L,FT,1,IN,Asia,Low_Tier,0,35913.44
 Data Engineer,EN,L,FT,1,IN,Asia,Low_Tier,50,35913.44
+Data Engineer,EN,L,FT,0,IN,Asia,Low_Tier,50,35913.44
 Data Engineer,EN,L,FT,1,IN,Asia,Low_Tier,100,35913.44
 Data Engineer,EN,L,FT,0,IN,Asia,Low_Tier,100,35913.44
 Data Engineer,EN,L,FT,1,PK,Asia,Low_Tier,0,35913.44
 Data Engineer,EN,L,FT,1,PK,Asia,Low_Tier,50,35913.44
+Data Engineer,EN,L,FT,0,PK,Asia,Low_Tier,50,35913.44
 Data Engineer,EN,L,FT,1,PK,Asia,Low_Tier,100,35913.44
 Data Engineer,EN,L,FT,0,PK,Asia,Low_Tier,100,35913.44
 Data Engineer,EN,L,FT,1,MX,North America,Low_Tier,0,35913.44
 Data Engineer,EN,L,FT,1,MX,North America,Low_Tier,50,35913.44
+Data Engineer,EN,L,FT,0,MX,North America,Low_Tier,50,35913.44
 Data Engineer,EN,L,FT,1,MX,North America,Low_Tier,100,35913.44
 Data Engineer,EN,L,FT,0,MX,North America,Low_Tier,100,35913.44
 Data Engineer,EN,L,FT,1,BR,South America,Low_Tier,0,35913.44
 Data Engineer,EN,L,FT,1,BR,South America,Low_Tier,50,35913.44
+Data Engineer,EN,L,FT,0,BR,South America,Low_Tier,50,35913.44
 Data Engineer,EN,L,FT,1,BR,South America,Low_Tier,100,35913.44
 Data Engineer,EN,L,FT,0,BR,South America,Low_Tier,100,35913.44
 Data Engineer,MI,S,FT,1,US,North America,High_Tier,0,59608.31
 Data Engineer,MI,S,FT,1,US,North America,High_Tier,50,59608.31
+Data Engineer,MI,S,FT,0,US,North America,High_Tier,50,59608.31
 Data Engineer,MI,S,FT,1,US,North America,High_Tier,100,59608.31
 Data Engineer,MI,S,FT,0,US,North America,High_Tier,100,59608.31
 Data Engineer,MI,S,FT,1,GB,Europe,High_Tier,0,59608.31
 Data Engineer,MI,S,FT,1,GB,Europe,High_Tier,50,59608.31
+Data Engineer,MI,S,FT,0,GB,Europe,High_Tier,50,59608.31
 Data Engineer,MI,S,FT,1,GB,Europe,High_Tier,100,59608.31
 Data Engineer,MI,S,FT,0,GB,Europe,High_Tier,100,59608.31
 Data Engineer,MI,S,FT,1,CA,North America,High_Tier,0,59608.31
 Data Engineer,MI,S,FT,1,CA,North America,High_Tier,50,59608.31
+Data Engineer,MI,S,FT,0,CA,North America,High_Tier,50,59608.31
 Data Engineer,MI,S,FT,1,CA,North America,High_Tier,100,59608.31
 Data Engineer,MI,S,FT,0,CA,North America,High_Tier,100,59608.31
 Data Engineer,MI,S,FT,1,DE,Europe,High_Tier,0,59608.31
 Data Engineer,MI,S,FT,1,DE,Europe,High_Tier,50,59608.31
+Data Engineer,MI,S,FT,0,DE,Europe,High_Tier,50,59608.31
 Data Engineer,MI,S,FT,1,DE,Europe,High_Tier,100,59608.31
 Data Engineer,MI,S,FT,0,DE,Europe,High_Tier,100,59608.31
 Data Engineer,MI,S,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Data Engineer,MI,S,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Data Engineer,MI,S,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Data Engineer,MI,S,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,S,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,S,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Data Engineer,MI,S,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Data Engineer,MI,S,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Data Engineer,MI,S,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,S,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,S,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Data Engineer,MI,S,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Data Engineer,MI,S,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Data Engineer,MI,S,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,S,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,S,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Data Engineer,MI,S,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Data Engineer,MI,S,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Data Engineer,MI,S,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,S,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,S,FT,1,IN,Asia,Low_Tier,0,18850.7
 Data Engineer,MI,S,FT,1,IN,Asia,Low_Tier,50,18850.7
+Data Engineer,MI,S,FT,0,IN,Asia,Low_Tier,50,18850.7
 Data Engineer,MI,S,FT,1,IN,Asia,Low_Tier,100,18850.7
 Data Engineer,MI,S,FT,0,IN,Asia,Low_Tier,100,18850.7
 Data Engineer,MI,S,FT,1,PK,Asia,Low_Tier,0,18850.7
 Data Engineer,MI,S,FT,1,PK,Asia,Low_Tier,50,18850.7
+Data Engineer,MI,S,FT,0,PK,Asia,Low_Tier,50,18850.7
 Data Engineer,MI,S,FT,1,PK,Asia,Low_Tier,100,18850.7
 Data Engineer,MI,S,FT,0,PK,Asia,Low_Tier,100,18850.7
 Data Engineer,MI,S,FT,1,MX,North America,Low_Tier,0,18850.7
 Data Engineer,MI,S,FT,1,MX,North America,Low_Tier,50,18850.7
+Data Engineer,MI,S,FT,0,MX,North America,Low_Tier,50,18850.7
 Data Engineer,MI,S,FT,1,MX,North America,Low_Tier,100,18850.7
 Data Engineer,MI,S,FT,0,MX,North America,Low_Tier,100,18850.7
 Data Engineer,MI,S,FT,1,BR,South America,Low_Tier,0,18850.7
 Data Engineer,MI,S,FT,1,BR,South America,Low_Tier,50,18850.7
+Data Engineer,MI,S,FT,0,BR,South America,Low_Tier,50,18850.7
 Data Engineer,MI,S,FT,1,BR,South America,Low_Tier,100,18850.7
 Data Engineer,MI,S,FT,0,BR,South America,Low_Tier,100,18850.7
 Data Engineer,MI,M,FT,1,US,North America,High_Tier,0,88855.88
 Data Engineer,MI,M,FT,1,US,North America,High_Tier,50,88855.88
+Data Engineer,MI,M,FT,0,US,North America,High_Tier,50,88855.88
 Data Engineer,MI,M,FT,1,US,North America,High_Tier,100,97351.22
 Data Engineer,MI,M,FT,0,US,North America,High_Tier,100,97351.22
 Data Engineer,MI,M,FT,1,GB,Europe,High_Tier,0,88855.88
 Data Engineer,MI,M,FT,1,GB,Europe,High_Tier,50,88855.88
+Data Engineer,MI,M,FT,0,GB,Europe,High_Tier,50,88855.88
 Data Engineer,MI,M,FT,1,GB,Europe,High_Tier,100,97351.22
 Data Engineer,MI,M,FT,0,GB,Europe,High_Tier,100,97351.22
 Data Engineer,MI,M,FT,1,CA,North America,High_Tier,0,88855.88
 Data Engineer,MI,M,FT,1,CA,North America,High_Tier,50,88855.88
+Data Engineer,MI,M,FT,0,CA,North America,High_Tier,50,88855.88
 Data Engineer,MI,M,FT,1,CA,North America,High_Tier,100,97351.22
 Data Engineer,MI,M,FT,0,CA,North America,High_Tier,100,97351.22
 Data Engineer,MI,M,FT,1,DE,Europe,High_Tier,0,88855.88
 Data Engineer,MI,M,FT,1,DE,Europe,High_Tier,50,88855.88
+Data Engineer,MI,M,FT,0,DE,Europe,High_Tier,50,88855.88
 Data Engineer,MI,M,FT,1,DE,Europe,High_Tier,100,97351.22
 Data Engineer,MI,M,FT,0,DE,Europe,High_Tier,100,97351.22
 Data Engineer,MI,M,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Data Engineer,MI,M,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Data Engineer,MI,M,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Data Engineer,MI,M,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,M,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,M,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Data Engineer,MI,M,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Data Engineer,MI,M,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Data Engineer,MI,M,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,M,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,M,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Data Engineer,MI,M,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Data Engineer,MI,M,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Data Engineer,MI,M,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,M,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,M,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Data Engineer,MI,M,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Data Engineer,MI,M,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Data Engineer,MI,M,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,M,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,M,FT,1,IN,Asia,Low_Tier,0,18850.7
 Data Engineer,MI,M,FT,1,IN,Asia,Low_Tier,50,18850.7
+Data Engineer,MI,M,FT,0,IN,Asia,Low_Tier,50,18850.7
 Data Engineer,MI,M,FT,1,IN,Asia,Low_Tier,100,18850.7
 Data Engineer,MI,M,FT,0,IN,Asia,Low_Tier,100,18850.7
 Data Engineer,MI,M,FT,1,PK,Asia,Low_Tier,0,18850.7
 Data Engineer,MI,M,FT,1,PK,Asia,Low_Tier,50,18850.7
+Data Engineer,MI,M,FT,0,PK,Asia,Low_Tier,50,18850.7
 Data Engineer,MI,M,FT,1,PK,Asia,Low_Tier,100,18850.7
 Data Engineer,MI,M,FT,0,PK,Asia,Low_Tier,100,18850.7
 Data Engineer,MI,M,FT,1,MX,North America,Low_Tier,0,18850.7
 Data Engineer,MI,M,FT,1,MX,North America,Low_Tier,50,18850.7
+Data Engineer,MI,M,FT,0,MX,North America,Low_Tier,50,18850.7
 Data Engineer,MI,M,FT,1,MX,North America,Low_Tier,100,18850.7
 Data Engineer,MI,M,FT,0,MX,North America,Low_Tier,100,18850.7
 Data Engineer,MI,M,FT,1,BR,South America,Low_Tier,0,18850.7
 Data Engineer,MI,M,FT,1,BR,South America,Low_Tier,50,18850.7
+Data Engineer,MI,M,FT,0,BR,South America,Low_Tier,50,18850.7
 Data Engineer,MI,M,FT,1,BR,South America,Low_Tier,100,18850.7
 Data Engineer,MI,M,FT,0,BR,South America,Low_Tier,100,18850.7
 Data Engineer,MI,L,FT,1,US,North America,High_Tier,0,88855.88
 Data Engineer,MI,L,FT,1,US,North America,High_Tier,50,88855.88
+Data Engineer,MI,L,FT,0,US,North America,High_Tier,50,88855.88
 Data Engineer,MI,L,FT,1,US,North America,High_Tier,100,137936.86
 Data Engineer,MI,L,FT,0,US,North America,High_Tier,100,137936.86
 Data Engineer,MI,L,FT,1,GB,Europe,High_Tier,0,88855.88
 Data Engineer,MI,L,FT,1,GB,Europe,High_Tier,50,88855.88
+Data Engineer,MI,L,FT,0,GB,Europe,High_Tier,50,88855.88
 Data Engineer,MI,L,FT,1,GB,Europe,High_Tier,100,137936.86
 Data Engineer,MI,L,FT,0,GB,Europe,High_Tier,100,137936.86
 Data Engineer,MI,L,FT,1,CA,North America,High_Tier,0,88855.88
 Data Engineer,MI,L,FT,1,CA,North America,High_Tier,50,88855.88
+Data Engineer,MI,L,FT,0,CA,North America,High_Tier,50,88855.88
 Data Engineer,MI,L,FT,1,CA,North America,High_Tier,100,137936.86
 Data Engineer,MI,L,FT,0,CA,North America,High_Tier,100,137936.86
 Data Engineer,MI,L,FT,1,DE,Europe,High_Tier,0,88855.88
 Data Engineer,MI,L,FT,1,DE,Europe,High_Tier,50,88855.88
+Data Engineer,MI,L,FT,0,DE,Europe,High_Tier,50,88855.88
 Data Engineer,MI,L,FT,1,DE,Europe,High_Tier,100,137936.86
 Data Engineer,MI,L,FT,0,DE,Europe,High_Tier,100,137936.86
 Data Engineer,MI,L,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Data Engineer,MI,L,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Data Engineer,MI,L,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Data Engineer,MI,L,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,L,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,L,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Data Engineer,MI,L,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Data Engineer,MI,L,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Data Engineer,MI,L,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,L,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,L,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Data Engineer,MI,L,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Data Engineer,MI,L,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Data Engineer,MI,L,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,L,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,L,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Data Engineer,MI,L,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Data Engineer,MI,L,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Data Engineer,MI,L,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,L,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Data Engineer,MI,L,FT,1,IN,Asia,Low_Tier,0,35913.44
 Data Engineer,MI,L,FT,1,IN,Asia,Low_Tier,50,35913.44
+Data Engineer,MI,L,FT,0,IN,Asia,Low_Tier,50,35913.44
 Data Engineer,MI,L,FT,1,IN,Asia,Low_Tier,100,35913.44
 Data Engineer,MI,L,FT,0,IN,Asia,Low_Tier,100,35913.44
 Data Engineer,MI,L,FT,1,PK,Asia,Low_Tier,0,35913.44
 Data Engineer,MI,L,FT,1,PK,Asia,Low_Tier,50,35913.44
+Data Engineer,MI,L,FT,0,PK,Asia,Low_Tier,50,35913.44
 Data Engineer,MI,L,FT,1,PK,Asia,Low_Tier,100,35913.44
 Data Engineer,MI,L,FT,0,PK,Asia,Low_Tier,100,35913.44
 Data Engineer,MI,L,FT,1,MX,North America,Low_Tier,0,35913.44
 Data Engineer,MI,L,FT,1,MX,North America,Low_Tier,50,35913.44
+Data Engineer,MI,L,FT,0,MX,North America,Low_Tier,50,35913.44
 Data Engineer,MI,L,FT,1,MX,North America,Low_Tier,100,35913.44
 Data Engineer,MI,L,FT,0,MX,North America,Low_Tier,100,35913.44
 Data Engineer,MI,L,FT,1,BR,South America,Low_Tier,0,35913.44
 Data Engineer,MI,L,FT,1,BR,South America,Low_Tier,50,35913.44
+Data Engineer,MI,L,FT,0,BR,South America,Low_Tier,50,35913.44
 Data Engineer,MI,L,FT,1,BR,South America,Low_Tier,100,35913.44
 Data Engineer,MI,L,FT,0,BR,South America,Low_Tier,100,35913.44
 Data Engineer,SE,S,FT,1,US,North America,High_Tier,0,119945.47
 Data Engineer,SE,S,FT,1,US,North America,High_Tier,50,119945.47
+Data Engineer,SE,S,FT,0,US,North America,High_Tier,50,119945.47
 Data Engineer,SE,S,FT,1,US,North America,High_Tier,100,119945.47
 Data Engineer,SE,S,FT,0,US,North America,High_Tier,100,119945.47
 Data Engineer,SE,S,FT,1,GB,Europe,High_Tier,0,119945.47
 Data Engineer,SE,S,FT,1,GB,Europe,High_Tier,50,119945.47
+Data Engineer,SE,S,FT,0,GB,Europe,High_Tier,50,119945.47
 Data Engineer,SE,S,FT,1,GB,Europe,High_Tier,100,119945.47
 Data Engineer,SE,S,FT,0,GB,Europe,High_Tier,100,119945.47
 Data Engineer,SE,S,FT,1,CA,North America,High_Tier,0,119945.47
 Data Engineer,SE,S,FT,1,CA,North America,High_Tier,50,119945.47
+Data Engineer,SE,S,FT,0,CA,North America,High_Tier,50,119945.47
 Data Engineer,SE,S,FT,1,CA,North America,High_Tier,100,119945.47
 Data Engineer,SE,S,FT,0,CA,North America,High_Tier,100,119945.47
 Data Engineer,SE,S,FT,1,DE,Europe,High_Tier,0,119945.47
 Data Engineer,SE,S,FT,1,DE,Europe,High_Tier,50,119945.47
+Data Engineer,SE,S,FT,0,DE,Europe,High_Tier,50,119945.47
 Data Engineer,SE,S,FT,1,DE,Europe,High_Tier,100,119945.47
 Data Engineer,SE,S,FT,0,DE,Europe,High_Tier,100,119945.47
 Data Engineer,SE,S,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Data Engineer,SE,S,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Data Engineer,SE,S,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Data Engineer,SE,S,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,S,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,S,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Data Engineer,SE,S,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Data Engineer,SE,S,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Data Engineer,SE,S,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,S,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,S,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Data Engineer,SE,S,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Data Engineer,SE,S,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Data Engineer,SE,S,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,S,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,S,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Data Engineer,SE,S,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Data Engineer,SE,S,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Data Engineer,SE,S,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,S,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,S,FT,1,IN,Asia,Low_Tier,0,18850.7
 Data Engineer,SE,S,FT,1,IN,Asia,Low_Tier,50,18850.7
+Data Engineer,SE,S,FT,0,IN,Asia,Low_Tier,50,18850.7
 Data Engineer,SE,S,FT,1,IN,Asia,Low_Tier,100,18850.7
 Data Engineer,SE,S,FT,0,IN,Asia,Low_Tier,100,18850.7
 Data Engineer,SE,S,FT,1,PK,Asia,Low_Tier,0,18850.7
 Data Engineer,SE,S,FT,1,PK,Asia,Low_Tier,50,18850.7
+Data Engineer,SE,S,FT,0,PK,Asia,Low_Tier,50,18850.7
 Data Engineer,SE,S,FT,1,PK,Asia,Low_Tier,100,18850.7
 Data Engineer,SE,S,FT,0,PK,Asia,Low_Tier,100,18850.7
 Data Engineer,SE,S,FT,1,MX,North America,Low_Tier,0,18850.7
 Data Engineer,SE,S,FT,1,MX,North America,Low_Tier,50,18850.7
+Data Engineer,SE,S,FT,0,MX,North America,Low_Tier,50,18850.7
 Data Engineer,SE,S,FT,1,MX,North America,Low_Tier,100,18850.7
 Data Engineer,SE,S,FT,0,MX,North America,Low_Tier,100,18850.7
 Data Engineer,SE,S,FT,1,BR,South America,Low_Tier,0,18850.7
 Data Engineer,SE,S,FT,1,BR,South America,Low_Tier,50,18850.7
+Data Engineer,SE,S,FT,0,BR,South America,Low_Tier,50,18850.7
 Data Engineer,SE,S,FT,1,BR,South America,Low_Tier,100,18850.7
 Data Engineer,SE,S,FT,0,BR,South America,Low_Tier,100,18850.7
 Data Engineer,SE,M,FT,1,US,North America,High_Tier,0,129013.08
 Data Engineer,SE,M,FT,1,US,North America,High_Tier,50,129013.08
+Data Engineer,SE,M,FT,0,US,North America,High_Tier,50,129013.08
 Data Engineer,SE,M,FT,1,US,North America,High_Tier,100,148125.37
 Data Engineer,SE,M,FT,0,US,North America,High_Tier,100,148125.37
 Data Engineer,SE,M,FT,1,GB,Europe,High_Tier,0,129013.08
 Data Engineer,SE,M,FT,1,GB,Europe,High_Tier,50,129013.08
+Data Engineer,SE,M,FT,0,GB,Europe,High_Tier,50,129013.08
 Data Engineer,SE,M,FT,1,GB,Europe,High_Tier,100,148125.37
 Data Engineer,SE,M,FT,0,GB,Europe,High_Tier,100,148125.37
 Data Engineer,SE,M,FT,1,CA,North America,High_Tier,0,129013.08
 Data Engineer,SE,M,FT,1,CA,North America,High_Tier,50,129013.08
+Data Engineer,SE,M,FT,0,CA,North America,High_Tier,50,129013.08
 Data Engineer,SE,M,FT,1,CA,North America,High_Tier,100,148125.37
 Data Engineer,SE,M,FT,0,CA,North America,High_Tier,100,148125.37
 Data Engineer,SE,M,FT,1,DE,Europe,High_Tier,0,129013.08
 Data Engineer,SE,M,FT,1,DE,Europe,High_Tier,50,129013.08
+Data Engineer,SE,M,FT,0,DE,Europe,High_Tier,50,129013.08
 Data Engineer,SE,M,FT,1,DE,Europe,High_Tier,100,148125.37
 Data Engineer,SE,M,FT,0,DE,Europe,High_Tier,100,148125.37
 Data Engineer,SE,M,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Data Engineer,SE,M,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Data Engineer,SE,M,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Data Engineer,SE,M,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,M,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,M,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Data Engineer,SE,M,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Data Engineer,SE,M,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Data Engineer,SE,M,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,M,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,M,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Data Engineer,SE,M,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Data Engineer,SE,M,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Data Engineer,SE,M,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,M,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,M,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Data Engineer,SE,M,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Data Engineer,SE,M,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Data Engineer,SE,M,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,M,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,M,FT,1,IN,Asia,Low_Tier,0,18850.7
 Data Engineer,SE,M,FT,1,IN,Asia,Low_Tier,50,18850.7
+Data Engineer,SE,M,FT,0,IN,Asia,Low_Tier,50,18850.7
 Data Engineer,SE,M,FT,1,IN,Asia,Low_Tier,100,18850.7
 Data Engineer,SE,M,FT,0,IN,Asia,Low_Tier,100,18850.7
 Data Engineer,SE,M,FT,1,PK,Asia,Low_Tier,0,18850.7
 Data Engineer,SE,M,FT,1,PK,Asia,Low_Tier,50,18850.7
+Data Engineer,SE,M,FT,0,PK,Asia,Low_Tier,50,18850.7
 Data Engineer,SE,M,FT,1,PK,Asia,Low_Tier,100,18850.7
 Data Engineer,SE,M,FT,0,PK,Asia,Low_Tier,100,18850.7
 Data Engineer,SE,M,FT,1,MX,North America,Low_Tier,0,18850.7
 Data Engineer,SE,M,FT,1,MX,North America,Low_Tier,50,18850.7
+Data Engineer,SE,M,FT,0,MX,North America,Low_Tier,50,18850.7
 Data Engineer,SE,M,FT,1,MX,North America,Low_Tier,100,18850.7
 Data Engineer,SE,M,FT,0,MX,North America,Low_Tier,100,18850.7
 Data Engineer,SE,M,FT,1,BR,South America,Low_Tier,0,18850.7
 Data Engineer,SE,M,FT,1,BR,South America,Low_Tier,50,18850.7
+Data Engineer,SE,M,FT,0,BR,South America,Low_Tier,50,18850.7
 Data Engineer,SE,M,FT,1,BR,South America,Low_Tier,100,18850.7
 Data Engineer,SE,M,FT,0,BR,South America,Low_Tier,100,18850.7
 Data Engineer,SE,L,FT,1,US,North America,High_Tier,0,169320.14
 Data Engineer,SE,L,FT,1,US,North America,High_Tier,50,169320.14
+Data Engineer,SE,L,FT,0,US,North America,High_Tier,50,169320.14
 Data Engineer,SE,L,FT,1,US,North America,High_Tier,100,169320.14
 Data Engineer,SE,L,FT,0,US,North America,High_Tier,100,169320.14
 Data Engineer,SE,L,FT,1,GB,Europe,High_Tier,0,169320.14
 Data Engineer,SE,L,FT,1,GB,Europe,High_Tier,50,169320.14
+Data Engineer,SE,L,FT,0,GB,Europe,High_Tier,50,169320.14
 Data Engineer,SE,L,FT,1,GB,Europe,High_Tier,100,169320.14
 Data Engineer,SE,L,FT,0,GB,Europe,High_Tier,100,169320.14
 Data Engineer,SE,L,FT,1,CA,North America,High_Tier,0,169320.14
 Data Engineer,SE,L,FT,1,CA,North America,High_Tier,50,169320.14
+Data Engineer,SE,L,FT,0,CA,North America,High_Tier,50,169320.14
 Data Engineer,SE,L,FT,1,CA,North America,High_Tier,100,169320.14
 Data Engineer,SE,L,FT,0,CA,North America,High_Tier,100,169320.14
 Data Engineer,SE,L,FT,1,DE,Europe,High_Tier,0,169320.14
 Data Engineer,SE,L,FT,1,DE,Europe,High_Tier,50,169320.14
+Data Engineer,SE,L,FT,0,DE,Europe,High_Tier,50,169320.14
 Data Engineer,SE,L,FT,1,DE,Europe,High_Tier,100,169320.14
 Data Engineer,SE,L,FT,0,DE,Europe,High_Tier,100,169320.14
 Data Engineer,SE,L,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Data Engineer,SE,L,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Data Engineer,SE,L,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Data Engineer,SE,L,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,L,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,L,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Data Engineer,SE,L,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Data Engineer,SE,L,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Data Engineer,SE,L,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,L,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,L,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Data Engineer,SE,L,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Data Engineer,SE,L,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Data Engineer,SE,L,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,L,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,L,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Data Engineer,SE,L,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Data Engineer,SE,L,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Data Engineer,SE,L,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,L,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Data Engineer,SE,L,FT,1,IN,Asia,Low_Tier,0,35913.44
 Data Engineer,SE,L,FT,1,IN,Asia,Low_Tier,50,35913.44
+Data Engineer,SE,L,FT,0,IN,Asia,Low_Tier,50,35913.44
 Data Engineer,SE,L,FT,1,IN,Asia,Low_Tier,100,35913.44
 Data Engineer,SE,L,FT,0,IN,Asia,Low_Tier,100,35913.44
 Data Engineer,SE,L,FT,1,PK,Asia,Low_Tier,0,35913.44
 Data Engineer,SE,L,FT,1,PK,Asia,Low_Tier,50,35913.44
+Data Engineer,SE,L,FT,0,PK,Asia,Low_Tier,50,35913.44
 Data Engineer,SE,L,FT,1,PK,Asia,Low_Tier,100,35913.44
 Data Engineer,SE,L,FT,0,PK,Asia,Low_Tier,100,35913.44
 Data Engineer,SE,L,FT,1,MX,North America,Low_Tier,0,35913.44
 Data Engineer,SE,L,FT,1,MX,North America,Low_Tier,50,35913.44
+Data Engineer,SE,L,FT,0,MX,North America,Low_Tier,50,35913.44
 Data Engineer,SE,L,FT,1,MX,North America,Low_Tier,100,35913.44
 Data Engineer,SE,L,FT,0,MX,North America,Low_Tier,100,35913.44
 Data Engineer,SE,L,FT,1,BR,South America,Low_Tier,0,35913.44
 Data Engineer,SE,L,FT,1,BR,South America,Low_Tier,50,35913.44
+Data Engineer,SE,L,FT,0,BR,South America,Low_Tier,50,35913.44
 Data Engineer,SE,L,FT,1,BR,South America,Low_Tier,100,35913.44
 Data Engineer,SE,L,FT,0,BR,South America,Low_Tier,100,35913.44
 Data Engineer,EX,M,FT,1,US,North America,High_Tier,0,231948.17
 Data Engineer,EX,M,FT,1,US,North America,High_Tier,50,231948.17
+Data Engineer,EX,M,FT,0,US,North America,High_Tier,50,231948.17
 Data Engineer,EX,M,FT,1,US,North America,High_Tier,100,231948.17
 Data Engineer,EX,M,FT,0,US,North America,High_Tier,100,231948.17
 Data Engineer,EX,M,FT,1,GB,Europe,High_Tier,0,231948.17
 Data Engineer,EX,M,FT,1,GB,Europe,High_Tier,50,231948.17
+Data Engineer,EX,M,FT,0,GB,Europe,High_Tier,50,231948.17
 Data Engineer,EX,M,FT,1,GB,Europe,High_Tier,100,231948.17
 Data Engineer,EX,M,FT,0,GB,Europe,High_Tier,100,231948.17
 Data Engineer,EX,M,FT,1,CA,North America,High_Tier,0,231948.17
 Data Engineer,EX,M,FT,1,CA,North America,High_Tier,50,231948.17
+Data Engineer,EX,M,FT,0,CA,North America,High_Tier,50,231948.17
 Data Engineer,EX,M,FT,1,CA,North America,High_Tier,100,231948.17
 Data Engineer,EX,M,FT,0,CA,North America,High_Tier,100,231948.17
 Data Engineer,EX,M,FT,1,DE,Europe,High_Tier,0,231948.17
 Data Engineer,EX,M,FT,1,DE,Europe,High_Tier,50,231948.17
+Data Engineer,EX,M,FT,0,DE,Europe,High_Tier,50,231948.17
 Data Engineer,EX,M,FT,1,DE,Europe,High_Tier,100,231948.17
 Data Engineer,EX,M,FT,0,DE,Europe,High_Tier,100,231948.17
 Data Engineer,EX,M,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Data Engineer,EX,M,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Data Engineer,EX,M,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Data Engineer,EX,M,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Data Engineer,EX,M,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Data Engineer,EX,M,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Data Engineer,EX,M,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Data Engineer,EX,M,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Data Engineer,EX,M,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Data Engineer,EX,M,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Data Engineer,EX,M,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Data Engineer,EX,M,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Data Engineer,EX,M,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Data Engineer,EX,M,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Data Engineer,EX,M,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Data Engineer,EX,M,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Data Engineer,EX,M,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Data Engineer,EX,M,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Data Engineer,EX,M,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Data Engineer,EX,M,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Data Engineer,EX,M,FT,1,IN,Asia,Low_Tier,0,18850.7
 Data Engineer,EX,M,FT,1,IN,Asia,Low_Tier,50,18850.7
+Data Engineer,EX,M,FT,0,IN,Asia,Low_Tier,50,18850.7
 Data Engineer,EX,M,FT,1,IN,Asia,Low_Tier,100,18850.7
 Data Engineer,EX,M,FT,0,IN,Asia,Low_Tier,100,18850.7
 Data Engineer,EX,M,FT,1,PK,Asia,Low_Tier,0,18850.7
 Data Engineer,EX,M,FT,1,PK,Asia,Low_Tier,50,18850.7
+Data Engineer,EX,M,FT,0,PK,Asia,Low_Tier,50,18850.7
 Data Engineer,EX,M,FT,1,PK,Asia,Low_Tier,100,18850.7
 Data Engineer,EX,M,FT,0,PK,Asia,Low_Tier,100,18850.7
 Data Engineer,EX,M,FT,1,MX,North America,Low_Tier,0,18850.7
 Data Engineer,EX,M,FT,1,MX,North America,Low_Tier,50,18850.7
+Data Engineer,EX,M,FT,0,MX,North America,Low_Tier,50,18850.7
 Data Engineer,EX,M,FT,1,MX,North America,Low_Tier,100,18850.7
 Data Engineer,EX,M,FT,0,MX,North America,Low_Tier,100,18850.7
 Data Engineer,EX,M,FT,1,BR,South America,Low_Tier,0,18850.7
 Data Engineer,EX,M,FT,1,BR,South America,Low_Tier,50,18850.7
+Data Engineer,EX,M,FT,0,BR,South America,Low_Tier,50,18850.7
 Data Engineer,EX,M,FT,1,BR,South America,Low_Tier,100,18850.7
 Data Engineer,EX,M,FT,0,BR,South America,Low_Tier,100,18850.7
 Data Engineer,EX,L,FT,1,US,North America,High_Tier,0,231948.17
 Data Engineer,EX,L,FT,1,US,North America,High_Tier,50,231948.17
+Data Engineer,EX,L,FT,0,US,North America,High_Tier,50,231948.17
 Data Engineer,EX,L,FT,1,US,North America,High_Tier,100,231948.17
 Data Engineer,EX,L,FT,0,US,North America,High_Tier,100,231948.17
 Data Engineer,EX,L,FT,1,GB,Europe,High_Tier,0,231948.17
 Data Engineer,EX,L,FT,1,GB,Europe,High_Tier,50,231948.17
+Data Engineer,EX,L,FT,0,GB,Europe,High_Tier,50,231948.17
 Data Engineer,EX,L,FT,1,GB,Europe,High_Tier,100,231948.17
 Data Engineer,EX,L,FT,0,GB,Europe,High_Tier,100,231948.17
 Data Engineer,EX,L,FT,1,CA,North America,High_Tier,0,231948.17
 Data Engineer,EX,L,FT,1,CA,North America,High_Tier,50,231948.17
+Data Engineer,EX,L,FT,0,CA,North America,High_Tier,50,231948.17
 Data Engineer,EX,L,FT,1,CA,North America,High_Tier,100,231948.17
 Data Engineer,EX,L,FT,0,CA,North America,High_Tier,100,231948.17
 Data Engineer,EX,L,FT,1,DE,Europe,High_Tier,0,231948.17
 Data Engineer,EX,L,FT,1,DE,Europe,High_Tier,50,231948.17
+Data Engineer,EX,L,FT,0,DE,Europe,High_Tier,50,231948.17
 Data Engineer,EX,L,FT,1,DE,Europe,High_Tier,100,231948.17
 Data Engineer,EX,L,FT,0,DE,Europe,High_Tier,100,231948.17
 Data Engineer,EX,L,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Data Engineer,EX,L,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Data Engineer,EX,L,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Data Engineer,EX,L,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Data Engineer,EX,L,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Data Engineer,EX,L,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Data Engineer,EX,L,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Data Engineer,EX,L,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Data Engineer,EX,L,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Data Engineer,EX,L,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Data Engineer,EX,L,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Data Engineer,EX,L,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Data Engineer,EX,L,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Data Engineer,EX,L,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Data Engineer,EX,L,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Data Engineer,EX,L,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Data Engineer,EX,L,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Data Engineer,EX,L,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Data Engineer,EX,L,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Data Engineer,EX,L,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Data Engineer,EX,L,FT,1,IN,Asia,Low_Tier,0,35913.44
 Data Engineer,EX,L,FT,1,IN,Asia,Low_Tier,50,35913.44
+Data Engineer,EX,L,FT,0,IN,Asia,Low_Tier,50,35913.44
 Data Engineer,EX,L,FT,1,IN,Asia,Low_Tier,100,35913.44
 Data Engineer,EX,L,FT,0,IN,Asia,Low_Tier,100,35913.44
 Data Engineer,EX,L,FT,1,PK,Asia,Low_Tier,0,35913.44
 Data Engineer,EX,L,FT,1,PK,Asia,Low_Tier,50,35913.44
+Data Engineer,EX,L,FT,0,PK,Asia,Low_Tier,50,35913.44
 Data Engineer,EX,L,FT,1,PK,Asia,Low_Tier,100,35913.44
 Data Engineer,EX,L,FT,0,PK,Asia,Low_Tier,100,35913.44
 Data Engineer,EX,L,FT,1,MX,North America,Low_Tier,0,35913.44
 Data Engineer,EX,L,FT,1,MX,North America,Low_Tier,50,35913.44
+Data Engineer,EX,L,FT,0,MX,North America,Low_Tier,50,35913.44
 Data Engineer,EX,L,FT,1,MX,North America,Low_Tier,100,35913.44
 Data Engineer,EX,L,FT,0,MX,North America,Low_Tier,100,35913.44
 Data Engineer,EX,L,FT,1,BR,South America,Low_Tier,0,35913.44
 Data Engineer,EX,L,FT,1,BR,South America,Low_Tier,50,35913.44
+Data Engineer,EX,L,FT,0,BR,South America,Low_Tier,50,35913.44
 Data Engineer,EX,L,FT,1,BR,South America,Low_Tier,100,35913.44
 Data Engineer,EX,L,FT,0,BR,South America,Low_Tier,100,35913.44
 Data Scientist,EN,S,FT,1,US,North America,High_Tier,0,75804.56
 Data Scientist,EN,S,FT,1,US,North America,High_Tier,50,75804.56
+Data Scientist,EN,S,FT,0,US,North America,High_Tier,50,75804.56
 Data Scientist,EN,S,FT,1,US,North America,High_Tier,100,75804.56
 Data Scientist,EN,S,FT,0,US,North America,High_Tier,100,75804.56
 Data Scientist,EN,S,FT,1,GB,Europe,High_Tier,0,75804.56
 Data Scientist,EN,S,FT,1,GB,Europe,High_Tier,50,75804.56
+Data Scientist,EN,S,FT,0,GB,Europe,High_Tier,50,75804.56
 Data Scientist,EN,S,FT,1,GB,Europe,High_Tier,100,75804.56
 Data Scientist,EN,S,FT,0,GB,Europe,High_Tier,100,75804.56
 Data Scientist,EN,S,FT,1,CA,North America,High_Tier,0,75804.56
 Data Scientist,EN,S,FT,1,CA,North America,High_Tier,50,75804.56
+Data Scientist,EN,S,FT,0,CA,North America,High_Tier,50,75804.56
 Data Scientist,EN,S,FT,1,CA,North America,High_Tier,100,75804.56
 Data Scientist,EN,S,FT,0,CA,North America,High_Tier,100,75804.56
 Data Scientist,EN,S,FT,1,DE,Europe,High_Tier,0,75804.56
 Data Scientist,EN,S,FT,1,DE,Europe,High_Tier,50,75804.56
+Data Scientist,EN,S,FT,0,DE,Europe,High_Tier,50,75804.56
 Data Scientist,EN,S,FT,1,DE,Europe,High_Tier,100,75804.56
 Data Scientist,EN,S,FT,0,DE,Europe,High_Tier,100,75804.56
 Data Scientist,EN,S,FT,1,FR,Europe,Mid_Tier,0,31994.08
 Data Scientist,EN,S,FT,1,FR,Europe,Mid_Tier,50,31994.08
+Data Scientist,EN,S,FT,0,FR,Europe,Mid_Tier,50,31994.08
 Data Scientist,EN,S,FT,1,FR,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,S,FT,0,FR,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,S,FT,1,ES,Europe,Mid_Tier,0,31994.08
 Data Scientist,EN,S,FT,1,ES,Europe,Mid_Tier,50,31994.08
+Data Scientist,EN,S,FT,0,ES,Europe,Mid_Tier,50,31994.08
 Data Scientist,EN,S,FT,1,ES,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,S,FT,0,ES,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,S,FT,1,GR,Europe,Mid_Tier,0,31994.08
 Data Scientist,EN,S,FT,1,GR,Europe,Mid_Tier,50,31994.08
+Data Scientist,EN,S,FT,0,GR,Europe,Mid_Tier,50,31994.08
 Data Scientist,EN,S,FT,1,GR,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,S,FT,0,GR,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,S,FT,1,NL,Europe,Mid_Tier,0,31994.08
 Data Scientist,EN,S,FT,1,NL,Europe,Mid_Tier,50,31994.08
+Data Scientist,EN,S,FT,0,NL,Europe,Mid_Tier,50,31994.08
 Data Scientist,EN,S,FT,1,NL,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,S,FT,0,NL,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,S,FT,1,IN,Asia,Low_Tier,0,18850.7
 Data Scientist,EN,S,FT,1,IN,Asia,Low_Tier,50,18850.7
+Data Scientist,EN,S,FT,0,IN,Asia,Low_Tier,50,18850.7
 Data Scientist,EN,S,FT,1,IN,Asia,Low_Tier,100,18850.7
 Data Scientist,EN,S,FT,0,IN,Asia,Low_Tier,100,18850.7
 Data Scientist,EN,S,FT,1,PK,Asia,Low_Tier,0,18850.7
 Data Scientist,EN,S,FT,1,PK,Asia,Low_Tier,50,18850.7
+Data Scientist,EN,S,FT,0,PK,Asia,Low_Tier,50,18850.7
 Data Scientist,EN,S,FT,1,PK,Asia,Low_Tier,100,18850.7
 Data Scientist,EN,S,FT,0,PK,Asia,Low_Tier,100,18850.7
 Data Scientist,EN,S,FT,1,MX,North America,Low_Tier,0,18850.7
 Data Scientist,EN,S,FT,1,MX,North America,Low_Tier,50,18850.7
+Data Scientist,EN,S,FT,0,MX,North America,Low_Tier,50,18850.7
 Data Scientist,EN,S,FT,1,MX,North America,Low_Tier,100,18850.7
 Data Scientist,EN,S,FT,0,MX,North America,Low_Tier,100,18850.7
 Data Scientist,EN,S,FT,1,BR,South America,Low_Tier,0,18850.7
 Data Scientist,EN,S,FT,1,BR,South America,Low_Tier,50,18850.7
+Data Scientist,EN,S,FT,0,BR,South America,Low_Tier,50,18850.7
 Data Scientist,EN,S,FT,1,BR,South America,Low_Tier,100,18850.7
 Data Scientist,EN,S,FT,0,BR,South America,Low_Tier,100,18850.7
 Data Scientist,EN,M,FT,1,US,North America,High_Tier,0,66478.36
 Data Scientist,EN,M,FT,1,US,North America,High_Tier,50,66478.36
+Data Scientist,EN,M,FT,0,US,North America,High_Tier,50,66478.36
 Data Scientist,EN,M,FT,1,US,North America,High_Tier,100,66478.36
 Data Scientist,EN,M,FT,0,US,North America,High_Tier,100,66478.36
 Data Scientist,EN,M,FT,1,GB,Europe,High_Tier,0,66478.36
 Data Scientist,EN,M,FT,1,GB,Europe,High_Tier,50,66478.36
+Data Scientist,EN,M,FT,0,GB,Europe,High_Tier,50,66478.36
 Data Scientist,EN,M,FT,1,GB,Europe,High_Tier,100,66478.36
 Data Scientist,EN,M,FT,0,GB,Europe,High_Tier,100,66478.36
 Data Scientist,EN,M,FT,1,CA,North America,High_Tier,0,66478.36
 Data Scientist,EN,M,FT,1,CA,North America,High_Tier,50,66478.36
+Data Scientist,EN,M,FT,0,CA,North America,High_Tier,50,66478.36
 Data Scientist,EN,M,FT,1,CA,North America,High_Tier,100,66478.36
 Data Scientist,EN,M,FT,0,CA,North America,High_Tier,100,66478.36
 Data Scientist,EN,M,FT,1,DE,Europe,High_Tier,0,66478.36
 Data Scientist,EN,M,FT,1,DE,Europe,High_Tier,50,66478.36
+Data Scientist,EN,M,FT,0,DE,Europe,High_Tier,50,66478.36
 Data Scientist,EN,M,FT,1,DE,Europe,High_Tier,100,66478.36
 Data Scientist,EN,M,FT,0,DE,Europe,High_Tier,100,66478.36
 Data Scientist,EN,M,FT,1,FR,Europe,Mid_Tier,0,31994.08
 Data Scientist,EN,M,FT,1,FR,Europe,Mid_Tier,50,31994.08
+Data Scientist,EN,M,FT,0,FR,Europe,Mid_Tier,50,31994.08
 Data Scientist,EN,M,FT,1,FR,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,M,FT,0,FR,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,M,FT,1,ES,Europe,Mid_Tier,0,31994.08
 Data Scientist,EN,M,FT,1,ES,Europe,Mid_Tier,50,31994.08
+Data Scientist,EN,M,FT,0,ES,Europe,Mid_Tier,50,31994.08
 Data Scientist,EN,M,FT,1,ES,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,M,FT,0,ES,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,M,FT,1,GR,Europe,Mid_Tier,0,31994.08
 Data Scientist,EN,M,FT,1,GR,Europe,Mid_Tier,50,31994.08
+Data Scientist,EN,M,FT,0,GR,Europe,Mid_Tier,50,31994.08
 Data Scientist,EN,M,FT,1,GR,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,M,FT,0,GR,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,M,FT,1,NL,Europe,Mid_Tier,0,31994.08
 Data Scientist,EN,M,FT,1,NL,Europe,Mid_Tier,50,31994.08
+Data Scientist,EN,M,FT,0,NL,Europe,Mid_Tier,50,31994.08
 Data Scientist,EN,M,FT,1,NL,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,M,FT,0,NL,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,M,FT,1,IN,Asia,Low_Tier,0,18850.7
 Data Scientist,EN,M,FT,1,IN,Asia,Low_Tier,50,18850.7
+Data Scientist,EN,M,FT,0,IN,Asia,Low_Tier,50,18850.7
 Data Scientist,EN,M,FT,1,IN,Asia,Low_Tier,100,18850.7
 Data Scientist,EN,M,FT,0,IN,Asia,Low_Tier,100,18850.7
 Data Scientist,EN,M,FT,1,PK,Asia,Low_Tier,0,18850.7
 Data Scientist,EN,M,FT,1,PK,Asia,Low_Tier,50,18850.7
+Data Scientist,EN,M,FT,0,PK,Asia,Low_Tier,50,18850.7
 Data Scientist,EN,M,FT,1,PK,Asia,Low_Tier,100,18850.7
 Data Scientist,EN,M,FT,0,PK,Asia,Low_Tier,100,18850.7
 Data Scientist,EN,M,FT,1,MX,North America,Low_Tier,0,18850.7
 Data Scientist,EN,M,FT,1,MX,North America,Low_Tier,50,18850.7
+Data Scientist,EN,M,FT,0,MX,North America,Low_Tier,50,18850.7
 Data Scientist,EN,M,FT,1,MX,North America,Low_Tier,100,18850.7
 Data Scientist,EN,M,FT,0,MX,North America,Low_Tier,100,18850.7
 Data Scientist,EN,M,FT,1,BR,South America,Low_Tier,0,18850.7
 Data Scientist,EN,M,FT,1,BR,South America,Low_Tier,50,18850.7
+Data Scientist,EN,M,FT,0,BR,South America,Low_Tier,50,18850.7
 Data Scientist,EN,M,FT,1,BR,South America,Low_Tier,100,18850.7
 Data Scientist,EN,M,FT,0,BR,South America,Low_Tier,100,18850.7
 Data Scientist,EN,L,FT,1,US,North America,High_Tier,0,98113.0
 Data Scientist,EN,L,FT,1,US,North America,High_Tier,50,98113.0
+Data Scientist,EN,L,FT,0,US,North America,High_Tier,50,98113.0
 Data Scientist,EN,L,FT,1,US,North America,High_Tier,100,98113.0
 Data Scientist,EN,L,FT,0,US,North America,High_Tier,100,98113.0
 Data Scientist,EN,L,FT,1,GB,Europe,High_Tier,0,98113.0
 Data Scientist,EN,L,FT,1,GB,Europe,High_Tier,50,98113.0
+Data Scientist,EN,L,FT,0,GB,Europe,High_Tier,50,98113.0
 Data Scientist,EN,L,FT,1,GB,Europe,High_Tier,100,98113.0
 Data Scientist,EN,L,FT,0,GB,Europe,High_Tier,100,98113.0
 Data Scientist,EN,L,FT,1,CA,North America,High_Tier,0,98113.0
 Data Scientist,EN,L,FT,1,CA,North America,High_Tier,50,98113.0
+Data Scientist,EN,L,FT,0,CA,North America,High_Tier,50,98113.0
 Data Scientist,EN,L,FT,1,CA,North America,High_Tier,100,98113.0
 Data Scientist,EN,L,FT,0,CA,North America,High_Tier,100,98113.0
 Data Scientist,EN,L,FT,1,DE,Europe,High_Tier,0,98113.0
 Data Scientist,EN,L,FT,1,DE,Europe,High_Tier,50,98113.0
+Data Scientist,EN,L,FT,0,DE,Europe,High_Tier,50,98113.0
 Data Scientist,EN,L,FT,1,DE,Europe,High_Tier,100,98113.0
 Data Scientist,EN,L,FT,0,DE,Europe,High_Tier,100,98113.0
 Data Scientist,EN,L,FT,1,FR,Europe,Mid_Tier,0,31994.08
 Data Scientist,EN,L,FT,1,FR,Europe,Mid_Tier,50,31994.08
+Data Scientist,EN,L,FT,0,FR,Europe,Mid_Tier,50,31994.08
 Data Scientist,EN,L,FT,1,FR,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,L,FT,0,FR,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,L,FT,1,ES,Europe,Mid_Tier,0,31994.08
 Data Scientist,EN,L,FT,1,ES,Europe,Mid_Tier,50,31994.08
+Data Scientist,EN,L,FT,0,ES,Europe,Mid_Tier,50,31994.08
 Data Scientist,EN,L,FT,1,ES,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,L,FT,0,ES,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,L,FT,1,GR,Europe,Mid_Tier,0,31994.08
 Data Scientist,EN,L,FT,1,GR,Europe,Mid_Tier,50,31994.08
+Data Scientist,EN,L,FT,0,GR,Europe,Mid_Tier,50,31994.08
 Data Scientist,EN,L,FT,1,GR,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,L,FT,0,GR,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,L,FT,1,NL,Europe,Mid_Tier,0,31994.08
 Data Scientist,EN,L,FT,1,NL,Europe,Mid_Tier,50,31994.08
+Data Scientist,EN,L,FT,0,NL,Europe,Mid_Tier,50,31994.08
 Data Scientist,EN,L,FT,1,NL,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,L,FT,0,NL,Europe,Mid_Tier,100,31994.08
 Data Scientist,EN,L,FT,1,IN,Asia,Low_Tier,0,35913.44
 Data Scientist,EN,L,FT,1,IN,Asia,Low_Tier,50,35913.44
+Data Scientist,EN,L,FT,0,IN,Asia,Low_Tier,50,35913.44
 Data Scientist,EN,L,FT,1,IN,Asia,Low_Tier,100,35913.44
 Data Scientist,EN,L,FT,0,IN,Asia,Low_Tier,100,35913.44
 Data Scientist,EN,L,FT,1,PK,Asia,Low_Tier,0,35913.44
 Data Scientist,EN,L,FT,1,PK,Asia,Low_Tier,50,35913.44
+Data Scientist,EN,L,FT,0,PK,Asia,Low_Tier,50,35913.44
 Data Scientist,EN,L,FT,1,PK,Asia,Low_Tier,100,35913.44
 Data Scientist,EN,L,FT,0,PK,Asia,Low_Tier,100,35913.44
 Data Scientist,EN,L,FT,1,MX,North America,Low_Tier,0,35913.44
 Data Scientist,EN,L,FT,1,MX,North America,Low_Tier,50,35913.44
+Data Scientist,EN,L,FT,0,MX,North America,Low_Tier,50,35913.44
 Data Scientist,EN,L,FT,1,MX,North America,Low_Tier,100,35913.44
 Data Scientist,EN,L,FT,0,MX,North America,Low_Tier,100,35913.44
 Data Scientist,EN,L,FT,1,BR,South America,Low_Tier,0,35913.44
 Data Scientist,EN,L,FT,1,BR,South America,Low_Tier,50,35913.44
+Data Scientist,EN,L,FT,0,BR,South America,Low_Tier,50,35913.44
 Data Scientist,EN,L,FT,1,BR,South America,Low_Tier,100,35913.44
 Data Scientist,EN,L,FT,0,BR,South America,Low_Tier,100,35913.44
 Data Scientist,MI,S,FT,1,US,North America,High_Tier,0,59608.31
 Data Scientist,MI,S,FT,1,US,North America,High_Tier,50,59608.31
+Data Scientist,MI,S,FT,0,US,North America,High_Tier,50,59608.31
 Data Scientist,MI,S,FT,1,US,North America,High_Tier,100,59608.31
 Data Scientist,MI,S,FT,0,US,North America,High_Tier,100,59608.31
 Data Scientist,MI,S,FT,1,GB,Europe,High_Tier,0,59608.31
 Data Scientist,MI,S,FT,1,GB,Europe,High_Tier,50,59608.31
+Data Scientist,MI,S,FT,0,GB,Europe,High_Tier,50,59608.31
 Data Scientist,MI,S,FT,1,GB,Europe,High_Tier,100,59608.31
 Data Scientist,MI,S,FT,0,GB,Europe,High_Tier,100,59608.31
 Data Scientist,MI,S,FT,1,CA,North America,High_Tier,0,59608.31
 Data Scientist,MI,S,FT,1,CA,North America,High_Tier,50,59608.31
+Data Scientist,MI,S,FT,0,CA,North America,High_Tier,50,59608.31
 Data Scientist,MI,S,FT,1,CA,North America,High_Tier,100,59608.31
 Data Scientist,MI,S,FT,0,CA,North America,High_Tier,100,59608.31
 Data Scientist,MI,S,FT,1,DE,Europe,High_Tier,0,59608.31
 Data Scientist,MI,S,FT,1,DE,Europe,High_Tier,50,59608.31
+Data Scientist,MI,S,FT,0,DE,Europe,High_Tier,50,59608.31
 Data Scientist,MI,S,FT,1,DE,Europe,High_Tier,100,59608.31
 Data Scientist,MI,S,FT,0,DE,Europe,High_Tier,100,59608.31
 Data Scientist,MI,S,FT,1,FR,Europe,Mid_Tier,0,68344.14
 Data Scientist,MI,S,FT,1,FR,Europe,Mid_Tier,50,68344.14
+Data Scientist,MI,S,FT,0,FR,Europe,Mid_Tier,50,68344.14
 Data Scientist,MI,S,FT,1,FR,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,S,FT,0,FR,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,S,FT,1,ES,Europe,Mid_Tier,0,68344.14
 Data Scientist,MI,S,FT,1,ES,Europe,Mid_Tier,50,68344.14
+Data Scientist,MI,S,FT,0,ES,Europe,Mid_Tier,50,68344.14
 Data Scientist,MI,S,FT,1,ES,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,S,FT,0,ES,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,S,FT,1,GR,Europe,Mid_Tier,0,68344.14
 Data Scientist,MI,S,FT,1,GR,Europe,Mid_Tier,50,68344.14
+Data Scientist,MI,S,FT,0,GR,Europe,Mid_Tier,50,68344.14
 Data Scientist,MI,S,FT,1,GR,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,S,FT,0,GR,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,S,FT,1,NL,Europe,Mid_Tier,0,68344.14
 Data Scientist,MI,S,FT,1,NL,Europe,Mid_Tier,50,68344.14
+Data Scientist,MI,S,FT,0,NL,Europe,Mid_Tier,50,68344.14
 Data Scientist,MI,S,FT,1,NL,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,S,FT,0,NL,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,S,FT,1,IN,Asia,Low_Tier,0,18850.7
 Data Scientist,MI,S,FT,1,IN,Asia,Low_Tier,50,18850.7
+Data Scientist,MI,S,FT,0,IN,Asia,Low_Tier,50,18850.7
 Data Scientist,MI,S,FT,1,IN,Asia,Low_Tier,100,18850.7
 Data Scientist,MI,S,FT,0,IN,Asia,Low_Tier,100,18850.7
 Data Scientist,MI,S,FT,1,PK,Asia,Low_Tier,0,18850.7
 Data Scientist,MI,S,FT,1,PK,Asia,Low_Tier,50,18850.7
+Data Scientist,MI,S,FT,0,PK,Asia,Low_Tier,50,18850.7
 Data Scientist,MI,S,FT,1,PK,Asia,Low_Tier,100,18850.7
 Data Scientist,MI,S,FT,0,PK,Asia,Low_Tier,100,18850.7
 Data Scientist,MI,S,FT,1,MX,North America,Low_Tier,0,18850.7
 Data Scientist,MI,S,FT,1,MX,North America,Low_Tier,50,18850.7
+Data Scientist,MI,S,FT,0,MX,North America,Low_Tier,50,18850.7
 Data Scientist,MI,S,FT,1,MX,North America,Low_Tier,100,18850.7
 Data Scientist,MI,S,FT,0,MX,North America,Low_Tier,100,18850.7
 Data Scientist,MI,S,FT,1,BR,South America,Low_Tier,0,18850.7
 Data Scientist,MI,S,FT,1,BR,South America,Low_Tier,50,18850.7
+Data Scientist,MI,S,FT,0,BR,South America,Low_Tier,50,18850.7
 Data Scientist,MI,S,FT,1,BR,South America,Low_Tier,100,18850.7
 Data Scientist,MI,S,FT,0,BR,South America,Low_Tier,100,18850.7
 Data Scientist,MI,M,FT,1,US,North America,High_Tier,0,88855.88
 Data Scientist,MI,M,FT,1,US,North America,High_Tier,50,88855.88
+Data Scientist,MI,M,FT,0,US,North America,High_Tier,50,88855.88
 Data Scientist,MI,M,FT,1,US,North America,High_Tier,100,130546.25
 Data Scientist,MI,M,FT,0,US,North America,High_Tier,100,130546.25
 Data Scientist,MI,M,FT,1,GB,Europe,High_Tier,0,88855.88
 Data Scientist,MI,M,FT,1,GB,Europe,High_Tier,50,88855.88
+Data Scientist,MI,M,FT,0,GB,Europe,High_Tier,50,88855.88
 Data Scientist,MI,M,FT,1,GB,Europe,High_Tier,100,130546.25
 Data Scientist,MI,M,FT,0,GB,Europe,High_Tier,100,130546.25
 Data Scientist,MI,M,FT,1,CA,North America,High_Tier,0,88855.88
 Data Scientist,MI,M,FT,1,CA,North America,High_Tier,50,88855.88
+Data Scientist,MI,M,FT,0,CA,North America,High_Tier,50,88855.88
 Data Scientist,MI,M,FT,1,CA,North America,High_Tier,100,130546.25
 Data Scientist,MI,M,FT,0,CA,North America,High_Tier,100,130546.25
 Data Scientist,MI,M,FT,1,DE,Europe,High_Tier,0,88855.88
 Data Scientist,MI,M,FT,1,DE,Europe,High_Tier,50,88855.88
+Data Scientist,MI,M,FT,0,DE,Europe,High_Tier,50,88855.88
 Data Scientist,MI,M,FT,1,DE,Europe,High_Tier,100,130546.25
 Data Scientist,MI,M,FT,0,DE,Europe,High_Tier,100,130546.25
 Data Scientist,MI,M,FT,1,FR,Europe,Mid_Tier,0,68344.14
 Data Scientist,MI,M,FT,1,FR,Europe,Mid_Tier,50,68344.14
+Data Scientist,MI,M,FT,0,FR,Europe,Mid_Tier,50,68344.14
 Data Scientist,MI,M,FT,1,FR,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,M,FT,0,FR,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,M,FT,1,ES,Europe,Mid_Tier,0,68344.14
 Data Scientist,MI,M,FT,1,ES,Europe,Mid_Tier,50,68344.14
+Data Scientist,MI,M,FT,0,ES,Europe,Mid_Tier,50,68344.14
 Data Scientist,MI,M,FT,1,ES,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,M,FT,0,ES,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,M,FT,1,GR,Europe,Mid_Tier,0,68344.14
 Data Scientist,MI,M,FT,1,GR,Europe,Mid_Tier,50,68344.14
+Data Scientist,MI,M,FT,0,GR,Europe,Mid_Tier,50,68344.14
 Data Scientist,MI,M,FT,1,GR,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,M,FT,0,GR,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,M,FT,1,NL,Europe,Mid_Tier,0,68344.14
 Data Scientist,MI,M,FT,1,NL,Europe,Mid_Tier,50,68344.14
+Data Scientist,MI,M,FT,0,NL,Europe,Mid_Tier,50,68344.14
 Data Scientist,MI,M,FT,1,NL,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,M,FT,0,NL,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,M,FT,1,IN,Asia,Low_Tier,0,18850.7
 Data Scientist,MI,M,FT,1,IN,Asia,Low_Tier,50,18850.7
+Data Scientist,MI,M,FT,0,IN,Asia,Low_Tier,50,18850.7
 Data Scientist,MI,M,FT,1,IN,Asia,Low_Tier,100,18850.7
 Data Scientist,MI,M,FT,0,IN,Asia,Low_Tier,100,18850.7
 Data Scientist,MI,M,FT,1,PK,Asia,Low_Tier,0,18850.7
 Data Scientist,MI,M,FT,1,PK,Asia,Low_Tier,50,18850.7
+Data Scientist,MI,M,FT,0,PK,Asia,Low_Tier,50,18850.7
 Data Scientist,MI,M,FT,1,PK,Asia,Low_Tier,100,18850.7
 Data Scientist,MI,M,FT,0,PK,Asia,Low_Tier,100,18850.7
 Data Scientist,MI,M,FT,1,MX,North America,Low_Tier,0,18850.7
 Data Scientist,MI,M,FT,1,MX,North America,Low_Tier,50,18850.7
+Data Scientist,MI,M,FT,0,MX,North America,Low_Tier,50,18850.7
 Data Scientist,MI,M,FT,1,MX,North America,Low_Tier,100,18850.7
 Data Scientist,MI,M,FT,0,MX,North America,Low_Tier,100,18850.7
 Data Scientist,MI,M,FT,1,BR,South America,Low_Tier,0,18850.7
 Data Scientist,MI,M,FT,1,BR,South America,Low_Tier,50,18850.7
+Data Scientist,MI,M,FT,0,BR,South America,Low_Tier,50,18850.7
 Data Scientist,MI,M,FT,1,BR,South America,Low_Tier,100,18850.7
 Data Scientist,MI,M,FT,0,BR,South America,Low_Tier,100,18850.7
 Data Scientist,MI,L,FT,1,US,North America,High_Tier,0,88855.88
 Data Scientist,MI,L,FT,1,US,North America,High_Tier,50,88855.88
+Data Scientist,MI,L,FT,0,US,North America,High_Tier,50,88855.88
 Data Scientist,MI,L,FT,1,US,North America,High_Tier,100,137936.86
 Data Scientist,MI,L,FT,0,US,North America,High_Tier,100,137936.86
 Data Scientist,MI,L,FT,1,GB,Europe,High_Tier,0,88855.88
 Data Scientist,MI,L,FT,1,GB,Europe,High_Tier,50,88855.88
+Data Scientist,MI,L,FT,0,GB,Europe,High_Tier,50,88855.88
 Data Scientist,MI,L,FT,1,GB,Europe,High_Tier,100,137936.86
 Data Scientist,MI,L,FT,0,GB,Europe,High_Tier,100,137936.86
 Data Scientist,MI,L,FT,1,CA,North America,High_Tier,0,88855.88
 Data Scientist,MI,L,FT,1,CA,North America,High_Tier,50,88855.88
+Data Scientist,MI,L,FT,0,CA,North America,High_Tier,50,88855.88
 Data Scientist,MI,L,FT,1,CA,North America,High_Tier,100,137936.86
 Data Scientist,MI,L,FT,0,CA,North America,High_Tier,100,137936.86
 Data Scientist,MI,L,FT,1,DE,Europe,High_Tier,0,88855.88
 Data Scientist,MI,L,FT,1,DE,Europe,High_Tier,50,88855.88
+Data Scientist,MI,L,FT,0,DE,Europe,High_Tier,50,88855.88
 Data Scientist,MI,L,FT,1,DE,Europe,High_Tier,100,137936.86
 Data Scientist,MI,L,FT,0,DE,Europe,High_Tier,100,137936.86
 Data Scientist,MI,L,FT,1,FR,Europe,Mid_Tier,0,68344.14
 Data Scientist,MI,L,FT,1,FR,Europe,Mid_Tier,50,68344.14
+Data Scientist,MI,L,FT,0,FR,Europe,Mid_Tier,50,68344.14
 Data Scientist,MI,L,FT,1,FR,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,L,FT,0,FR,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,L,FT,1,ES,Europe,Mid_Tier,0,68344.14
 Data Scientist,MI,L,FT,1,ES,Europe,Mid_Tier,50,68344.14
+Data Scientist,MI,L,FT,0,ES,Europe,Mid_Tier,50,68344.14
 Data Scientist,MI,L,FT,1,ES,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,L,FT,0,ES,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,L,FT,1,GR,Europe,Mid_Tier,0,68344.14
 Data Scientist,MI,L,FT,1,GR,Europe,Mid_Tier,50,68344.14
+Data Scientist,MI,L,FT,0,GR,Europe,Mid_Tier,50,68344.14
 Data Scientist,MI,L,FT,1,GR,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,L,FT,0,GR,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,L,FT,1,NL,Europe,Mid_Tier,0,68344.14
 Data Scientist,MI,L,FT,1,NL,Europe,Mid_Tier,50,68344.14
+Data Scientist,MI,L,FT,0,NL,Europe,Mid_Tier,50,68344.14
 Data Scientist,MI,L,FT,1,NL,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,L,FT,0,NL,Europe,Mid_Tier,100,68344.14
 Data Scientist,MI,L,FT,1,IN,Asia,Low_Tier,0,35913.44
 Data Scientist,MI,L,FT,1,IN,Asia,Low_Tier,50,35913.44
+Data Scientist,MI,L,FT,0,IN,Asia,Low_Tier,50,35913.44
 Data Scientist,MI,L,FT,1,IN,Asia,Low_Tier,100,35913.44
 Data Scientist,MI,L,FT,0,IN,Asia,Low_Tier,100,35913.44
 Data Scientist,MI,L,FT,1,PK,Asia,Low_Tier,0,35913.44
 Data Scientist,MI,L,FT,1,PK,Asia,Low_Tier,50,35913.44
+Data Scientist,MI,L,FT,0,PK,Asia,Low_Tier,50,35913.44
 Data Scientist,MI,L,FT,1,PK,Asia,Low_Tier,100,35913.44
 Data Scientist,MI,L,FT,0,PK,Asia,Low_Tier,100,35913.44
 Data Scientist,MI,L,FT,1,MX,North America,Low_Tier,0,35913.44
 Data Scientist,MI,L,FT,1,MX,North America,Low_Tier,50,35913.44
+Data Scientist,MI,L,FT,0,MX,North America,Low_Tier,50,35913.44
 Data Scientist,MI,L,FT,1,MX,North America,Low_Tier,100,35913.44
 Data Scientist,MI,L,FT,0,MX,North America,Low_Tier,100,35913.44
 Data Scientist,MI,L,FT,1,BR,South America,Low_Tier,0,35913.44
 Data Scientist,MI,L,FT,1,BR,South America,Low_Tier,50,35913.44
+Data Scientist,MI,L,FT,0,BR,South America,Low_Tier,50,35913.44
 Data Scientist,MI,L,FT,1,BR,South America,Low_Tier,100,35913.44
 Data Scientist,MI,L,FT,0,BR,South America,Low_Tier,100,35913.44
 Data Scientist,SE,S,FT,1,US,North America,High_Tier,0,119945.47
 Data Scientist,SE,S,FT,1,US,North America,High_Tier,50,119945.47
+Data Scientist,SE,S,FT,0,US,North America,High_Tier,50,119945.47
 Data Scientist,SE,S,FT,1,US,North America,High_Tier,100,119945.47
 Data Scientist,SE,S,FT,0,US,North America,High_Tier,100,119945.47
 Data Scientist,SE,S,FT,1,GB,Europe,High_Tier,0,119945.47
 Data Scientist,SE,S,FT,1,GB,Europe,High_Tier,50,119945.47
+Data Scientist,SE,S,FT,0,GB,Europe,High_Tier,50,119945.47
 Data Scientist,SE,S,FT,1,GB,Europe,High_Tier,100,119945.47
 Data Scientist,SE,S,FT,0,GB,Europe,High_Tier,100,119945.47
 Data Scientist,SE,S,FT,1,CA,North America,High_Tier,0,119945.47
 Data Scientist,SE,S,FT,1,CA,North America,High_Tier,50,119945.47
+Data Scientist,SE,S,FT,0,CA,North America,High_Tier,50,119945.47
 Data Scientist,SE,S,FT,1,CA,North America,High_Tier,100,119945.47
 Data Scientist,SE,S,FT,0,CA,North America,High_Tier,100,119945.47
 Data Scientist,SE,S,FT,1,DE,Europe,High_Tier,0,119945.47
 Data Scientist,SE,S,FT,1,DE,Europe,High_Tier,50,119945.47
+Data Scientist,SE,S,FT,0,DE,Europe,High_Tier,50,119945.47
 Data Scientist,SE,S,FT,1,DE,Europe,High_Tier,100,119945.47
 Data Scientist,SE,S,FT,0,DE,Europe,High_Tier,100,119945.47
 Data Scientist,SE,S,FT,1,FR,Europe,Mid_Tier,0,68344.14
 Data Scientist,SE,S,FT,1,FR,Europe,Mid_Tier,50,68344.14
+Data Scientist,SE,S,FT,0,FR,Europe,Mid_Tier,50,68344.14
 Data Scientist,SE,S,FT,1,FR,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,S,FT,0,FR,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,S,FT,1,ES,Europe,Mid_Tier,0,68344.14
 Data Scientist,SE,S,FT,1,ES,Europe,Mid_Tier,50,68344.14
+Data Scientist,SE,S,FT,0,ES,Europe,Mid_Tier,50,68344.14
 Data Scientist,SE,S,FT,1,ES,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,S,FT,0,ES,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,S,FT,1,GR,Europe,Mid_Tier,0,68344.14
 Data Scientist,SE,S,FT,1,GR,Europe,Mid_Tier,50,68344.14
+Data Scientist,SE,S,FT,0,GR,Europe,Mid_Tier,50,68344.14
 Data Scientist,SE,S,FT,1,GR,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,S,FT,0,GR,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,S,FT,1,NL,Europe,Mid_Tier,0,68344.14
 Data Scientist,SE,S,FT,1,NL,Europe,Mid_Tier,50,68344.14
+Data Scientist,SE,S,FT,0,NL,Europe,Mid_Tier,50,68344.14
 Data Scientist,SE,S,FT,1,NL,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,S,FT,0,NL,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,S,FT,1,IN,Asia,Low_Tier,0,18850.7
 Data Scientist,SE,S,FT,1,IN,Asia,Low_Tier,50,18850.7
+Data Scientist,SE,S,FT,0,IN,Asia,Low_Tier,50,18850.7
 Data Scientist,SE,S,FT,1,IN,Asia,Low_Tier,100,18850.7
 Data Scientist,SE,S,FT,0,IN,Asia,Low_Tier,100,18850.7
 Data Scientist,SE,S,FT,1,PK,Asia,Low_Tier,0,18850.7
 Data Scientist,SE,S,FT,1,PK,Asia,Low_Tier,50,18850.7
+Data Scientist,SE,S,FT,0,PK,Asia,Low_Tier,50,18850.7
 Data Scientist,SE,S,FT,1,PK,Asia,Low_Tier,100,18850.7
 Data Scientist,SE,S,FT,0,PK,Asia,Low_Tier,100,18850.7
 Data Scientist,SE,S,FT,1,MX,North America,Low_Tier,0,18850.7
 Data Scientist,SE,S,FT,1,MX,North America,Low_Tier,50,18850.7
+Data Scientist,SE,S,FT,0,MX,North America,Low_Tier,50,18850.7
 Data Scientist,SE,S,FT,1,MX,North America,Low_Tier,100,18850.7
 Data Scientist,SE,S,FT,0,MX,North America,Low_Tier,100,18850.7
 Data Scientist,SE,S,FT,1,BR,South America,Low_Tier,0,18850.7
 Data Scientist,SE,S,FT,1,BR,South America,Low_Tier,50,18850.7
+Data Scientist,SE,S,FT,0,BR,South America,Low_Tier,50,18850.7
 Data Scientist,SE,S,FT,1,BR,South America,Low_Tier,100,18850.7
 Data Scientist,SE,S,FT,0,BR,South America,Low_Tier,100,18850.7
 Data Scientist,SE,M,FT,1,US,North America,High_Tier,0,147188.58
 Data Scientist,SE,M,FT,1,US,North America,High_Tier,50,147188.58
+Data Scientist,SE,M,FT,0,US,North America,High_Tier,50,147188.58
 Data Scientist,SE,M,FT,1,US,North America,High_Tier,100,172126.36
 Data Scientist,SE,M,FT,0,US,North America,High_Tier,100,172126.36
 Data Scientist,SE,M,FT,1,GB,Europe,High_Tier,0,147188.58
 Data Scientist,SE,M,FT,1,GB,Europe,High_Tier,50,147188.58
+Data Scientist,SE,M,FT,0,GB,Europe,High_Tier,50,147188.58
 Data Scientist,SE,M,FT,1,GB,Europe,High_Tier,100,172126.36
 Data Scientist,SE,M,FT,0,GB,Europe,High_Tier,100,172126.36
 Data Scientist,SE,M,FT,1,CA,North America,High_Tier,0,147188.58
 Data Scientist,SE,M,FT,1,CA,North America,High_Tier,50,147188.58
+Data Scientist,SE,M,FT,0,CA,North America,High_Tier,50,147188.58
 Data Scientist,SE,M,FT,1,CA,North America,High_Tier,100,172126.36
 Data Scientist,SE,M,FT,0,CA,North America,High_Tier,100,172126.36
 Data Scientist,SE,M,FT,1,DE,Europe,High_Tier,0,147188.58
 Data Scientist,SE,M,FT,1,DE,Europe,High_Tier,50,147188.58
+Data Scientist,SE,M,FT,0,DE,Europe,High_Tier,50,147188.58
 Data Scientist,SE,M,FT,1,DE,Europe,High_Tier,100,172126.36
 Data Scientist,SE,M,FT,0,DE,Europe,High_Tier,100,172126.36
 Data Scientist,SE,M,FT,1,FR,Europe,Mid_Tier,0,68344.14
 Data Scientist,SE,M,FT,1,FR,Europe,Mid_Tier,50,68344.14
+Data Scientist,SE,M,FT,0,FR,Europe,Mid_Tier,50,68344.14
 Data Scientist,SE,M,FT,1,FR,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,M,FT,0,FR,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,M,FT,1,ES,Europe,Mid_Tier,0,68344.14
 Data Scientist,SE,M,FT,1,ES,Europe,Mid_Tier,50,68344.14
+Data Scientist,SE,M,FT,0,ES,Europe,Mid_Tier,50,68344.14
 Data Scientist,SE,M,FT,1,ES,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,M,FT,0,ES,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,M,FT,1,GR,Europe,Mid_Tier,0,68344.14
 Data Scientist,SE,M,FT,1,GR,Europe,Mid_Tier,50,68344.14
+Data Scientist,SE,M,FT,0,GR,Europe,Mid_Tier,50,68344.14
 Data Scientist,SE,M,FT,1,GR,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,M,FT,0,GR,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,M,FT,1,NL,Europe,Mid_Tier,0,68344.14
 Data Scientist,SE,M,FT,1,NL,Europe,Mid_Tier,50,68344.14
+Data Scientist,SE,M,FT,0,NL,Europe,Mid_Tier,50,68344.14
 Data Scientist,SE,M,FT,1,NL,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,M,FT,0,NL,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,M,FT,1,IN,Asia,Low_Tier,0,18850.7
 Data Scientist,SE,M,FT,1,IN,Asia,Low_Tier,50,18850.7
+Data Scientist,SE,M,FT,0,IN,Asia,Low_Tier,50,18850.7
 Data Scientist,SE,M,FT,1,IN,Asia,Low_Tier,100,18850.7
 Data Scientist,SE,M,FT,0,IN,Asia,Low_Tier,100,18850.7
 Data Scientist,SE,M,FT,1,PK,Asia,Low_Tier,0,18850.7
 Data Scientist,SE,M,FT,1,PK,Asia,Low_Tier,50,18850.7
+Data Scientist,SE,M,FT,0,PK,Asia,Low_Tier,50,18850.7
 Data Scientist,SE,M,FT,1,PK,Asia,Low_Tier,100,18850.7
 Data Scientist,SE,M,FT,0,PK,Asia,Low_Tier,100,18850.7
 Data Scientist,SE,M,FT,1,MX,North America,Low_Tier,0,18850.7
 Data Scientist,SE,M,FT,1,MX,North America,Low_Tier,50,18850.7
+Data Scientist,SE,M,FT,0,MX,North America,Low_Tier,50,18850.7
 Data Scientist,SE,M,FT,1,MX,North America,Low_Tier,100,18850.7
 Data Scientist,SE,M,FT,0,MX,North America,Low_Tier,100,18850.7
 Data Scientist,SE,M,FT,1,BR,South America,Low_Tier,0,18850.7
 Data Scientist,SE,M,FT,1,BR,South America,Low_Tier,50,18850.7
+Data Scientist,SE,M,FT,0,BR,South America,Low_Tier,50,18850.7
 Data Scientist,SE,M,FT,1,BR,South America,Low_Tier,100,18850.7
 Data Scientist,SE,M,FT,0,BR,South America,Low_Tier,100,18850.7
 Data Scientist,SE,L,FT,1,US,North America,High_Tier,0,156373.8
 Data Scientist,SE,L,FT,1,US,North America,High_Tier,50,156373.8
+Data Scientist,SE,L,FT,0,US,North America,High_Tier,50,156373.8
 Data Scientist,SE,L,FT,1,US,North America,High_Tier,100,172126.36
 Data Scientist,SE,L,FT,0,US,North America,High_Tier,100,172126.36
 Data Scientist,SE,L,FT,1,GB,Europe,High_Tier,0,156373.8
 Data Scientist,SE,L,FT,1,GB,Europe,High_Tier,50,156373.8
+Data Scientist,SE,L,FT,0,GB,Europe,High_Tier,50,156373.8
 Data Scientist,SE,L,FT,1,GB,Europe,High_Tier,100,172126.36
 Data Scientist,SE,L,FT,0,GB,Europe,High_Tier,100,172126.36
 Data Scientist,SE,L,FT,1,CA,North America,High_Tier,0,156373.8
 Data Scientist,SE,L,FT,1,CA,North America,High_Tier,50,156373.8
+Data Scientist,SE,L,FT,0,CA,North America,High_Tier,50,156373.8
 Data Scientist,SE,L,FT,1,CA,North America,High_Tier,100,172126.36
 Data Scientist,SE,L,FT,0,CA,North America,High_Tier,100,172126.36
 Data Scientist,SE,L,FT,1,DE,Europe,High_Tier,0,156373.8
 Data Scientist,SE,L,FT,1,DE,Europe,High_Tier,50,156373.8
+Data Scientist,SE,L,FT,0,DE,Europe,High_Tier,50,156373.8
 Data Scientist,SE,L,FT,1,DE,Europe,High_Tier,100,172126.36
 Data Scientist,SE,L,FT,0,DE,Europe,High_Tier,100,172126.36
 Data Scientist,SE,L,FT,1,FR,Europe,Mid_Tier,0,68344.14
 Data Scientist,SE,L,FT,1,FR,Europe,Mid_Tier,50,68344.14
+Data Scientist,SE,L,FT,0,FR,Europe,Mid_Tier,50,68344.14
 Data Scientist,SE,L,FT,1,FR,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,L,FT,0,FR,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,L,FT,1,ES,Europe,Mid_Tier,0,68344.14
 Data Scientist,SE,L,FT,1,ES,Europe,Mid_Tier,50,68344.14
+Data Scientist,SE,L,FT,0,ES,Europe,Mid_Tier,50,68344.14
 Data Scientist,SE,L,FT,1,ES,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,L,FT,0,ES,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,L,FT,1,GR,Europe,Mid_Tier,0,68344.14
 Data Scientist,SE,L,FT,1,GR,Europe,Mid_Tier,50,68344.14
+Data Scientist,SE,L,FT,0,GR,Europe,Mid_Tier,50,68344.14
 Data Scientist,SE,L,FT,1,GR,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,L,FT,0,GR,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,L,FT,1,NL,Europe,Mid_Tier,0,68344.14
 Data Scientist,SE,L,FT,1,NL,Europe,Mid_Tier,50,68344.14
+Data Scientist,SE,L,FT,0,NL,Europe,Mid_Tier,50,68344.14
 Data Scientist,SE,L,FT,1,NL,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,L,FT,0,NL,Europe,Mid_Tier,100,68344.14
 Data Scientist,SE,L,FT,1,IN,Asia,Low_Tier,0,35913.44
 Data Scientist,SE,L,FT,1,IN,Asia,Low_Tier,50,35913.44
+Data Scientist,SE,L,FT,0,IN,Asia,Low_Tier,50,35913.44
 Data Scientist,SE,L,FT,1,IN,Asia,Low_Tier,100,35913.44
 Data Scientist,SE,L,FT,0,IN,Asia,Low_Tier,100,35913.44
 Data Scientist,SE,L,FT,1,PK,Asia,Low_Tier,0,35913.44
 Data Scientist,SE,L,FT,1,PK,Asia,Low_Tier,50,35913.44
+Data Scientist,SE,L,FT,0,PK,Asia,Low_Tier,50,35913.44
 Data Scientist,SE,L,FT,1,PK,Asia,Low_Tier,100,35913.44
 Data Scientist,SE,L,FT,0,PK,Asia,Low_Tier,100,35913.44
 Data Scientist,SE,L,FT,1,MX,North America,Low_Tier,0,35913.44
 Data Scientist,SE,L,FT,1,MX,North America,Low_Tier,50,35913.44
+Data Scientist,SE,L,FT,0,MX,North America,Low_Tier,50,35913.44
 Data Scientist,SE,L,FT,1,MX,North America,Low_Tier,100,35913.44
 Data Scientist,SE,L,FT,0,MX,North America,Low_Tier,100,35913.44
 Data Scientist,SE,L,FT,1,BR,South America,Low_Tier,0,35913.44
 Data Scientist,SE,L,FT,1,BR,South America,Low_Tier,50,35913.44
+Data Scientist,SE,L,FT,0,BR,South America,Low_Tier,50,35913.44
 Data Scientist,SE,L,FT,1,BR,South America,Low_Tier,100,35913.44
 Data Scientist,SE,L,FT,0,BR,South America,Low_Tier,100,35913.44
 Data Scientist,EX,M,FT,1,US,North America,High_Tier,0,231948.17
 Data Scientist,EX,M,FT,1,US,North America,High_Tier,50,231948.17
+Data Scientist,EX,M,FT,0,US,North America,High_Tier,50,231948.17
 Data Scientist,EX,M,FT,1,US,North America,High_Tier,100,231948.17
 Data Scientist,EX,M,FT,0,US,North America,High_Tier,100,231948.17
 Data Scientist,EX,M,FT,1,GB,Europe,High_Tier,0,231948.17
 Data Scientist,EX,M,FT,1,GB,Europe,High_Tier,50,231948.17
+Data Scientist,EX,M,FT,0,GB,Europe,High_Tier,50,231948.17
 Data Scientist,EX,M,FT,1,GB,Europe,High_Tier,100,231948.17
 Data Scientist,EX,M,FT,0,GB,Europe,High_Tier,100,231948.17
 Data Scientist,EX,M,FT,1,CA,North America,High_Tier,0,231948.17
 Data Scientist,EX,M,FT,1,CA,North America,High_Tier,50,231948.17
+Data Scientist,EX,M,FT,0,CA,North America,High_Tier,50,231948.17
 Data Scientist,EX,M,FT,1,CA,North America,High_Tier,100,231948.17
 Data Scientist,EX,M,FT,0,CA,North America,High_Tier,100,231948.17
 Data Scientist,EX,M,FT,1,DE,Europe,High_Tier,0,231948.17
 Data Scientist,EX,M,FT,1,DE,Europe,High_Tier,50,231948.17
+Data Scientist,EX,M,FT,0,DE,Europe,High_Tier,50,231948.17
 Data Scientist,EX,M,FT,1,DE,Europe,High_Tier,100,231948.17
 Data Scientist,EX,M,FT,0,DE,Europe,High_Tier,100,231948.17
 Data Scientist,EX,M,FT,1,FR,Europe,Mid_Tier,0,68344.14
 Data Scientist,EX,M,FT,1,FR,Europe,Mid_Tier,50,68344.14
+Data Scientist,EX,M,FT,0,FR,Europe,Mid_Tier,50,68344.14
 Data Scientist,EX,M,FT,1,FR,Europe,Mid_Tier,100,68344.14
 Data Scientist,EX,M,FT,0,FR,Europe,Mid_Tier,100,68344.14
 Data Scientist,EX,M,FT,1,ES,Europe,Mid_Tier,0,68344.14
 Data Scientist,EX,M,FT,1,ES,Europe,Mid_Tier,50,68344.14
+Data Scientist,EX,M,FT,0,ES,Europe,Mid_Tier,50,68344.14
 Data Scientist,EX,M,FT,1,ES,Europe,Mid_Tier,100,68344.14
 Data Scientist,EX,M,FT,0,ES,Europe,Mid_Tier,100,68344.14
 Data Scientist,EX,M,FT,1,GR,Europe,Mid_Tier,0,68344.14
 Data Scientist,EX,M,FT,1,GR,Europe,Mid_Tier,50,68344.14
+Data Scientist,EX,M,FT,0,GR,Europe,Mid_Tier,50,68344.14
 Data Scientist,EX,M,FT,1,GR,Europe,Mid_Tier,100,68344.14
 Data Scientist,EX,M,FT,0,GR,Europe,Mid_Tier,100,68344.14
 Data Scientist,EX,M,FT,1,NL,Europe,Mid_Tier,0,68344.14
 Data Scientist,EX,M,FT,1,NL,Europe,Mid_Tier,50,68344.14
+Data Scientist,EX,M,FT,0,NL,Europe,Mid_Tier,50,68344.14
 Data Scientist,EX,M,FT,1,NL,Europe,Mid_Tier,100,68344.14
 Data Scientist,EX,M,FT,0,NL,Europe,Mid_Tier,100,68344.14
 Data Scientist,EX,M,FT,1,IN,Asia,Low_Tier,0,18850.7
 Data Scientist,EX,M,FT,1,IN,Asia,Low_Tier,50,18850.7
+Data Scientist,EX,M,FT,0,IN,Asia,Low_Tier,50,18850.7
 Data Scientist,EX,M,FT,1,IN,Asia,Low_Tier,100,18850.7
 Data Scientist,EX,M,FT,0,IN,Asia,Low_Tier,100,18850.7
 Data Scientist,EX,M,FT,1,PK,Asia,Low_Tier,0,18850.7
 Data Scientist,EX,M,FT,1,PK,Asia,Low_Tier,50,18850.7
+Data Scientist,EX,M,FT,0,PK,Asia,Low_Tier,50,18850.7
 Data Scientist,EX,M,FT,1,PK,Asia,Low_Tier,100,18850.7
 Data Scientist,EX,M,FT,0,PK,Asia,Low_Tier,100,18850.7
 Data Scientist,EX,M,FT,1,MX,North America,Low_Tier,0,18850.7
 Data Scientist,EX,M,FT,1,MX,North America,Low_Tier,50,18850.7
+Data Scientist,EX,M,FT,0,MX,North America,Low_Tier,50,18850.7
 Data Scientist,EX,M,FT,1,MX,North America,Low_Tier,100,18850.7
 Data Scientist,EX,M,FT,0,MX,North America,Low_Tier,100,18850.7
 Data Scientist,EX,M,FT,1,BR,South America,Low_Tier,0,18850.7
 Data Scientist,EX,M,FT,1,BR,South America,Low_Tier,50,18850.7
+Data Scientist,EX,M,FT,0,BR,South America,Low_Tier,50,18850.7
 Data Scientist,EX,M,FT,1,BR,South America,Low_Tier,100,18850.7
 Data Scientist,EX,M,FT,0,BR,South America,Low_Tier,100,18850.7
 Data Scientist,EX,L,FT,1,US,North America,High_Tier,0,231948.17
 Data Scientist,EX,L,FT,1,US,North America,High_Tier,50,231948.17
+Data Scientist,EX,L,FT,0,US,North America,High_Tier,50,231948.17
 Data Scientist,EX,L,FT,1,US,North America,High_Tier,100,231948.17
 Data Scientist,EX,L,FT,0,US,North America,High_Tier,100,231948.17
 Data Scientist,EX,L,FT,1,GB,Europe,High_Tier,0,231948.17
 Data Scientist,EX,L,FT,1,GB,Europe,High_Tier,50,231948.17
+Data Scientist,EX,L,FT,0,GB,Europe,High_Tier,50,231948.17
 Data Scientist,EX,L,FT,1,GB,Europe,High_Tier,100,231948.17
 Data Scientist,EX,L,FT,0,GB,Europe,High_Tier,100,231948.17
 Data Scientist,EX,L,FT,1,CA,North America,High_Tier,0,231948.17
 Data Scientist,EX,L,FT,1,CA,North America,High_Tier,50,231948.17
+Data Scientist,EX,L,FT,0,CA,North America,High_Tier,50,231948.17
 Data Scientist,EX,L,FT,1,CA,North America,High_Tier,100,231948.17
 Data Scientist,EX,L,FT,0,CA,North America,High_Tier,100,231948.17
 Data Scientist,EX,L,FT,1,DE,Europe,High_Tier,0,231948.17
 Data Scientist,EX,L,FT,1,DE,Europe,High_Tier,50,231948.17
+Data Scientist,EX,L,FT,0,DE,Europe,High_Tier,50,231948.17
 Data Scientist,EX,L,FT,1,DE,Europe,High_Tier,100,231948.17
 Data Scientist,EX,L,FT,0,DE,Europe,High_Tier,100,231948.17
 Data Scientist,EX,L,FT,1,FR,Europe,Mid_Tier,0,68344.14
 Data Scientist,EX,L,FT,1,FR,Europe,Mid_Tier,50,68344.14
+Data Scientist,EX,L,FT,0,FR,Europe,Mid_Tier,50,68344.14
 Data Scientist,EX,L,FT,1,FR,Europe,Mid_Tier,100,68344.14
 Data Scientist,EX,L,FT,0,FR,Europe,Mid_Tier,100,68344.14
 Data Scientist,EX,L,FT,1,ES,Europe,Mid_Tier,0,68344.14
 Data Scientist,EX,L,FT,1,ES,Europe,Mid_Tier,50,68344.14
+Data Scientist,EX,L,FT,0,ES,Europe,Mid_Tier,50,68344.14
 Data Scientist,EX,L,FT,1,ES,Europe,Mid_Tier,100,68344.14
 Data Scientist,EX,L,FT,0,ES,Europe,Mid_Tier,100,68344.14
 Data Scientist,EX,L,FT,1,GR,Europe,Mid_Tier,0,68344.14
 Data Scientist,EX,L,FT,1,GR,Europe,Mid_Tier,50,68344.14
+Data Scientist,EX,L,FT,0,GR,Europe,Mid_Tier,50,68344.14
 Data Scientist,EX,L,FT,1,GR,Europe,Mid_Tier,100,68344.14
 Data Scientist,EX,L,FT,0,GR,Europe,Mid_Tier,100,68344.14
 Data Scientist,EX,L,FT,1,NL,Europe,Mid_Tier,0,68344.14
 Data Scientist,EX,L,FT,1,NL,Europe,Mid_Tier,50,68344.14
+Data Scientist,EX,L,FT,0,NL,Europe,Mid_Tier,50,68344.14
 Data Scientist,EX,L,FT,1,NL,Europe,Mid_Tier,100,68344.14
 Data Scientist,EX,L,FT,0,NL,Europe,Mid_Tier,100,68344.14
 Data Scientist,EX,L,FT,1,IN,Asia,Low_Tier,0,35913.44
 Data Scientist,EX,L,FT,1,IN,Asia,Low_Tier,50,35913.44
+Data Scientist,EX,L,FT,0,IN,Asia,Low_Tier,50,35913.44
 Data Scientist,EX,L,FT,1,IN,Asia,Low_Tier,100,35913.44
 Data Scientist,EX,L,FT,0,IN,Asia,Low_Tier,100,35913.44
 Data Scientist,EX,L,FT,1,PK,Asia,Low_Tier,0,35913.44
 Data Scientist,EX,L,FT,1,PK,Asia,Low_Tier,50,35913.44
+Data Scientist,EX,L,FT,0,PK,Asia,Low_Tier,50,35913.44
 Data Scientist,EX,L,FT,1,PK,Asia,Low_Tier,100,35913.44
 Data Scientist,EX,L,FT,0,PK,Asia,Low_Tier,100,35913.44
 Data Scientist,EX,L,FT,1,MX,North America,Low_Tier,0,35913.44
 Data Scientist,EX,L,FT,1,MX,North America,Low_Tier,50,35913.44
+Data Scientist,EX,L,FT,0,MX,North America,Low_Tier,50,35913.44
 Data Scientist,EX,L,FT,1,MX,North America,Low_Tier,100,35913.44
 Data Scientist,EX,L,FT,0,MX,North America,Low_Tier,100,35913.44
 Data Scientist,EX,L,FT,1,BR,South America,Low_Tier,0,35913.44
 Data Scientist,EX,L,FT,1,BR,South America,Low_Tier,50,35913.44
+Data Scientist,EX,L,FT,0,BR,South America,Low_Tier,50,35913.44
 Data Scientist,EX,L,FT,1,BR,South America,Low_Tier,100,35913.44
 Data Scientist,EX,L,FT,0,BR,South America,Low_Tier,100,35913.44
 Machine Learning Engineer,EN,S,FT,1,US,North America,High_Tier,0,75804.56
 Machine Learning Engineer,EN,S,FT,1,US,North America,High_Tier,50,75804.56
+Machine Learning Engineer,EN,S,FT,0,US,North America,High_Tier,50,75804.56
 Machine Learning Engineer,EN,S,FT,1,US,North America,High_Tier,100,75804.56
 Machine Learning Engineer,EN,S,FT,0,US,North America,High_Tier,100,75804.56
 Machine Learning Engineer,EN,S,FT,1,GB,Europe,High_Tier,0,75804.56
 Machine Learning Engineer,EN,S,FT,1,GB,Europe,High_Tier,50,75804.56
+Machine Learning Engineer,EN,S,FT,0,GB,Europe,High_Tier,50,75804.56
 Machine Learning Engineer,EN,S,FT,1,GB,Europe,High_Tier,100,75804.56
 Machine Learning Engineer,EN,S,FT,0,GB,Europe,High_Tier,100,75804.56
 Machine Learning Engineer,EN,S,FT,1,CA,North America,High_Tier,0,75804.56
 Machine Learning Engineer,EN,S,FT,1,CA,North America,High_Tier,50,75804.56
+Machine Learning Engineer,EN,S,FT,0,CA,North America,High_Tier,50,75804.56
 Machine Learning Engineer,EN,S,FT,1,CA,North America,High_Tier,100,75804.56
 Machine Learning Engineer,EN,S,FT,0,CA,North America,High_Tier,100,75804.56
 Machine Learning Engineer,EN,S,FT,1,DE,Europe,High_Tier,0,75804.56
 Machine Learning Engineer,EN,S,FT,1,DE,Europe,High_Tier,50,75804.56
+Machine Learning Engineer,EN,S,FT,0,DE,Europe,High_Tier,50,75804.56
 Machine Learning Engineer,EN,S,FT,1,DE,Europe,High_Tier,100,75804.56
 Machine Learning Engineer,EN,S,FT,0,DE,Europe,High_Tier,100,75804.56
 Machine Learning Engineer,EN,S,FT,1,FR,Europe,Mid_Tier,0,31994.08
 Machine Learning Engineer,EN,S,FT,1,FR,Europe,Mid_Tier,50,31994.08
+Machine Learning Engineer,EN,S,FT,0,FR,Europe,Mid_Tier,50,31994.08
 Machine Learning Engineer,EN,S,FT,1,FR,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,S,FT,0,FR,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,S,FT,1,ES,Europe,Mid_Tier,0,31994.08
 Machine Learning Engineer,EN,S,FT,1,ES,Europe,Mid_Tier,50,31994.08
+Machine Learning Engineer,EN,S,FT,0,ES,Europe,Mid_Tier,50,31994.08
 Machine Learning Engineer,EN,S,FT,1,ES,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,S,FT,0,ES,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,S,FT,1,GR,Europe,Mid_Tier,0,31994.08
 Machine Learning Engineer,EN,S,FT,1,GR,Europe,Mid_Tier,50,31994.08
+Machine Learning Engineer,EN,S,FT,0,GR,Europe,Mid_Tier,50,31994.08
 Machine Learning Engineer,EN,S,FT,1,GR,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,S,FT,0,GR,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,S,FT,1,NL,Europe,Mid_Tier,0,31994.08
 Machine Learning Engineer,EN,S,FT,1,NL,Europe,Mid_Tier,50,31994.08
+Machine Learning Engineer,EN,S,FT,0,NL,Europe,Mid_Tier,50,31994.08
 Machine Learning Engineer,EN,S,FT,1,NL,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,S,FT,0,NL,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,S,FT,1,IN,Asia,Low_Tier,0,18850.7
 Machine Learning Engineer,EN,S,FT,1,IN,Asia,Low_Tier,50,18850.7
+Machine Learning Engineer,EN,S,FT,0,IN,Asia,Low_Tier,50,18850.7
 Machine Learning Engineer,EN,S,FT,1,IN,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,EN,S,FT,0,IN,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,EN,S,FT,1,PK,Asia,Low_Tier,0,18850.7
 Machine Learning Engineer,EN,S,FT,1,PK,Asia,Low_Tier,50,18850.7
+Machine Learning Engineer,EN,S,FT,0,PK,Asia,Low_Tier,50,18850.7
 Machine Learning Engineer,EN,S,FT,1,PK,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,EN,S,FT,0,PK,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,EN,S,FT,1,MX,North America,Low_Tier,0,18850.7
 Machine Learning Engineer,EN,S,FT,1,MX,North America,Low_Tier,50,18850.7
+Machine Learning Engineer,EN,S,FT,0,MX,North America,Low_Tier,50,18850.7
 Machine Learning Engineer,EN,S,FT,1,MX,North America,Low_Tier,100,18850.7
 Machine Learning Engineer,EN,S,FT,0,MX,North America,Low_Tier,100,18850.7
 Machine Learning Engineer,EN,S,FT,1,BR,South America,Low_Tier,0,18850.7
 Machine Learning Engineer,EN,S,FT,1,BR,South America,Low_Tier,50,18850.7
+Machine Learning Engineer,EN,S,FT,0,BR,South America,Low_Tier,50,18850.7
 Machine Learning Engineer,EN,S,FT,1,BR,South America,Low_Tier,100,18850.7
 Machine Learning Engineer,EN,S,FT,0,BR,South America,Low_Tier,100,18850.7
 Machine Learning Engineer,EN,M,FT,1,US,North America,High_Tier,0,66478.36
 Machine Learning Engineer,EN,M,FT,1,US,North America,High_Tier,50,66478.36
+Machine Learning Engineer,EN,M,FT,0,US,North America,High_Tier,50,66478.36
 Machine Learning Engineer,EN,M,FT,1,US,North America,High_Tier,100,66478.36
 Machine Learning Engineer,EN,M,FT,0,US,North America,High_Tier,100,66478.36
 Machine Learning Engineer,EN,M,FT,1,GB,Europe,High_Tier,0,66478.36
 Machine Learning Engineer,EN,M,FT,1,GB,Europe,High_Tier,50,66478.36
+Machine Learning Engineer,EN,M,FT,0,GB,Europe,High_Tier,50,66478.36
 Machine Learning Engineer,EN,M,FT,1,GB,Europe,High_Tier,100,66478.36
 Machine Learning Engineer,EN,M,FT,0,GB,Europe,High_Tier,100,66478.36
 Machine Learning Engineer,EN,M,FT,1,CA,North America,High_Tier,0,66478.36
 Machine Learning Engineer,EN,M,FT,1,CA,North America,High_Tier,50,66478.36
+Machine Learning Engineer,EN,M,FT,0,CA,North America,High_Tier,50,66478.36
 Machine Learning Engineer,EN,M,FT,1,CA,North America,High_Tier,100,66478.36
 Machine Learning Engineer,EN,M,FT,0,CA,North America,High_Tier,100,66478.36
 Machine Learning Engineer,EN,M,FT,1,DE,Europe,High_Tier,0,66478.36
 Machine Learning Engineer,EN,M,FT,1,DE,Europe,High_Tier,50,66478.36
+Machine Learning Engineer,EN,M,FT,0,DE,Europe,High_Tier,50,66478.36
 Machine Learning Engineer,EN,M,FT,1,DE,Europe,High_Tier,100,66478.36
 Machine Learning Engineer,EN,M,FT,0,DE,Europe,High_Tier,100,66478.36
 Machine Learning Engineer,EN,M,FT,1,FR,Europe,Mid_Tier,0,31994.08
 Machine Learning Engineer,EN,M,FT,1,FR,Europe,Mid_Tier,50,31994.08
+Machine Learning Engineer,EN,M,FT,0,FR,Europe,Mid_Tier,50,31994.08
 Machine Learning Engineer,EN,M,FT,1,FR,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,M,FT,0,FR,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,M,FT,1,ES,Europe,Mid_Tier,0,31994.08
 Machine Learning Engineer,EN,M,FT,1,ES,Europe,Mid_Tier,50,31994.08
+Machine Learning Engineer,EN,M,FT,0,ES,Europe,Mid_Tier,50,31994.08
 Machine Learning Engineer,EN,M,FT,1,ES,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,M,FT,0,ES,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,M,FT,1,GR,Europe,Mid_Tier,0,31994.08
 Machine Learning Engineer,EN,M,FT,1,GR,Europe,Mid_Tier,50,31994.08
+Machine Learning Engineer,EN,M,FT,0,GR,Europe,Mid_Tier,50,31994.08
 Machine Learning Engineer,EN,M,FT,1,GR,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,M,FT,0,GR,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,M,FT,1,NL,Europe,Mid_Tier,0,31994.08
 Machine Learning Engineer,EN,M,FT,1,NL,Europe,Mid_Tier,50,31994.08
+Machine Learning Engineer,EN,M,FT,0,NL,Europe,Mid_Tier,50,31994.08
 Machine Learning Engineer,EN,M,FT,1,NL,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,M,FT,0,NL,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,M,FT,1,IN,Asia,Low_Tier,0,18850.7
 Machine Learning Engineer,EN,M,FT,1,IN,Asia,Low_Tier,50,18850.7
+Machine Learning Engineer,EN,M,FT,0,IN,Asia,Low_Tier,50,18850.7
 Machine Learning Engineer,EN,M,FT,1,IN,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,EN,M,FT,0,IN,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,EN,M,FT,1,PK,Asia,Low_Tier,0,18850.7
 Machine Learning Engineer,EN,M,FT,1,PK,Asia,Low_Tier,50,18850.7
+Machine Learning Engineer,EN,M,FT,0,PK,Asia,Low_Tier,50,18850.7
 Machine Learning Engineer,EN,M,FT,1,PK,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,EN,M,FT,0,PK,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,EN,M,FT,1,MX,North America,Low_Tier,0,18850.7
 Machine Learning Engineer,EN,M,FT,1,MX,North America,Low_Tier,50,18850.7
+Machine Learning Engineer,EN,M,FT,0,MX,North America,Low_Tier,50,18850.7
 Machine Learning Engineer,EN,M,FT,1,MX,North America,Low_Tier,100,18850.7
 Machine Learning Engineer,EN,M,FT,0,MX,North America,Low_Tier,100,18850.7
 Machine Learning Engineer,EN,M,FT,1,BR,South America,Low_Tier,0,18850.7
 Machine Learning Engineer,EN,M,FT,1,BR,South America,Low_Tier,50,18850.7
+Machine Learning Engineer,EN,M,FT,0,BR,South America,Low_Tier,50,18850.7
 Machine Learning Engineer,EN,M,FT,1,BR,South America,Low_Tier,100,18850.7
 Machine Learning Engineer,EN,M,FT,0,BR,South America,Low_Tier,100,18850.7
 Machine Learning Engineer,EN,L,FT,1,US,North America,High_Tier,0,98113.0
 Machine Learning Engineer,EN,L,FT,1,US,North America,High_Tier,50,98113.0
+Machine Learning Engineer,EN,L,FT,0,US,North America,High_Tier,50,98113.0
 Machine Learning Engineer,EN,L,FT,1,US,North America,High_Tier,100,98113.0
 Machine Learning Engineer,EN,L,FT,0,US,North America,High_Tier,100,98113.0
 Machine Learning Engineer,EN,L,FT,1,GB,Europe,High_Tier,0,98113.0
 Machine Learning Engineer,EN,L,FT,1,GB,Europe,High_Tier,50,98113.0
+Machine Learning Engineer,EN,L,FT,0,GB,Europe,High_Tier,50,98113.0
 Machine Learning Engineer,EN,L,FT,1,GB,Europe,High_Tier,100,98113.0
 Machine Learning Engineer,EN,L,FT,0,GB,Europe,High_Tier,100,98113.0
 Machine Learning Engineer,EN,L,FT,1,CA,North America,High_Tier,0,98113.0
 Machine Learning Engineer,EN,L,FT,1,CA,North America,High_Tier,50,98113.0
+Machine Learning Engineer,EN,L,FT,0,CA,North America,High_Tier,50,98113.0
 Machine Learning Engineer,EN,L,FT,1,CA,North America,High_Tier,100,98113.0
 Machine Learning Engineer,EN,L,FT,0,CA,North America,High_Tier,100,98113.0
 Machine Learning Engineer,EN,L,FT,1,DE,Europe,High_Tier,0,98113.0
 Machine Learning Engineer,EN,L,FT,1,DE,Europe,High_Tier,50,98113.0
+Machine Learning Engineer,EN,L,FT,0,DE,Europe,High_Tier,50,98113.0
 Machine Learning Engineer,EN,L,FT,1,DE,Europe,High_Tier,100,98113.0
 Machine Learning Engineer,EN,L,FT,0,DE,Europe,High_Tier,100,98113.0
 Machine Learning Engineer,EN,L,FT,1,FR,Europe,Mid_Tier,0,31994.08
 Machine Learning Engineer,EN,L,FT,1,FR,Europe,Mid_Tier,50,31994.08
+Machine Learning Engineer,EN,L,FT,0,FR,Europe,Mid_Tier,50,31994.08
 Machine Learning Engineer,EN,L,FT,1,FR,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,L,FT,0,FR,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,L,FT,1,ES,Europe,Mid_Tier,0,31994.08
 Machine Learning Engineer,EN,L,FT,1,ES,Europe,Mid_Tier,50,31994.08
+Machine Learning Engineer,EN,L,FT,0,ES,Europe,Mid_Tier,50,31994.08
 Machine Learning Engineer,EN,L,FT,1,ES,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,L,FT,0,ES,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,L,FT,1,GR,Europe,Mid_Tier,0,31994.08
 Machine Learning Engineer,EN,L,FT,1,GR,Europe,Mid_Tier,50,31994.08
+Machine Learning Engineer,EN,L,FT,0,GR,Europe,Mid_Tier,50,31994.08
 Machine Learning Engineer,EN,L,FT,1,GR,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,L,FT,0,GR,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,L,FT,1,NL,Europe,Mid_Tier,0,31994.08
 Machine Learning Engineer,EN,L,FT,1,NL,Europe,Mid_Tier,50,31994.08
+Machine Learning Engineer,EN,L,FT,0,NL,Europe,Mid_Tier,50,31994.08
 Machine Learning Engineer,EN,L,FT,1,NL,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,L,FT,0,NL,Europe,Mid_Tier,100,31994.08
 Machine Learning Engineer,EN,L,FT,1,IN,Asia,Low_Tier,0,35913.44
 Machine Learning Engineer,EN,L,FT,1,IN,Asia,Low_Tier,50,35913.44
+Machine Learning Engineer,EN,L,FT,0,IN,Asia,Low_Tier,50,35913.44
 Machine Learning Engineer,EN,L,FT,1,IN,Asia,Low_Tier,100,35913.44
 Machine Learning Engineer,EN,L,FT,0,IN,Asia,Low_Tier,100,35913.44
 Machine Learning Engineer,EN,L,FT,1,PK,Asia,Low_Tier,0,35913.44
 Machine Learning Engineer,EN,L,FT,1,PK,Asia,Low_Tier,50,35913.44
+Machine Learning Engineer,EN,L,FT,0,PK,Asia,Low_Tier,50,35913.44
 Machine Learning Engineer,EN,L,FT,1,PK,Asia,Low_Tier,100,35913.44
 Machine Learning Engineer,EN,L,FT,0,PK,Asia,Low_Tier,100,35913.44
 Machine Learning Engineer,EN,L,FT,1,MX,North America,Low_Tier,0,35913.44
 Machine Learning Engineer,EN,L,FT,1,MX,North America,Low_Tier,50,35913.44
+Machine Learning Engineer,EN,L,FT,0,MX,North America,Low_Tier,50,35913.44
 Machine Learning Engineer,EN,L,FT,1,MX,North America,Low_Tier,100,35913.44
 Machine Learning Engineer,EN,L,FT,0,MX,North America,Low_Tier,100,35913.44
 Machine Learning Engineer,EN,L,FT,1,BR,South America,Low_Tier,0,35913.44
 Machine Learning Engineer,EN,L,FT,1,BR,South America,Low_Tier,50,35913.44
+Machine Learning Engineer,EN,L,FT,0,BR,South America,Low_Tier,50,35913.44
 Machine Learning Engineer,EN,L,FT,1,BR,South America,Low_Tier,100,35913.44
 Machine Learning Engineer,EN,L,FT,0,BR,South America,Low_Tier,100,35913.44
 Machine Learning Engineer,MI,S,FT,1,US,North America,High_Tier,0,59608.31
 Machine Learning Engineer,MI,S,FT,1,US,North America,High_Tier,50,59608.31
+Machine Learning Engineer,MI,S,FT,0,US,North America,High_Tier,50,59608.31
 Machine Learning Engineer,MI,S,FT,1,US,North America,High_Tier,100,59608.31
 Machine Learning Engineer,MI,S,FT,0,US,North America,High_Tier,100,59608.31
 Machine Learning Engineer,MI,S,FT,1,GB,Europe,High_Tier,0,59608.31
 Machine Learning Engineer,MI,S,FT,1,GB,Europe,High_Tier,50,59608.31
+Machine Learning Engineer,MI,S,FT,0,GB,Europe,High_Tier,50,59608.31
 Machine Learning Engineer,MI,S,FT,1,GB,Europe,High_Tier,100,59608.31
 Machine Learning Engineer,MI,S,FT,0,GB,Europe,High_Tier,100,59608.31
 Machine Learning Engineer,MI,S,FT,1,CA,North America,High_Tier,0,59608.31
 Machine Learning Engineer,MI,S,FT,1,CA,North America,High_Tier,50,59608.31
+Machine Learning Engineer,MI,S,FT,0,CA,North America,High_Tier,50,59608.31
 Machine Learning Engineer,MI,S,FT,1,CA,North America,High_Tier,100,59608.31
 Machine Learning Engineer,MI,S,FT,0,CA,North America,High_Tier,100,59608.31
 Machine Learning Engineer,MI,S,FT,1,DE,Europe,High_Tier,0,59608.31
 Machine Learning Engineer,MI,S,FT,1,DE,Europe,High_Tier,50,59608.31
+Machine Learning Engineer,MI,S,FT,0,DE,Europe,High_Tier,50,59608.31
 Machine Learning Engineer,MI,S,FT,1,DE,Europe,High_Tier,100,59608.31
 Machine Learning Engineer,MI,S,FT,0,DE,Europe,High_Tier,100,59608.31
 Machine Learning Engineer,MI,S,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,MI,S,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,MI,S,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,MI,S,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,S,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,S,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,MI,S,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,MI,S,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,MI,S,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,S,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,S,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,MI,S,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,MI,S,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,MI,S,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,S,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,S,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,MI,S,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,MI,S,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,MI,S,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,S,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,S,FT,1,IN,Asia,Low_Tier,0,18850.7
 Machine Learning Engineer,MI,S,FT,1,IN,Asia,Low_Tier,50,18850.7
+Machine Learning Engineer,MI,S,FT,0,IN,Asia,Low_Tier,50,18850.7
 Machine Learning Engineer,MI,S,FT,1,IN,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,MI,S,FT,0,IN,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,MI,S,FT,1,PK,Asia,Low_Tier,0,18850.7
 Machine Learning Engineer,MI,S,FT,1,PK,Asia,Low_Tier,50,18850.7
+Machine Learning Engineer,MI,S,FT,0,PK,Asia,Low_Tier,50,18850.7
 Machine Learning Engineer,MI,S,FT,1,PK,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,MI,S,FT,0,PK,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,MI,S,FT,1,MX,North America,Low_Tier,0,18850.7
 Machine Learning Engineer,MI,S,FT,1,MX,North America,Low_Tier,50,18850.7
+Machine Learning Engineer,MI,S,FT,0,MX,North America,Low_Tier,50,18850.7
 Machine Learning Engineer,MI,S,FT,1,MX,North America,Low_Tier,100,18850.7
 Machine Learning Engineer,MI,S,FT,0,MX,North America,Low_Tier,100,18850.7
 Machine Learning Engineer,MI,S,FT,1,BR,South America,Low_Tier,0,18850.7
 Machine Learning Engineer,MI,S,FT,1,BR,South America,Low_Tier,50,18850.7
+Machine Learning Engineer,MI,S,FT,0,BR,South America,Low_Tier,50,18850.7
 Machine Learning Engineer,MI,S,FT,1,BR,South America,Low_Tier,100,18850.7
 Machine Learning Engineer,MI,S,FT,0,BR,South America,Low_Tier,100,18850.7
 Machine Learning Engineer,MI,M,FT,1,US,North America,High_Tier,0,88855.88
 Machine Learning Engineer,MI,M,FT,1,US,North America,High_Tier,50,88855.88
+Machine Learning Engineer,MI,M,FT,0,US,North America,High_Tier,50,88855.88
 Machine Learning Engineer,MI,M,FT,1,US,North America,High_Tier,100,97351.22
 Machine Learning Engineer,MI,M,FT,0,US,North America,High_Tier,100,97351.22
 Machine Learning Engineer,MI,M,FT,1,GB,Europe,High_Tier,0,88855.88
 Machine Learning Engineer,MI,M,FT,1,GB,Europe,High_Tier,50,88855.88
+Machine Learning Engineer,MI,M,FT,0,GB,Europe,High_Tier,50,88855.88
 Machine Learning Engineer,MI,M,FT,1,GB,Europe,High_Tier,100,97351.22
 Machine Learning Engineer,MI,M,FT,0,GB,Europe,High_Tier,100,97351.22
 Machine Learning Engineer,MI,M,FT,1,CA,North America,High_Tier,0,88855.88
 Machine Learning Engineer,MI,M,FT,1,CA,North America,High_Tier,50,88855.88
+Machine Learning Engineer,MI,M,FT,0,CA,North America,High_Tier,50,88855.88
 Machine Learning Engineer,MI,M,FT,1,CA,North America,High_Tier,100,97351.22
 Machine Learning Engineer,MI,M,FT,0,CA,North America,High_Tier,100,97351.22
 Machine Learning Engineer,MI,M,FT,1,DE,Europe,High_Tier,0,88855.88
 Machine Learning Engineer,MI,M,FT,1,DE,Europe,High_Tier,50,88855.88
+Machine Learning Engineer,MI,M,FT,0,DE,Europe,High_Tier,50,88855.88
 Machine Learning Engineer,MI,M,FT,1,DE,Europe,High_Tier,100,97351.22
 Machine Learning Engineer,MI,M,FT,0,DE,Europe,High_Tier,100,97351.22
 Machine Learning Engineer,MI,M,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,MI,M,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,MI,M,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,MI,M,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,M,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,M,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,MI,M,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,MI,M,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,MI,M,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,M,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,M,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,MI,M,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,MI,M,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,MI,M,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,M,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,M,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,MI,M,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,MI,M,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,MI,M,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,M,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,M,FT,1,IN,Asia,Low_Tier,0,18850.7
 Machine Learning Engineer,MI,M,FT,1,IN,Asia,Low_Tier,50,18850.7
+Machine Learning Engineer,MI,M,FT,0,IN,Asia,Low_Tier,50,18850.7
 Machine Learning Engineer,MI,M,FT,1,IN,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,MI,M,FT,0,IN,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,MI,M,FT,1,PK,Asia,Low_Tier,0,18850.7
 Machine Learning Engineer,MI,M,FT,1,PK,Asia,Low_Tier,50,18850.7
+Machine Learning Engineer,MI,M,FT,0,PK,Asia,Low_Tier,50,18850.7
 Machine Learning Engineer,MI,M,FT,1,PK,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,MI,M,FT,0,PK,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,MI,M,FT,1,MX,North America,Low_Tier,0,18850.7
 Machine Learning Engineer,MI,M,FT,1,MX,North America,Low_Tier,50,18850.7
+Machine Learning Engineer,MI,M,FT,0,MX,North America,Low_Tier,50,18850.7
 Machine Learning Engineer,MI,M,FT,1,MX,North America,Low_Tier,100,18850.7
 Machine Learning Engineer,MI,M,FT,0,MX,North America,Low_Tier,100,18850.7
 Machine Learning Engineer,MI,M,FT,1,BR,South America,Low_Tier,0,18850.7
 Machine Learning Engineer,MI,M,FT,1,BR,South America,Low_Tier,50,18850.7
+Machine Learning Engineer,MI,M,FT,0,BR,South America,Low_Tier,50,18850.7
 Machine Learning Engineer,MI,M,FT,1,BR,South America,Low_Tier,100,18850.7
 Machine Learning Engineer,MI,M,FT,0,BR,South America,Low_Tier,100,18850.7
 Machine Learning Engineer,MI,L,FT,1,US,North America,High_Tier,0,88855.88
 Machine Learning Engineer,MI,L,FT,1,US,North America,High_Tier,50,88855.88
+Machine Learning Engineer,MI,L,FT,0,US,North America,High_Tier,50,88855.88
 Machine Learning Engineer,MI,L,FT,1,US,North America,High_Tier,100,137936.86
 Machine Learning Engineer,MI,L,FT,0,US,North America,High_Tier,100,137936.86
 Machine Learning Engineer,MI,L,FT,1,GB,Europe,High_Tier,0,88855.88
 Machine Learning Engineer,MI,L,FT,1,GB,Europe,High_Tier,50,88855.88
+Machine Learning Engineer,MI,L,FT,0,GB,Europe,High_Tier,50,88855.88
 Machine Learning Engineer,MI,L,FT,1,GB,Europe,High_Tier,100,137936.86
 Machine Learning Engineer,MI,L,FT,0,GB,Europe,High_Tier,100,137936.86
 Machine Learning Engineer,MI,L,FT,1,CA,North America,High_Tier,0,88855.88
 Machine Learning Engineer,MI,L,FT,1,CA,North America,High_Tier,50,88855.88
+Machine Learning Engineer,MI,L,FT,0,CA,North America,High_Tier,50,88855.88
 Machine Learning Engineer,MI,L,FT,1,CA,North America,High_Tier,100,137936.86
 Machine Learning Engineer,MI,L,FT,0,CA,North America,High_Tier,100,137936.86
 Machine Learning Engineer,MI,L,FT,1,DE,Europe,High_Tier,0,88855.88
 Machine Learning Engineer,MI,L,FT,1,DE,Europe,High_Tier,50,88855.88
+Machine Learning Engineer,MI,L,FT,0,DE,Europe,High_Tier,50,88855.88
 Machine Learning Engineer,MI,L,FT,1,DE,Europe,High_Tier,100,137936.86
 Machine Learning Engineer,MI,L,FT,0,DE,Europe,High_Tier,100,137936.86
 Machine Learning Engineer,MI,L,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,MI,L,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,MI,L,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,MI,L,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,L,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,L,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,MI,L,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,MI,L,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,MI,L,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,L,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,L,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,MI,L,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,MI,L,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,MI,L,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,L,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,L,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,MI,L,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,MI,L,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,MI,L,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,L,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,MI,L,FT,1,IN,Asia,Low_Tier,0,35913.44
 Machine Learning Engineer,MI,L,FT,1,IN,Asia,Low_Tier,50,35913.44
+Machine Learning Engineer,MI,L,FT,0,IN,Asia,Low_Tier,50,35913.44
 Machine Learning Engineer,MI,L,FT,1,IN,Asia,Low_Tier,100,35913.44
 Machine Learning Engineer,MI,L,FT,0,IN,Asia,Low_Tier,100,35913.44
 Machine Learning Engineer,MI,L,FT,1,PK,Asia,Low_Tier,0,35913.44
 Machine Learning Engineer,MI,L,FT,1,PK,Asia,Low_Tier,50,35913.44
+Machine Learning Engineer,MI,L,FT,0,PK,Asia,Low_Tier,50,35913.44
 Machine Learning Engineer,MI,L,FT,1,PK,Asia,Low_Tier,100,35913.44
 Machine Learning Engineer,MI,L,FT,0,PK,Asia,Low_Tier,100,35913.44
 Machine Learning Engineer,MI,L,FT,1,MX,North America,Low_Tier,0,35913.44
 Machine Learning Engineer,MI,L,FT,1,MX,North America,Low_Tier,50,35913.44
+Machine Learning Engineer,MI,L,FT,0,MX,North America,Low_Tier,50,35913.44
 Machine Learning Engineer,MI,L,FT,1,MX,North America,Low_Tier,100,35913.44
 Machine Learning Engineer,MI,L,FT,0,MX,North America,Low_Tier,100,35913.44
 Machine Learning Engineer,MI,L,FT,1,BR,South America,Low_Tier,0,35913.44
 Machine Learning Engineer,MI,L,FT,1,BR,South America,Low_Tier,50,35913.44
+Machine Learning Engineer,MI,L,FT,0,BR,South America,Low_Tier,50,35913.44
 Machine Learning Engineer,MI,L,FT,1,BR,South America,Low_Tier,100,35913.44
 Machine Learning Engineer,MI,L,FT,0,BR,South America,Low_Tier,100,35913.44
 Machine Learning Engineer,SE,S,FT,1,US,North America,High_Tier,0,119945.47
 Machine Learning Engineer,SE,S,FT,1,US,North America,High_Tier,50,119945.47
+Machine Learning Engineer,SE,S,FT,0,US,North America,High_Tier,50,119945.47
 Machine Learning Engineer,SE,S,FT,1,US,North America,High_Tier,100,119945.47
 Machine Learning Engineer,SE,S,FT,0,US,North America,High_Tier,100,119945.47
 Machine Learning Engineer,SE,S,FT,1,GB,Europe,High_Tier,0,119945.47
 Machine Learning Engineer,SE,S,FT,1,GB,Europe,High_Tier,50,119945.47
+Machine Learning Engineer,SE,S,FT,0,GB,Europe,High_Tier,50,119945.47
 Machine Learning Engineer,SE,S,FT,1,GB,Europe,High_Tier,100,119945.47
 Machine Learning Engineer,SE,S,FT,0,GB,Europe,High_Tier,100,119945.47
 Machine Learning Engineer,SE,S,FT,1,CA,North America,High_Tier,0,119945.47
 Machine Learning Engineer,SE,S,FT,1,CA,North America,High_Tier,50,119945.47
+Machine Learning Engineer,SE,S,FT,0,CA,North America,High_Tier,50,119945.47
 Machine Learning Engineer,SE,S,FT,1,CA,North America,High_Tier,100,119945.47
 Machine Learning Engineer,SE,S,FT,0,CA,North America,High_Tier,100,119945.47
 Machine Learning Engineer,SE,S,FT,1,DE,Europe,High_Tier,0,119945.47
 Machine Learning Engineer,SE,S,FT,1,DE,Europe,High_Tier,50,119945.47
+Machine Learning Engineer,SE,S,FT,0,DE,Europe,High_Tier,50,119945.47
 Machine Learning Engineer,SE,S,FT,1,DE,Europe,High_Tier,100,119945.47
 Machine Learning Engineer,SE,S,FT,0,DE,Europe,High_Tier,100,119945.47
 Machine Learning Engineer,SE,S,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,SE,S,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,SE,S,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,SE,S,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,S,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,S,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,SE,S,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,SE,S,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,SE,S,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,S,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,S,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,SE,S,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,SE,S,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,SE,S,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,S,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,S,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,SE,S,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,SE,S,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,SE,S,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,S,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,S,FT,1,IN,Asia,Low_Tier,0,18850.7
 Machine Learning Engineer,SE,S,FT,1,IN,Asia,Low_Tier,50,18850.7
+Machine Learning Engineer,SE,S,FT,0,IN,Asia,Low_Tier,50,18850.7
 Machine Learning Engineer,SE,S,FT,1,IN,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,SE,S,FT,0,IN,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,SE,S,FT,1,PK,Asia,Low_Tier,0,18850.7
 Machine Learning Engineer,SE,S,FT,1,PK,Asia,Low_Tier,50,18850.7
+Machine Learning Engineer,SE,S,FT,0,PK,Asia,Low_Tier,50,18850.7
 Machine Learning Engineer,SE,S,FT,1,PK,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,SE,S,FT,0,PK,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,SE,S,FT,1,MX,North America,Low_Tier,0,18850.7
 Machine Learning Engineer,SE,S,FT,1,MX,North America,Low_Tier,50,18850.7
+Machine Learning Engineer,SE,S,FT,0,MX,North America,Low_Tier,50,18850.7
 Machine Learning Engineer,SE,S,FT,1,MX,North America,Low_Tier,100,18850.7
 Machine Learning Engineer,SE,S,FT,0,MX,North America,Low_Tier,100,18850.7
 Machine Learning Engineer,SE,S,FT,1,BR,South America,Low_Tier,0,18850.7
 Machine Learning Engineer,SE,S,FT,1,BR,South America,Low_Tier,50,18850.7
+Machine Learning Engineer,SE,S,FT,0,BR,South America,Low_Tier,50,18850.7
 Machine Learning Engineer,SE,S,FT,1,BR,South America,Low_Tier,100,18850.7
 Machine Learning Engineer,SE,S,FT,0,BR,South America,Low_Tier,100,18850.7
 Machine Learning Engineer,SE,M,FT,1,US,North America,High_Tier,0,147188.58
 Machine Learning Engineer,SE,M,FT,1,US,North America,High_Tier,50,147188.58
+Machine Learning Engineer,SE,M,FT,0,US,North America,High_Tier,50,147188.58
 Machine Learning Engineer,SE,M,FT,1,US,North America,High_Tier,100,172126.36
 Machine Learning Engineer,SE,M,FT,0,US,North America,High_Tier,100,172126.36
 Machine Learning Engineer,SE,M,FT,1,GB,Europe,High_Tier,0,147188.58
 Machine Learning Engineer,SE,M,FT,1,GB,Europe,High_Tier,50,147188.58
+Machine Learning Engineer,SE,M,FT,0,GB,Europe,High_Tier,50,147188.58
 Machine Learning Engineer,SE,M,FT,1,GB,Europe,High_Tier,100,172126.36
 Machine Learning Engineer,SE,M,FT,0,GB,Europe,High_Tier,100,172126.36
 Machine Learning Engineer,SE,M,FT,1,CA,North America,High_Tier,0,147188.58
 Machine Learning Engineer,SE,M,FT,1,CA,North America,High_Tier,50,147188.58
+Machine Learning Engineer,SE,M,FT,0,CA,North America,High_Tier,50,147188.58
 Machine Learning Engineer,SE,M,FT,1,CA,North America,High_Tier,100,172126.36
 Machine Learning Engineer,SE,M,FT,0,CA,North America,High_Tier,100,172126.36
 Machine Learning Engineer,SE,M,FT,1,DE,Europe,High_Tier,0,147188.58
 Machine Learning Engineer,SE,M,FT,1,DE,Europe,High_Tier,50,147188.58
+Machine Learning Engineer,SE,M,FT,0,DE,Europe,High_Tier,50,147188.58
 Machine Learning Engineer,SE,M,FT,1,DE,Europe,High_Tier,100,172126.36
 Machine Learning Engineer,SE,M,FT,0,DE,Europe,High_Tier,100,172126.36
 Machine Learning Engineer,SE,M,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,SE,M,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,SE,M,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,SE,M,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,M,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,M,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,SE,M,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,SE,M,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,SE,M,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,M,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,M,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,SE,M,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,SE,M,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,SE,M,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,M,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,M,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,SE,M,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,SE,M,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,SE,M,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,M,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,M,FT,1,IN,Asia,Low_Tier,0,18850.7
 Machine Learning Engineer,SE,M,FT,1,IN,Asia,Low_Tier,50,18850.7
+Machine Learning Engineer,SE,M,FT,0,IN,Asia,Low_Tier,50,18850.7
 Machine Learning Engineer,SE,M,FT,1,IN,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,SE,M,FT,0,IN,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,SE,M,FT,1,PK,Asia,Low_Tier,0,18850.7
 Machine Learning Engineer,SE,M,FT,1,PK,Asia,Low_Tier,50,18850.7
+Machine Learning Engineer,SE,M,FT,0,PK,Asia,Low_Tier,50,18850.7
 Machine Learning Engineer,SE,M,FT,1,PK,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,SE,M,FT,0,PK,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,SE,M,FT,1,MX,North America,Low_Tier,0,18850.7
 Machine Learning Engineer,SE,M,FT,1,MX,North America,Low_Tier,50,18850.7
+Machine Learning Engineer,SE,M,FT,0,MX,North America,Low_Tier,50,18850.7
 Machine Learning Engineer,SE,M,FT,1,MX,North America,Low_Tier,100,18850.7
 Machine Learning Engineer,SE,M,FT,0,MX,North America,Low_Tier,100,18850.7
 Machine Learning Engineer,SE,M,FT,1,BR,South America,Low_Tier,0,18850.7
 Machine Learning Engineer,SE,M,FT,1,BR,South America,Low_Tier,50,18850.7
+Machine Learning Engineer,SE,M,FT,0,BR,South America,Low_Tier,50,18850.7
 Machine Learning Engineer,SE,M,FT,1,BR,South America,Low_Tier,100,18850.7
 Machine Learning Engineer,SE,M,FT,0,BR,South America,Low_Tier,100,18850.7
 Machine Learning Engineer,SE,L,FT,1,US,North America,High_Tier,0,156373.8
 Machine Learning Engineer,SE,L,FT,1,US,North America,High_Tier,50,156373.8
+Machine Learning Engineer,SE,L,FT,0,US,North America,High_Tier,50,156373.8
 Machine Learning Engineer,SE,L,FT,1,US,North America,High_Tier,100,172126.36
 Machine Learning Engineer,SE,L,FT,0,US,North America,High_Tier,100,172126.36
 Machine Learning Engineer,SE,L,FT,1,GB,Europe,High_Tier,0,156373.8
 Machine Learning Engineer,SE,L,FT,1,GB,Europe,High_Tier,50,156373.8
+Machine Learning Engineer,SE,L,FT,0,GB,Europe,High_Tier,50,156373.8
 Machine Learning Engineer,SE,L,FT,1,GB,Europe,High_Tier,100,172126.36
 Machine Learning Engineer,SE,L,FT,0,GB,Europe,High_Tier,100,172126.36
 Machine Learning Engineer,SE,L,FT,1,CA,North America,High_Tier,0,156373.8
 Machine Learning Engineer,SE,L,FT,1,CA,North America,High_Tier,50,156373.8
+Machine Learning Engineer,SE,L,FT,0,CA,North America,High_Tier,50,156373.8
 Machine Learning Engineer,SE,L,FT,1,CA,North America,High_Tier,100,172126.36
 Machine Learning Engineer,SE,L,FT,0,CA,North America,High_Tier,100,172126.36
 Machine Learning Engineer,SE,L,FT,1,DE,Europe,High_Tier,0,156373.8
 Machine Learning Engineer,SE,L,FT,1,DE,Europe,High_Tier,50,156373.8
+Machine Learning Engineer,SE,L,FT,0,DE,Europe,High_Tier,50,156373.8
 Machine Learning Engineer,SE,L,FT,1,DE,Europe,High_Tier,100,172126.36
 Machine Learning Engineer,SE,L,FT,0,DE,Europe,High_Tier,100,172126.36
 Machine Learning Engineer,SE,L,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,SE,L,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,SE,L,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,SE,L,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,L,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,L,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,SE,L,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,SE,L,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,SE,L,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,L,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,L,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,SE,L,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,SE,L,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,SE,L,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,L,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,L,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,SE,L,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,SE,L,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,SE,L,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,L,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,SE,L,FT,1,IN,Asia,Low_Tier,0,35913.44
 Machine Learning Engineer,SE,L,FT,1,IN,Asia,Low_Tier,50,35913.44
+Machine Learning Engineer,SE,L,FT,0,IN,Asia,Low_Tier,50,35913.44
 Machine Learning Engineer,SE,L,FT,1,IN,Asia,Low_Tier,100,35913.44
 Machine Learning Engineer,SE,L,FT,0,IN,Asia,Low_Tier,100,35913.44
 Machine Learning Engineer,SE,L,FT,1,PK,Asia,Low_Tier,0,35913.44
 Machine Learning Engineer,SE,L,FT,1,PK,Asia,Low_Tier,50,35913.44
+Machine Learning Engineer,SE,L,FT,0,PK,Asia,Low_Tier,50,35913.44
 Machine Learning Engineer,SE,L,FT,1,PK,Asia,Low_Tier,100,35913.44
 Machine Learning Engineer,SE,L,FT,0,PK,Asia,Low_Tier,100,35913.44
 Machine Learning Engineer,SE,L,FT,1,MX,North America,Low_Tier,0,35913.44
 Machine Learning Engineer,SE,L,FT,1,MX,North America,Low_Tier,50,35913.44
+Machine Learning Engineer,SE,L,FT,0,MX,North America,Low_Tier,50,35913.44
 Machine Learning Engineer,SE,L,FT,1,MX,North America,Low_Tier,100,35913.44
 Machine Learning Engineer,SE,L,FT,0,MX,North America,Low_Tier,100,35913.44
 Machine Learning Engineer,SE,L,FT,1,BR,South America,Low_Tier,0,35913.44
 Machine Learning Engineer,SE,L,FT,1,BR,South America,Low_Tier,50,35913.44
+Machine Learning Engineer,SE,L,FT,0,BR,South America,Low_Tier,50,35913.44
 Machine Learning Engineer,SE,L,FT,1,BR,South America,Low_Tier,100,35913.44
 Machine Learning Engineer,SE,L,FT,0,BR,South America,Low_Tier,100,35913.44
 Machine Learning Engineer,EX,M,FT,1,US,North America,High_Tier,0,231948.17
 Machine Learning Engineer,EX,M,FT,1,US,North America,High_Tier,50,231948.17
+Machine Learning Engineer,EX,M,FT,0,US,North America,High_Tier,50,231948.17
 Machine Learning Engineer,EX,M,FT,1,US,North America,High_Tier,100,231948.17
 Machine Learning Engineer,EX,M,FT,0,US,North America,High_Tier,100,231948.17
 Machine Learning Engineer,EX,M,FT,1,GB,Europe,High_Tier,0,231948.17
 Machine Learning Engineer,EX,M,FT,1,GB,Europe,High_Tier,50,231948.17
+Machine Learning Engineer,EX,M,FT,0,GB,Europe,High_Tier,50,231948.17
 Machine Learning Engineer,EX,M,FT,1,GB,Europe,High_Tier,100,231948.17
 Machine Learning Engineer,EX,M,FT,0,GB,Europe,High_Tier,100,231948.17
 Machine Learning Engineer,EX,M,FT,1,CA,North America,High_Tier,0,231948.17
 Machine Learning Engineer,EX,M,FT,1,CA,North America,High_Tier,50,231948.17
+Machine Learning Engineer,EX,M,FT,0,CA,North America,High_Tier,50,231948.17
 Machine Learning Engineer,EX,M,FT,1,CA,North America,High_Tier,100,231948.17
 Machine Learning Engineer,EX,M,FT,0,CA,North America,High_Tier,100,231948.17
 Machine Learning Engineer,EX,M,FT,1,DE,Europe,High_Tier,0,231948.17
 Machine Learning Engineer,EX,M,FT,1,DE,Europe,High_Tier,50,231948.17
+Machine Learning Engineer,EX,M,FT,0,DE,Europe,High_Tier,50,231948.17
 Machine Learning Engineer,EX,M,FT,1,DE,Europe,High_Tier,100,231948.17
 Machine Learning Engineer,EX,M,FT,0,DE,Europe,High_Tier,100,231948.17
 Machine Learning Engineer,EX,M,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,EX,M,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,EX,M,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,EX,M,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,EX,M,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,EX,M,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,EX,M,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,EX,M,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,EX,M,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,EX,M,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,EX,M,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,EX,M,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,EX,M,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,EX,M,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,EX,M,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,EX,M,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,EX,M,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,EX,M,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,EX,M,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,EX,M,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,EX,M,FT,1,IN,Asia,Low_Tier,0,18850.7
 Machine Learning Engineer,EX,M,FT,1,IN,Asia,Low_Tier,50,18850.7
+Machine Learning Engineer,EX,M,FT,0,IN,Asia,Low_Tier,50,18850.7
 Machine Learning Engineer,EX,M,FT,1,IN,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,EX,M,FT,0,IN,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,EX,M,FT,1,PK,Asia,Low_Tier,0,18850.7
 Machine Learning Engineer,EX,M,FT,1,PK,Asia,Low_Tier,50,18850.7
+Machine Learning Engineer,EX,M,FT,0,PK,Asia,Low_Tier,50,18850.7
 Machine Learning Engineer,EX,M,FT,1,PK,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,EX,M,FT,0,PK,Asia,Low_Tier,100,18850.7
 Machine Learning Engineer,EX,M,FT,1,MX,North America,Low_Tier,0,18850.7
 Machine Learning Engineer,EX,M,FT,1,MX,North America,Low_Tier,50,18850.7
+Machine Learning Engineer,EX,M,FT,0,MX,North America,Low_Tier,50,18850.7
 Machine Learning Engineer,EX,M,FT,1,MX,North America,Low_Tier,100,18850.7
 Machine Learning Engineer,EX,M,FT,0,MX,North America,Low_Tier,100,18850.7
 Machine Learning Engineer,EX,M,FT,1,BR,South America,Low_Tier,0,18850.7
 Machine Learning Engineer,EX,M,FT,1,BR,South America,Low_Tier,50,18850.7
+Machine Learning Engineer,EX,M,FT,0,BR,South America,Low_Tier,50,18850.7
 Machine Learning Engineer,EX,M,FT,1,BR,South America,Low_Tier,100,18850.7
 Machine Learning Engineer,EX,M,FT,0,BR,South America,Low_Tier,100,18850.7
 Machine Learning Engineer,EX,L,FT,1,US,North America,High_Tier,0,231948.17
 Machine Learning Engineer,EX,L,FT,1,US,North America,High_Tier,50,231948.17
+Machine Learning Engineer,EX,L,FT,0,US,North America,High_Tier,50,231948.17
 Machine Learning Engineer,EX,L,FT,1,US,North America,High_Tier,100,231948.17
 Machine Learning Engineer,EX,L,FT,0,US,North America,High_Tier,100,231948.17
 Machine Learning Engineer,EX,L,FT,1,GB,Europe,High_Tier,0,231948.17
 Machine Learning Engineer,EX,L,FT,1,GB,Europe,High_Tier,50,231948.17
+Machine Learning Engineer,EX,L,FT,0,GB,Europe,High_Tier,50,231948.17
 Machine Learning Engineer,EX,L,FT,1,GB,Europe,High_Tier,100,231948.17
 Machine Learning Engineer,EX,L,FT,0,GB,Europe,High_Tier,100,231948.17
 Machine Learning Engineer,EX,L,FT,1,CA,North America,High_Tier,0,231948.17
 Machine Learning Engineer,EX,L,FT,1,CA,North America,High_Tier,50,231948.17
+Machine Learning Engineer,EX,L,FT,0,CA,North America,High_Tier,50,231948.17
 Machine Learning Engineer,EX,L,FT,1,CA,North America,High_Tier,100,231948.17
 Machine Learning Engineer,EX,L,FT,0,CA,North America,High_Tier,100,231948.17
 Machine Learning Engineer,EX,L,FT,1,DE,Europe,High_Tier,0,231948.17
 Machine Learning Engineer,EX,L,FT,1,DE,Europe,High_Tier,50,231948.17
+Machine Learning Engineer,EX,L,FT,0,DE,Europe,High_Tier,50,231948.17
 Machine Learning Engineer,EX,L,FT,1,DE,Europe,High_Tier,100,231948.17
 Machine Learning Engineer,EX,L,FT,0,DE,Europe,High_Tier,100,231948.17
 Machine Learning Engineer,EX,L,FT,1,FR,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,EX,L,FT,1,FR,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,EX,L,FT,0,FR,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,EX,L,FT,1,FR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,EX,L,FT,0,FR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,EX,L,FT,1,ES,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,EX,L,FT,1,ES,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,EX,L,FT,0,ES,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,EX,L,FT,1,ES,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,EX,L,FT,0,ES,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,EX,L,FT,1,GR,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,EX,L,FT,1,GR,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,EX,L,FT,0,GR,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,EX,L,FT,1,GR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,EX,L,FT,0,GR,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,EX,L,FT,1,NL,Europe,Mid_Tier,0,59683.29
 Machine Learning Engineer,EX,L,FT,1,NL,Europe,Mid_Tier,50,59683.29
+Machine Learning Engineer,EX,L,FT,0,NL,Europe,Mid_Tier,50,59683.29
 Machine Learning Engineer,EX,L,FT,1,NL,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,EX,L,FT,0,NL,Europe,Mid_Tier,100,59683.29
 Machine Learning Engineer,EX,L,FT,1,IN,Asia,Low_Tier,0,35913.44
 Machine Learning Engineer,EX,L,FT,1,IN,Asia,Low_Tier,50,35913.44
+Machine Learning Engineer,EX,L,FT,0,IN,Asia,Low_Tier,50,35913.44
 Machine Learning Engineer,EX,L,FT,1,IN,Asia,Low_Tier,100,35913.44
 Machine Learning Engineer,EX,L,FT,0,IN,Asia,Low_Tier,100,35913.44
 Machine Learning Engineer,EX,L,FT,1,PK,Asia,Low_Tier,0,35913.44
 Machine Learning Engineer,EX,L,FT,1,PK,Asia,Low_Tier,50,35913.44
+Machine Learning Engineer,EX,L,FT,0,PK,Asia,Low_Tier,50,35913.44
 Machine Learning Engineer,EX,L,FT,1,PK,Asia,Low_Tier,100,35913.44
 Machine Learning Engineer,EX,L,FT,0,PK,Asia,Low_Tier,100,35913.44
 Machine Learning Engineer,EX,L,FT,1,MX,North America,Low_Tier,0,35913.44
 Machine Learning Engineer,EX,L,FT,1,MX,North America,Low_Tier,50,35913.44
+Machine Learning Engineer,EX,L,FT,0,MX,North America,Low_Tier,50,35913.44
 Machine Learning Engineer,EX,L,FT,1,MX,North America,Low_Tier,100,35913.44
 Machine Learning Engineer,EX,L,FT,0,MX,North America,Low_Tier,100,35913.44
 Machine Learning Engineer,EX,L,FT,1,BR,South America,Low_Tier,0,35913.44
 Machine Learning Engineer,EX,L,FT,1,BR,South America,Low_Tier,50,35913.44
+Machine Learning Engineer,EX,L,FT,0,BR,South America,Low_Tier,50,35913.44
 Machine Learning Engineer,EX,L,FT,1,BR,South America,Low_Tier,100,35913.44
 Machine Learning Engineer,EX,L,FT,0,BR,South America,Low_Tier,100,35913.44

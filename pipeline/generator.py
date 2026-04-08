@@ -142,13 +142,13 @@ def is_valid_combination(
 
     Rules applied:
         1. EX + S filtered out (rare/noisy in the dataset).
-        2. Cross-border (is_same_country=0) must be 100% remote.
+        2. Cross-border (is_same_country=0) + fully on-site (remote=0) filtered out.
     Employment pruning (FT only) is handled upstream.
     """
     if experience_level == "EX" and company_size == "S":
         return False
 
-    if is_same_country == 0 and remote_ratio != 100:
+    if is_same_country == 0 and remote_ratio == 0:
         return False
 
     return True
