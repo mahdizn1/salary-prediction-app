@@ -100,17 +100,17 @@ def build_feature_vector(
     # -- Validate and map categorical values -----------------------------------
     if job_title not in job_map:
         raise ValueError(
-            f"Unknown job_title: '{job_title}'. "
+            f"The provided job title is not recognized: '{job_title}'. "
             f"Valid titles: {sorted(job_map.keys())}"
         )
     if company_location not in tier_map:
         raise ValueError(
-            f"Unknown company_location: '{company_location}'. "
+            f"The provided country code is not recognized: '{company_location}'. "
             f"Valid ISO codes: {sorted(tier_map.keys())}"
         )
     if employee_residence not in tier_map:
         raise ValueError(
-            f"Unknown employee_residence: '{employee_residence}'. "
+            f"The provided country code is not recognized: '{employee_residence}'. "
             f"Valid ISO codes: {sorted(tier_map.keys())}"
         )
 
