@@ -30,6 +30,7 @@ from dotenv import load_dotenv
 import requests
 from supabase import create_client, Client
 
+from pipeline.generator import generate_combinations
 from pipeline.llm_analyst import generate_micro_narrative, generate_global_summary
 
 # ── Load .env from the pipeline directory ─────────────────────────────────────
@@ -408,6 +409,16 @@ def run_full_pipeline(combinations: list[dict], push: bool = True) -> None:
 
 # ── CLI ────────────────────────────────────────────────────────────────────────
 
+def _resolve_combinations(args) -> list[dict]:
+    """Pick the right combination source based on CLI flags."""
+    if args.country:
+        combos = generate_combinations(country_filter=args.country)
+        if args.limit:
+            combos = combos[: args.limit]
+        return combos
+    return SAMPLE_COMBINATIONS
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Salary Prediction Pipeline Orchestrator",
@@ -426,14 +437,27 @@ def main() -> None:
         required=True,
         help="Pipeline step to execute",
     )
+    parser.add_argument(
+        "--country",
+        type=str,
+        default=None,
+        help="ISO-2 country code to generate combinations for (e.g. US)",
+    )
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Max number of generated combinations to process",
+    )
     args = parser.parse_args()
+    combos = _resolve_combinations(args)
 
     if args.step == "predict":
-        run_predict(SAMPLE_COMBINATIONS)
+        run_predict(combos)
     elif args.step == "analyze":
-        run_analyze(SAMPLE_COMBINATIONS)
+        run_analyze(combos)
     elif args.step in ("push_db", "full_pipeline"):
-        run_full_pipeline(SAMPLE_COMBINATIONS, push=True)
+        run_full_pipeline(combos, push=True)
 
 
 if __name__ == "__main__":
