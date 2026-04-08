@@ -109,6 +109,59 @@ COUNTRY_NAMES: dict[str, str] = {
 # Key names llama3.2 has been observed to use instead of "narrative"
 _CANDIDATE_KEYS = ("narrative", "response", "insight", "analysis", "text", "content", "message")
 
+# ── Hierarchical Rule Engine ──────────────────────────────────────────────────
+
+def determine_primary_driver(combo: dict, granular_status: str) -> str:
+    """
+    Hierarchical Rule Engine for LLM Context Injection.
+    Prioritizes Experience -> Geography -> Company Size.
+
+    Parameters
+    ----------
+    combo : dict
+        The input combination with experience_level, location_tier, company_size.
+    granular_status : str
+        "ABOVE" or "BELOW" — the pre-calculated position vs market median.
+
+    Returns
+    -------
+    str
+        A phrase completing: "This positioning is primarily driven by [X]."
+    """
+    exp = combo.get("experience_level")
+    tier = combo.get("location_tier")
+    size = combo.get("company_size")
+
+    is_above = "above" in granular_status.lower()
+    is_below = "below" in granular_status.lower()
+
+    # --- 1. EXPERIENCE LEVEL (The Expected Path) ---
+    if (exp in ["SE", "EX"]) and is_above:
+        return f"the premium compensation expected for {exp}-level expertise and leadership"
+    if (exp in ["EN", "MI"]) and is_below:
+        return f"the baseline compensation typical for {exp}-level roles in the current market"
+
+    # --- 2. GEOGRAPHY (The Anomaly Explainer) ---
+    if (exp in ["EN", "MI"]) and is_above and tier == "High_Tier":
+        return "highly competitive geographic market rates offsetting the lower experience level"
+    if (exp in ["SE", "EX"]) and is_below and tier in ["Low_Tier", "Mid_Tier"]:
+        return f"regional geographic constraints typical of {tier.replace('_', ' ')} markets"
+
+    # --- 3. COMPANY SIZE (The Deep Anomaly) ---
+    if (exp in ["SE", "EX"]) and is_below and size == "S":
+        return "budgetary constraints commonly associated with smaller organizations and startups"
+    if (exp in ["EN", "MI"]) and is_above and size == "L":
+        return "the aggressive, premium compensation banding of large enterprise organizations"
+
+    # --- 4. THE OUTLIERS ---
+    if is_above:
+        return "highly specialized skill demands creating a unique premium for this combination"
+    if is_below:
+        return "unique macroeconomic conditions suppressing the rate for this specific cross-section"
+
+    return "a perfect equilibrium of standard market forces for this role"
+
+
 # ── System prompts ─────────────────────────────────────────────────────────────
 
 MICRO_SYSTEM_PROMPT = (
@@ -121,8 +174,10 @@ MICRO_SYSTEM_PROMPT = (
     "\"below market average.\" Do NOT use positive descriptors like \"competitive\" or \"strong.\"\n"
     "- If status is ABOVE: Use terms like \"premium,\" \"competitive,\" or \"top-tier.\" "
     "Do NOT suggest \"negotiating\" or \"low.\"\n"
-    "- Sentence 1: State the comparison to the median clearly.\n"
-    "- Sentence 2: Provide a brief justification based on the provided company size or location.\n\n"
+    "- Sentence 1: State the comparison to the median clearly, mentioning the job title and location.\n"
+    "- Sentence 2: MUST be EXACTLY: \"This positioning is primarily driven by [PRIMARY_DRIVER].\" "
+    "where [PRIMARY_DRIVER] is the exact string provided in the input. "
+    "Do NOT invent your own reasons. Copy the PRIMARY_DRIVER text verbatim.\n\n"
     "Output MUST be a single JSON object: {\"narrative\": \"...\"}"
 )
 
@@ -322,6 +377,9 @@ def generate_micro_narrative(
     percentage_diff = abs(delta / overall_median * 100) if overall_median else 0
     status = "ABOVE" if delta >= 0 else "BELOW"
 
+    # ── Determine the primary driver via hierarchical rule engine ─────────
+    primary_driver = determine_primary_driver(payload, status)
+
     # ── Build the user message with injected facts ────────────────────────
     user_message = (
         f"Job Title: {job_title}\n"
@@ -333,6 +391,7 @@ def generate_micro_narrative(
         f"Market Median Salary: ${overall_median:,.0f} USD\n"
         f"Status: {status}\n"
         f"Percentage Difference: {percentage_diff:.1f}%\n"
+        f"PRIMARY_DRIVER: {primary_driver}\n"
     )
 
     return _call_ollama(MICRO_SYSTEM_PROMPT, user_message, job_title, FALLBACK_NARRATIVE)
@@ -409,11 +468,25 @@ if __name__ == "__main__":
         "employment_type": "FT",
         "company_location": "US",
         "company_size": "L",
+        "location_tier": "High_Tier",
     }
     predicted = 155_000.0
 
-    print("── Micro Narrative ────────────────────────────────────────────")
+    print("── Micro Narrative (SE + High_Tier + ABOVE) ────────────────────")
     print(generate_micro_narrative(dummy_payload, predicted, dummy_medians))
+    print()
+
+    # Test an anomaly case: EN + High_Tier + ABOVE
+    anomaly_payload = {
+        "job_title": "Data Analyst",
+        "experience_level": "EN",
+        "employment_type": "FT",
+        "company_location": "US",
+        "company_size": "L",
+        "location_tier": "High_Tier",
+    }
+    print("── Micro Narrative (EN + High_Tier + ABOVE) ────────────────────")
+    print(generate_micro_narrative(anomaly_payload, 125_000.0, dummy_medians))
     print()
 
     # ── Test global summary ───────────────────────────────────────────────
