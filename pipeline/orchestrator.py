@@ -411,8 +411,13 @@ def run_full_pipeline(combinations: list[dict], push: bool = True) -> None:
 
 def _resolve_combinations(args) -> list[dict]:
     """Pick the right combination source based on CLI flags."""
-    if args.country:
-        combos = generate_combinations(country_filter=args.country)
+    if args.tier:
+        combos = generate_combinations(tier_filter=args.tier)
+        if args.limit:
+            combos = combos[: args.limit]
+        return combos
+    if args.generate:
+        combos = generate_combinations()
         if args.limit:
             combos = combos[: args.limit]
         return combos
@@ -438,10 +443,15 @@ def main() -> None:
         help="Pipeline step to execute",
     )
     parser.add_argument(
-        "--country",
+        "--generate",
+        action="store_true",
+        help="Use the generator instead of sample combinations",
+    )
+    parser.add_argument(
+        "--tier",
         type=str,
         default=None,
-        help="ISO-2 country code to generate combinations for (e.g. US)",
+        help="Location tier to generate for: High_Tier, Mid_Tier, or Low_Tier",
     )
     parser.add_argument(
         "--limit",
