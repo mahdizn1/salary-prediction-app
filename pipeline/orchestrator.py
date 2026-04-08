@@ -24,11 +24,16 @@ Error contract:
 import argparse
 import logging
 import os
+from pathlib import Path
 
+from dotenv import load_dotenv
 import requests
 from supabase import create_client, Client
 
-from pipeline.llm_analyst import generate_micro_narrative
+from pipeline.llm_analyst import generate_micro_narrative, generate_global_summary
+
+# ── Load .env from the pipeline directory ─────────────────────────────────────
+load_dotenv(Path(__file__).resolve().parent / ".env")
 
 # ── Logging ────────────────────────────────────────────────────────────────────
 logging.basicConfig(
@@ -43,6 +48,61 @@ FASTAPI_URL = "http://localhost:8000/predict"
 # ── Supabase credentials — loaded from environment, never hardcoded ────────────
 SUPABASE_URL: str = os.environ.get("SUPABASE_URL", "")
 SUPABASE_KEY: str = os.environ.get("SUPABASE_KEY", "")
+
+# ── Country-code → region mapping ─────────────────────────────────────────────
+# Covers all 50 ISO-2 codes in the model's country_tier_map.
+COUNTRY_REGION: dict[str, str] = {
+    "AE": "Middle East",
+    "AS": "Asia",
+    "AT": "Europe",
+    "AU": "Oceania",
+    "BE": "Europe",
+    "BR": "South America",
+    "CA": "North America",
+    "CH": "Europe",
+    "CL": "South America",
+    "CN": "Asia",
+    "CO": "South America",
+    "CZ": "Europe",
+    "DE": "Europe",
+    "DK": "Europe",
+    "DZ": "Africa",
+    "EE": "Europe",
+    "ES": "Europe",
+    "FR": "Europe",
+    "GB": "Europe",
+    "GR": "Europe",
+    "HN": "Central America",
+    "HR": "Europe",
+    "HU": "Europe",
+    "IE": "Europe",
+    "IL": "Middle East",
+    "IN": "Asia",
+    "IQ": "Middle East",
+    "IR": "Middle East",
+    "IT": "Europe",
+    "JP": "Asia",
+    "KE": "Africa",
+    "LU": "Europe",
+    "MD": "Europe",
+    "MT": "Europe",
+    "MX": "North America",
+    "MY": "Asia",
+    "NG": "Africa",
+    "NL": "Europe",
+    "NZ": "Oceania",
+    "PK": "Asia",
+    "PL": "Europe",
+    "PT": "Europe",
+    "RO": "Europe",
+    "RU": "Europe",
+    "SG": "Asia",
+    "SI": "Europe",
+    "TR": "Middle East",
+    "UA": "Europe",
+    "US": "North America",
+    "VN": "Asia",
+}
 
 # ── Reference statistics for the LLM analyst ──────────────────────────────────
 # These are approximate market medians computed during EDA.
@@ -94,7 +154,7 @@ SAMPLE_COMBINATIONS: list[dict] = [
 
 # ── Network functions ──────────────────────────────────────────────────────────
 
-def call_fastapi(payload: dict) -> float | None:
+def call_fastapi(payload: dict) -> dict | None:
     """
     Calls GET /predict on the local FastAPI server.
 
@@ -105,14 +165,14 @@ def call_fastapi(payload: dict) -> float | None:
 
     Returns
     -------
-    float | None
-        Predicted salary in USD, or None on any failure.
-        None signals the caller to skip this record — it does NOT raise.
+    dict | None
+        Full API response dict (predicted_salary_usd + derived inputs),
+        or None on any failure.
     """
     try:
         response = requests.get(FASTAPI_URL, params=payload, timeout=10)
         response.raise_for_status()
-        return float(response.json()["predicted_salary_usd"])
+        return response.json()
 
     except requests.exceptions.ConnectionError:
         logger.error(
@@ -185,18 +245,17 @@ def call_llm(payload: dict, prediction: float) -> str:
 
 def push_to_supabase(final_record: dict) -> bool:
     """
-    Inserts one prediction record into the Supabase `predictions` table.
+    Inserts one prediction record into the Supabase `precomputed_salaries` table.
 
     Parameters
     ----------
     final_record : dict
-        The fully assembled record ready for persistence.
+        The fully assembled record matching the precomputed_salaries schema.
 
     Returns
     -------
     bool
         True on success, False on any failure.
-        False signals the caller to skip this record — it does NOT raise.
     """
     if not SUPABASE_URL or not SUPABASE_KEY:
         logger.error(
@@ -207,19 +266,20 @@ def push_to_supabase(final_record: dict) -> bool:
 
     try:
         client: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
-        client.table("predictions").insert(final_record).execute()
+        client.table("precomputed_salaries").insert(final_record).execute()
         logger.info(
-            "Supabase insert OK: '%s' (%s) → $%s",
-            final_record.get("job_title"),
+            "Supabase insert OK: '%s' (%s, %s) → $%s",
+            final_record.get("job_category"),
             final_record.get("experience_level"),
-            f"{final_record.get('predicted_salary_usd', 0):,.0f}",
+            final_record.get("country_code"),
+            f"{final_record.get('predicted_salary', 0):,.0f}",
         )
         return True
 
     except Exception as exc:
         logger.error(
             "Supabase insert failed for '%s': %s",
-            final_record.get("job_title"),
+            final_record.get("job_category"),
             exc,
         )
         return False
@@ -234,13 +294,15 @@ def run_predict(combinations: list[dict]) -> None:
     """
     print(f"\nRunning PREDICT step for {len(combinations)} combination(s)…\n")
     for combo in combinations:
-        prediction = call_fastapi(combo)
-        if prediction is None:
+        api_resp = call_fastapi(combo)
+        if api_resp is None:
             print(f"  SKIP  {combo.get('job_title')} ({combo.get('experience_level')}) — prediction failed")
             continue
+        salary = api_resp["predicted_salary_usd"]
+        inputs = api_resp["inputs"]
         print(
-            f"  OK    {combo['job_title']} ({combo['experience_level']}, "
-            f"{combo['company_location']}) → ${prediction:,.0f}"
+            f"  OK    {inputs['job_category']} ({inputs['experience_level']}, "
+            f"{inputs['company_location']}) → ${salary:,.0f}"
         )
 
 
@@ -251,16 +313,18 @@ def run_analyze(combinations: list[dict]) -> None:
     """
     print(f"\nRunning ANALYZE step for {len(combinations)} combination(s)…\n")
     for combo in combinations:
-        prediction = call_fastapi(combo)
-        if prediction is None:
+        api_resp = call_fastapi(combo)
+        if api_resp is None:
             print(f"  SKIP  {combo.get('job_title')} — prediction failed, skipping LLM\n")
             continue
 
-        narrative = call_llm(combo, prediction)
+        salary = api_resp["predicted_salary_usd"]
+        inputs = api_resp["inputs"]
+        narrative = call_llm(combo, salary)
         print(
-            f"  [{combo['job_title']} | {combo['experience_level']} | "
-            f"{combo['company_location']}]\n"
-            f"  Salary: ${prediction:,.0f}\n"
+            f"  [{inputs['job_category']} | {inputs['experience_level']} | "
+            f"{inputs['company_location']}]\n"
+            f"  Salary: ${salary:,.0f}\n"
             f"  Narrative: {narrative}\n"
         )
 
@@ -293,27 +357,32 @@ def run_full_pipeline(combinations: list[dict], push: bool = True) -> None:
         logger.info("Processing [%d/%d]: %s | %s | %s", i, total, job_title, exp, loc)
 
         # ── Step 1: Predict ────────────────────────────────────────────────
-        prediction = call_fastapi(combo)
-        if prediction is None:
+        api_resp = call_fastapi(combo)
+        if api_resp is None:
             logger.warning("SKIP [%d/%d]: prediction failed for %s", i, total, job_title)
             fail_count += 1
             continue
 
-        # ── Step 2: LLM narrative (never None) ────────────────────────────
-        narrative = call_llm(combo, prediction)
+        salary = api_resp["predicted_salary_usd"]
+        inputs = api_resp["inputs"]
 
-        # ── Step 3: Assemble the final record ─────────────────────────────
+        # ── Step 2: LLM narrative (never None) ────────────────────────────
+        narrative = call_llm(combo, salary)
+
+        # ── Step 3: Assemble the final record for precomputed_salaries ────
+        country_code = inputs["company_location"]
         final_record = {
-            "job_title": job_title,
-            "experience_level": exp,
-            "employment_type": combo.get("employment_type"),
-            "company_location": loc,
-            "employee_residence": combo.get("employee_residence"),
-            "company_size": combo.get("company_size"),
-            "work_year": combo.get("work_year"),
-            "remote_ratio": combo.get("remote_ratio"),
-            "predicted_salary_usd": prediction,
+            "job_category": inputs["job_category"],
+            "experience_level": inputs["experience_level"],
+            "company_size": inputs["company_size"],
+            "employment_type": inputs["employment_type"],
+            "is_same_country": inputs["is_same_country"],
+            "country_code": country_code,
+            "region": COUNTRY_REGION.get(country_code, "Other"),
+            "location_tier": inputs["location_tier"],
+            "predicted_salary": salary,
             "narrative": narrative,
+            "chart_data": None,
         }
 
         # ── Step 4: Persist to Supabase ───────────────────────────────────
@@ -324,14 +393,12 @@ def run_full_pipeline(combinations: list[dict], push: bool = True) -> None:
                     "SKIP DB [%d/%d]: Supabase insert failed for %s",
                     i, total, job_title,
                 )
-                # Count as partial success — prediction and narrative are fine,
-                # only the DB write failed.
                 fail_count += 1
                 continue
 
         success_count += 1
         status = "OK (no DB)" if not push else "OK"
-        print(f"  {status}  {job_title} ({exp}, {loc}) → ${prediction:,.0f}")
+        print(f"  {status}  {inputs['job_category']} ({exp}, {country_code}) → ${salary:,.0f}")
 
     # ── Summary ───────────────────────────────────────────────────────────────
     print(f"\n{'─' * 60}")
