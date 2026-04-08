@@ -3,10 +3,8 @@ Input Generator
 ───────────────
 Generates valid input combinations for the pre-generation pipeline.
 
-The ML model uses `location_tier` (High/Mid/Low) as its geographic feature,
-NOT individual country codes. Countries were grouped into tiers during EDA
-based on median salary quantiles (0.33 / 0.66 thresholds). So the Cartesian
-product iterates over tiers, not over all 50 countries.
+Iterates over every country in COUNTRY_MAP (not just tiers) so that each
+supported country has dedicated rows in Supabase for the Streamlit dropdown.
 
 Business rules:
     - Only Full-Time (FT) employment is generated.
@@ -18,8 +16,8 @@ Business rules:
 Usage:
     from pipeline.generator import generate_combinations
 
-    combos = generate_combinations()                         # all tiers
-    combos = generate_combinations(tier_filter="High_Tier")  # single tier
+    combos = generate_combinations()                         # all countries
+    combos = generate_combinations(country_filter="US")      # single country
 """
 
 import logging
@@ -35,9 +33,9 @@ _BASE_DIR = Path(__file__).resolve().parent.parent
 _mappings = joblib.load(_BASE_DIR / "model" / "feature_mappings.joblib")
 
 # ── Job categories → representative titles ────────────────────────────────────
-# The model uses one-hot encoded job_category (4 categories), but the API
-# expects a specific job_title string. We pick one representative title per
-# category — preferring the title that matches the category name exactly.
+# The API expects a job_title, but the DB stores job_category. We pick one
+# representative title per category — preferring the title that matches the
+# category name exactly (all 4 do in this dataset).
 _category_to_titles: dict[str, list[str]] = {}
 for _title, _cat in _mappings["job_category_map"].items():
     _category_to_titles.setdefault(_cat, []).append(_title)
@@ -46,9 +44,10 @@ CATEGORY_REPRESENTATIVE: dict[str, str] = {}
 for _cat, _titles in sorted(_category_to_titles.items()):
     CATEGORY_REPRESENTATIVE[_cat] = _cat if _cat in _titles else sorted(_titles)[0]
 
-# ── Country map — code → {region, tier} (extracted from EDA) ─────────────────
-# Countries were grouped into tiers during feature engineering using median
-# salary quantiles: bottom 33% → Low_Tier, 33-66% → Mid_Tier, top 33% → High_Tier.
+# ── Country map — code → {region, tier} ───────────────────────────────────────
+# Every country must have a dedicated row in Supabase for Streamlit dropdowns.
+# Countries were grouped into tiers during EDA using median salary quantiles:
+# bottom 33% → Low_Tier, 33-66% → Mid_Tier, top 33% → High_Tier.
 COUNTRY_MAP: dict[str, dict[str, str]] = {
     "AE": {"region": "Middle East",     "tier": "High_Tier"},
     "AS": {"region": "Asia",            "tier": "Low_Tier"},
@@ -102,31 +101,20 @@ COUNTRY_MAP: dict[str, dict[str, str]] = {
     "VN": {"region": "Asia",            "tier": "Low_Tier"},
 }
 
-# ── Tier → representative country (for FastAPI calls) ─────────────────────────
-# The API expects a country code, but the model only uses the tier. We pick
-# one representative country per tier so all tier-level predictions are correct.
-TIER_REPRESENTATIVE: dict[str, str] = {
-    "High_Tier": "US",
-    "Mid_Tier": "FR",
-    "Low_Tier": "IN",
-}
-
-# ── Tier → list of countries (for expanding to per-country Supabase rows) ─────
-TIER_COUNTRIES: dict[str, list[str]] = {"High_Tier": [], "Mid_Tier": [], "Low_Tier": []}
-for _code, _info in COUNTRY_MAP.items():
-    TIER_COUNTRIES[_info["tier"]].append(_code)
-
 # ── Cartesian product dimensions ──────────────────────────────────────────────
-LOCATION_TIERS = ["High_Tier", "Mid_Tier", "Low_Tier"]
 EXPERIENCE_LEVELS = ["EN", "MI", "SE", "EX"]
 COMPANY_SIZES = ["S", "M", "L"]
 IS_SAME_COUNTRY_VALUES = [1, 0]
 
-# ── API-only parameters (not stored in Supabase) ─────────────────────────────
-# The FastAPI endpoint requires work_year and remote_ratio, but the Supabase
-# schema does not store them. We fix sensible defaults for the batch run.
+# ── API-only parameters (required by FastAPI but not stored in Supabase) ──────
 _WORK_YEAR = 2024
 _REMOTE_RATIO = {1: 50, 0: 100}  # same-country → hybrid, cross-border → fully remote
+
+# For is_same_country=0, the API needs employee_residence ≠ company_location.
+# We use a fixed dummy residence that is a valid code in the API's tier_map.
+# "XX" is NOT valid — the API validates residence against its 50-code list.
+_DUMMY_RESIDENCE = "GB"
+_DUMMY_RESIDENCE_FOR_GB = "US"  # when company is already in GB
 
 
 # ── Validation ────────────────────────────────────────────────────────────────
@@ -143,8 +131,7 @@ def is_valid_combination(
     Rules applied:
         1. EX + S filtered out (rare/noisy in the dataset).
         2. Cross-border (is_same_country=0) + remote_ratio=0 filtered out.
-    Employment pruning (FT only) is handled upstream — only FT combinations
-    are generated, so no check is needed here.
+    Employment pruning (FT only) is handled upstream.
     """
     if experience_level == "EX" and company_size == "S":
         return False
@@ -157,43 +144,41 @@ def is_valid_combination(
 
 # ── Generator ─────────────────────────────────────────────────────────────────
 
-def generate_combinations(tier_filter: str | None = None) -> list[dict]:
+def generate_combinations(country_filter: str | None = None) -> list[dict]:
     """
     Generate all valid input combinations for the pre-generation pipeline.
 
-    Iterates over (job_category × experience_level × company_size ×
-    location_tier × is_same_country). Each combination includes the fields
-    needed for the FastAPI call (using a representative country per tier)
-    plus metadata and dummy one-hot columns.
+    Iterates over every country in COUNTRY_MAP so each country has dedicated
+    rows in Supabase for the Streamlit dropdown filter.
 
     Parameters
     ----------
-    tier_filter : str | None
-        If set, only generate combinations for this tier.
-        One of "High_Tier", "Mid_Tier", "Low_Tier".
+    country_filter : str | None
+        If set, only generate combinations for this ISO-2 country code.
 
     Returns
     -------
     list[dict]
         List of valid combination dicts.
     """
-    tiers = LOCATION_TIERS
-    if tier_filter:
-        if tier_filter not in TIER_REPRESENTATIVE:
+    countries = list(COUNTRY_MAP.keys())
+    if country_filter:
+        country_filter = country_filter.upper()
+        if country_filter not in COUNTRY_MAP:
             raise ValueError(
-                f"Unknown tier: '{tier_filter}'. "
-                f"Valid: {LOCATION_TIERS}"
+                f"Unknown country code: '{country_filter}'. "
+                f"Valid: {sorted(COUNTRY_MAP.keys())}"
             )
-        tiers = [tier_filter]
+        countries = [country_filter]
 
     job_categories = sorted(CATEGORY_REPRESENTATIVE.keys())
     combinations: list[dict] = []
 
-    for job_cat, exp, size, tier, same in product(
+    for job_cat, exp, size, country, same in product(
         job_categories,
         EXPERIENCE_LEVELS,
         COMPANY_SIZES,
-        tiers,
+        countries,
         IS_SAME_COUNTRY_VALUES,
     ):
         remote_ratio = _REMOTE_RATIO[same]
@@ -201,20 +186,21 @@ def generate_combinations(tier_filter: str | None = None) -> list[dict]:
         if not is_valid_combination(exp, size, same, remote_ratio):
             continue
 
-        rep_country = TIER_REPRESENTATIVE[tier]
-
         # For cross-border: employee_residence must differ from company_location
+        # and must be a valid code in the API's country_tier_map.
         if same == 1:
-            employee_residence = rep_country
+            employee_residence = country
+        elif country == "GB":
+            employee_residence = _DUMMY_RESIDENCE_FOR_GB
         else:
-            employee_residence = "GB" if rep_country == "US" else "US"
+            employee_residence = _DUMMY_RESIDENCE
 
         combo = {
             # ── Fields for FastAPI /predict ────────────────────────────
             "job_title": CATEGORY_REPRESENTATIVE[job_cat],
             "experience_level": exp,
             "employment_type": "FT",
-            "company_location": rep_country,
+            "company_location": country,
             "employee_residence": employee_residence,
             "company_size": size,
             "work_year": _WORK_YEAR,
@@ -222,7 +208,8 @@ def generate_combinations(tier_filter: str | None = None) -> list[dict]:
             # ── Metadata (used by orchestrator for Supabase record) ───
             "is_same_country": same,
             "job_category": job_cat,
-            "location_tier": tier,
+            "region": COUNTRY_MAP[country]["region"],
+            "location_tier": COUNTRY_MAP[country]["tier"],
             # ── Dummy one-hot columns for ML model compatibility ──────
             "employment_type_FT": 1,
             "employment_type_CT": 0,
@@ -232,9 +219,9 @@ def generate_combinations(tier_filter: str | None = None) -> list[dict]:
         combinations.append(combo)
 
     logger.info(
-        "Generated %d valid combinations (tier_filter=%s)",
+        "Generated %d valid combinations (country_filter=%s)",
         len(combinations),
-        tier_filter,
+        country_filter,
     )
     return combinations
 
@@ -246,17 +233,22 @@ if __name__ == "__main__":
         format="%(levelname)s | %(name)s | %(message)s",
     )
 
-    combos = generate_combinations()
-    print(f"\nTotal combinations: {len(combos)}\n")
-    for tier in LOCATION_TIERS:
-        count = sum(1 for c in combos if c["location_tier"] == tier)
-        print(f"  {tier}: {count}")
-    print()
-    for c in combos[:5]:
+    # Single country preview
+    us_combos = generate_combinations(country_filter="US")
+    print(f"\nUS combinations: {len(us_combos)}\n")
+    for c in us_combos[:5]:
         print(
             f"  {c['job_category']:30s} | {c['experience_level']} | "
-            f"{c['company_size']} | {c['location_tier']:10s} | "
-            f"same={c['is_same_country']}"
+            f"{c['company_size']} | same={c['is_same_country']} | "
+            f"res={c['employee_residence']}"
         )
-    if len(combos) > 5:
-        print(f"  ... and {len(combos) - 5} more")
+
+    # Full count
+    all_combos = generate_combinations()
+    print(f"\nTotal combinations (all 50 countries): {len(all_combos)}")
+
+    # Per-tier breakdown
+    for tier in ["High_Tier", "Mid_Tier", "Low_Tier"]:
+        count = sum(1 for c in all_combos if c["location_tier"] == tier)
+        countries = len([cc for cc, info in COUNTRY_MAP.items() if info["tier"] == tier])
+        print(f"  {tier}: {count} combos ({countries} countries)")
