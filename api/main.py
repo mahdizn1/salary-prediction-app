@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 
 # ── Artifact paths ─────────────────────────────────────────────────────────────
 BASE_DIR = Path(__file__).resolve().parent.parent
-MODEL_PATH = BASE_DIR / "model" / "decision_tree_v2.joblib"
+MODEL_PATH = BASE_DIR / "model" / "randomforest_v1.joblib"
 MAPPINGS_PATH = BASE_DIR / "model" / "feature_mappings.joblib"
 
 # ── Load artifacts at startup (once, at import time) ──────────────────────────
