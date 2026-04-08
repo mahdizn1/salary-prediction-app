@@ -22,6 +22,7 @@ Error contract:
 """
 
 import argparse
+import csv
 import logging
 import os
 from pathlib import Path
@@ -408,6 +409,62 @@ def run_full_pipeline(combinations: list[dict], push: bool = True) -> None:
     print(f"{'─' * 60}\n")
 
 
+def run_batch_predict(combinations: list[dict], output_path: str = "data/predictions.csv") -> None:
+    """
+    Runs predictions for all combinations and saves results to a CSV file.
+    No LLM narrative, no Supabase — predictions only, for EDA.
+    """
+    total = len(combinations)
+    print(f"\nRunning BATCH PREDICT for {total} combination(s) → {output_path}\n")
+
+    csv_columns = [
+        "job_category", "experience_level", "company_size", "employment_type",
+        "is_same_country", "country_code", "region", "location_tier",
+        "remote_ratio", "predicted_salary",
+    ]
+
+    success_count = 0
+    fail_count = 0
+
+    with open(output_path, "w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=csv_columns)
+        writer.writeheader()
+
+        for i, combo in enumerate(combinations, start=1):
+            api_resp = call_fastapi(combo)
+            if api_resp is None:
+                logger.warning("SKIP [%d/%d]: prediction failed", i, total)
+                fail_count += 1
+                continue
+
+            salary = api_resp["predicted_salary_usd"]
+            inputs = api_resp["inputs"]
+            country_code = inputs["company_location"]
+
+            row = {
+                "job_category": inputs["job_category"],
+                "experience_level": inputs["experience_level"],
+                "company_size": inputs["company_size"],
+                "employment_type": inputs["employment_type"],
+                "is_same_country": inputs["is_same_country"],
+                "country_code": country_code,
+                "region": COUNTRY_REGION.get(country_code, "Other"),
+                "location_tier": inputs["location_tier"],
+                "remote_ratio": inputs["remote_ratio"],
+                "predicted_salary": salary,
+            }
+            writer.writerow(row)
+            success_count += 1
+
+            if i % 200 == 0 or i == total:
+                print(f"  Progress: {i}/{total} ({success_count} OK, {fail_count} failed)")
+
+    print(f"\n{'─' * 60}")
+    print(f"  Total: {total} | Success: {success_count} | Failed: {fail_count}")
+    print(f"  Saved to: {output_path}")
+    print(f"{'─' * 60}\n")
+
+
 # ── CLI ────────────────────────────────────────────────────────────────────────
 
 def _resolve_combinations(args) -> list[dict]:
@@ -431,7 +488,8 @@ def main() -> None:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=(
             "Steps:\n"
-            "  predict       — FastAPI predictions only (no LLM, no DB)\n"
+            "  predict       — FastAPI predictions only, print to console\n"
+            "  batch_csv     — predictions only, save to CSV (no LLM, no DB)\n"
             "  analyze       — predict + LLM narrative (no DB)\n"
             "  push_db       — full pipeline including Supabase insert\n"
             "  full_pipeline — alias for push_db\n"
@@ -439,7 +497,7 @@ def main() -> None:
     )
     parser.add_argument(
         "--step",
-        choices=["predict", "analyze", "push_db", "full_pipeline"],
+        choices=["predict", "batch_csv", "analyze", "push_db", "full_pipeline"],
         required=True,
         help="Pipeline step to execute",
     )
@@ -465,6 +523,8 @@ def main() -> None:
 
     if args.step == "predict":
         run_predict(combos)
+    elif args.step == "batch_csv":
+        run_batch_predict(combos)
     elif args.step == "analyze":
         run_analyze(combos)
     elif args.step in ("push_db", "full_pipeline"):

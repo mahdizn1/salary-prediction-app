@@ -101,6 +101,18 @@ COUNTRY_MAP: dict[str, dict[str, str]] = {
     "VN": {"region": "Asia",            "tier": "Low_Tier"},
 }
 
+# ── Pruned country list — top 4 per tier by dataset frequency ─────────────────
+# Reduces from 50 countries (8,800 combos) to 12 countries (2,112 combos).
+# Full COUNTRY_MAP is kept above for reference / future expansion.
+ACTIVE_COUNTRIES: list[str] = [
+    # High_Tier:  US (355), GB (47), CA (30), DE (28)
+    "US", "GB", "CA", "DE",
+    # Mid_Tier:   FR (15),  ES (14), GR (11), NL (4)
+    "FR", "ES", "GR", "NL",
+    # Low_Tier:   IN (24),  PK (3),  MX (3),  BR (3)
+    "IN", "PK", "MX", "BR",
+]
+
 # ── Cartesian product dimensions ──────────────────────────────────────────────
 EXPERIENCE_LEVELS = ["EN", "MI", "SE", "EX"]
 COMPANY_SIZES = ["S", "M", "L"]
@@ -161,7 +173,7 @@ def generate_combinations(country_filter: str | None = None) -> list[dict]:
     list[dict]
         List of valid combination dicts.
     """
-    countries = list(COUNTRY_MAP.keys())
+    countries = list(ACTIVE_COUNTRIES)
     if country_filter:
         country_filter = country_filter.upper()
         if country_filter not in COUNTRY_MAP:
@@ -244,10 +256,10 @@ if __name__ == "__main__":
 
     # Full count
     all_combos = generate_combinations()
-    print(f"\nTotal combinations (all 50 countries): {len(all_combos)}")
+    print(f"\nTotal combinations ({len(ACTIVE_COUNTRIES)} active countries): {len(all_combos)}")
 
     # Per-tier breakdown
     for tier in ["High_Tier", "Mid_Tier", "Low_Tier"]:
         count = sum(1 for c in all_combos if c["location_tier"] == tier)
-        countries = len([cc for cc, info in COUNTRY_MAP.items() if info["tier"] == tier])
-        print(f"  {tier}: {count} combos ({countries} countries)")
+        tier_countries = [c for c in ACTIVE_COUNTRIES if COUNTRY_MAP[c]["tier"] == tier]
+        print(f"  {tier}: {count} combos ({tier_countries})")
