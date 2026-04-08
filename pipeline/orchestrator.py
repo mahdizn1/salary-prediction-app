@@ -110,11 +110,13 @@ COUNTRY_REGION: dict[str, str] = {
 # These are approximate market medians computed during EDA.
 # The LLM uses them to contextualise the predicted salary.
 GLOBAL_MEDIANS: dict = {
-    "overall_median": 110_000,
-    "median_entry": 67_000,
-    "median_mid": 100_000,
-    "median_senior": 140_000,
-    "median_executive": 180_000,
+    "overall_median": 101_570,
+    "category_medians": {
+        "Data Analyst": 92_000,
+        "Data Engineer": 111_888,
+        "Data Scientist": 110_000,
+        "Machine Learning Engineer": 81_872,
+    },
 }
 
 # ── Sample input combinations (hardcoded for integration testing) ──────────────

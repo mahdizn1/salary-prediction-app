@@ -113,15 +113,16 @@ _CANDIDATE_KEYS = ("narrative", "response", "insight", "analysis", "text", "cont
 
 def determine_primary_driver(combo: dict, granular_status: str) -> str:
     """
-    Hierarchical Rule Engine for LLM Context Injection.
-    Prioritizes Experience -> Geography -> Company Size.
+    Highly Granular Rule Engine for Context Injection.
+    Handles 50% extreme boundaries (exceptionally above/below).
 
     Parameters
     ----------
     combo : dict
         The input combination with experience_level, location_tier, company_size.
     granular_status : str
-        "ABOVE" or "BELOW" — the pre-calculated position vs market median.
+        One of: "exceptionally below", "below", "on par with",
+        "above", "exceptionally above".
 
     Returns
     -------
@@ -132,31 +133,44 @@ def determine_primary_driver(combo: dict, granular_status: str) -> str:
     tier = combo.get("location_tier")
     size = combo.get("company_size")
 
-    is_above = "above" in granular_status.lower()
-    is_below = "below" in granular_status.lower()
+    is_very_below = "exceptionally below" in granular_status.lower()
+    is_below = "below" in granular_status.lower() and not is_very_below
+    is_very_above = "exceptionally above" in granular_status.lower()
+    is_above = "above" in granular_status.lower() and not is_very_above
 
-    # --- 1. EXPERIENCE LEVEL (The Expected Path) ---
+    # --- EXTREME BOUNDARIES (The +/- 50% Rules) ---
+    if is_very_below and exp in ["EN", "MI"]:
+        if tier == "Low_Tier":
+            return "the heavily discounted regional baseline of Low Tier markets"
+        return "an extreme outlier case, likely due to uniquely suppressed macroeconomic factors for this role"
+
+    if is_very_above and exp in ["SE", "EX"]:
+        if exp == "EX":
+            return "the extreme premium commanded by executive leadership in the current market"
+        if exp == "SE" and tier == "High_Tier" and size == "L":
+            return "the compounding effect of large enterprise budgets combined with premium High Tier geographic rates"
+        return "an extreme outlier case, likely representing highly specialized, niche skill demands"
+
+    # --- STANDARD BOUNDARIES (The +/- 5% to 50% Rules) ---
     if (exp in ["SE", "EX"]) and is_above:
         return f"the premium compensation expected for {exp}-level expertise and leadership"
     if (exp in ["EN", "MI"]) and is_below:
         return f"the baseline compensation typical for {exp}-level roles in the current market"
 
-    # --- 2. GEOGRAPHY (The Anomaly Explainer) ---
     if (exp in ["EN", "MI"]) and is_above and tier == "High_Tier":
         return "highly competitive geographic market rates offsetting the lower experience level"
     if (exp in ["SE", "EX"]) and is_below and tier in ["Low_Tier", "Mid_Tier"]:
         return f"regional geographic constraints typical of {tier.replace('_', ' ')} markets"
 
-    # --- 3. COMPANY SIZE (The Deep Anomaly) ---
     if (exp in ["SE", "EX"]) and is_below and size == "S":
         return "budgetary constraints commonly associated with smaller organizations and startups"
     if (exp in ["EN", "MI"]) and is_above and size == "L":
         return "the aggressive, premium compensation banding of large enterprise organizations"
 
-    # --- 4. THE OUTLIERS ---
-    if is_above:
+    # --- CATCH-ALL OUTLIERS ---
+    if is_above or is_very_above:
         return "highly specialized skill demands creating a unique premium for this combination"
-    if is_below:
+    if is_below or is_very_below:
         return "unique macroeconomic conditions suppressing the rate for this specific cross-section"
 
     return "a perfect equilibrium of standard market forces for this role"
@@ -165,20 +179,15 @@ def determine_primary_driver(combo: dict, granular_status: str) -> str:
 # ── System prompts ─────────────────────────────────────────────────────────────
 
 MICRO_SYSTEM_PROMPT = (
-    "You are a strict Compensation Data Analyst. "
-    "Your task is to write a concise, 2-sentence summary of a specific salary prediction.\n\n"
-    "CORE RULES:\n"
-    "- You will be provided with a 'Status' (ABOVE or BELOW market median).\n"
-    "- You MUST anchor your tone to this status.\n"
-    "- If status is BELOW: Use terms like \"conservative,\" \"entry-point,\" or "
-    "\"below market average.\" Do NOT use positive descriptors like \"competitive\" or \"strong.\"\n"
-    "- If status is ABOVE: Use terms like \"premium,\" \"competitive,\" or \"top-tier.\" "
-    "Do NOT suggest \"negotiating\" or \"low.\"\n"
-    "- Sentence 1: State the comparison to the median clearly, mentioning the job title and location.\n"
-    "- Sentence 2: MUST be EXACTLY: \"This positioning is primarily driven by [PRIMARY_DRIVER].\" "
-    "where [PRIMARY_DRIVER] is the exact string provided in the input. "
-    "Do NOT invent your own reasons. Copy the PRIMARY_DRIVER text verbatim.\n\n"
-    "Output MUST be a single JSON object: {\"narrative\": \"...\"}"
+    "You are a robotic Compensation Data Formatter. "
+    "Your ONLY job is to output exactly two sentences. "
+    "Do not add conversational filler. Do not repeat phrases.\n\n"
+    "Sentence 1 MUST follow this exact template:\n"
+    "\"At $[PREDICTED], this [EXPERIENCE] [JOB] role in [LOCATION] is "
+    "[GRANULAR_STATUS] the category median of $[MEDIAN].\"\n\n"
+    "Sentence 2 MUST follow this exact template:\n"
+    "\"This positioning is primarily driven by [PRIMARY_DRIVER].\"\n\n"
+    "Output MUST be a single valid JSON object: {\"narrative\": \"sentence 1. sentence 2.\"}"
 )
 
 GLOBAL_SYSTEM_PROMPT = (
@@ -372,25 +381,36 @@ def generate_micro_narrative(
     company_size = payload.get("company_size", "Unknown")
 
     # ── Pre-calculate facts in Python (not left to the LLM) ──────────────
-    overall_median = global_medians.get("overall_median", 0)
-    delta = predicted_salary - overall_median
-    percentage_diff = abs(delta / overall_median * 100) if overall_median else 0
-    status = "ABOVE" if delta >= 0 else "BELOW"
+    # Use per-category median when available; fall back to overall median.
+    job_category = payload.get("job_category", job_title)
+    category_medians = global_medians.get("category_medians", {})
+    median = category_medians.get(job_category, global_medians.get("overall_median", 0))
+    delta = predicted_salary - median
+    percentage_diff = (delta / median * 100) if median else 0
+
+    # ── 5-band granular status ───────────────────────────────────────────
+    if percentage_diff < -50:
+        granular_status = "exceptionally below"
+    elif percentage_diff < -5:
+        granular_status = "below"
+    elif percentage_diff <= 5:
+        granular_status = "on par with"
+    elif percentage_diff <= 50:
+        granular_status = "above"
+    else:
+        granular_status = "exceptionally above"
 
     # ── Determine the primary driver via hierarchical rule engine ─────────
-    primary_driver = determine_primary_driver(payload, status)
+    primary_driver = determine_primary_driver(payload, granular_status)
 
     # ── Build the user message with injected facts ────────────────────────
     user_message = (
-        f"Job Title: {job_title}\n"
-        f"Experience Level: {experience_level}\n"
-        f"Employment Type: {employment_type}\n"
-        f"Company Location: {country_name}\n"
-        f"Company Size: {company_size}\n"
-        f"Predicted Salary: ${predicted_salary:,.0f} USD\n"
-        f"Market Median Salary: ${overall_median:,.0f} USD\n"
-        f"Status: {status}\n"
-        f"Percentage Difference: {percentage_diff:.1f}%\n"
+        f"JOB: {job_title}\n"
+        f"EXPERIENCE: {experience_level}\n"
+        f"LOCATION: {country_name}\n"
+        f"PREDICTED: ${predicted_salary:,.0f}\n"
+        f"MEDIAN: ${median:,.0f}\n"
+        f"GRANULAR_STATUS: {granular_status}\n"
         f"PRIMARY_DRIVER: {primary_driver}\n"
     )
 
@@ -457,8 +477,13 @@ if __name__ == "__main__":
     )
 
     dummy_medians = {
-        "overall_median": 110_000,
-        "median_senior": 140_000,
+        "overall_median": 101_570,
+        "category_medians": {
+            "Data Analyst": 92_000,
+            "Data Engineer": 111_888,
+            "Data Scientist": 110_000,
+            "Machine Learning Engineer": 81_872,
+        },
     }
 
     # ── Test micro narrative ──────────────────────────────────────────────
@@ -469,6 +494,7 @@ if __name__ == "__main__":
         "company_location": "US",
         "company_size": "L",
         "location_tier": "High_Tier",
+        "job_category": "Data Scientist",
     }
     predicted = 155_000.0
 
@@ -484,6 +510,7 @@ if __name__ == "__main__":
         "company_location": "US",
         "company_size": "L",
         "location_tier": "High_Tier",
+        "job_category": "Data Analyst",
     }
     print("── Micro Narrative (EN + High_Tier + ABOVE) ────────────────────")
     print(generate_micro_narrative(anomaly_payload, 125_000.0, dummy_medians))
