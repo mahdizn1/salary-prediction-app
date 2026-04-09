@@ -271,8 +271,12 @@ def push_global_insights_to_db(payload: dict) -> bool:
 
     try:
         client: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
-        client.table("global_insights").upsert({"id": 1, **payload}).execute()
-        logger.info("Supabase upsert OK → global_insights (id=1)")
+        # Fixed UUID for the singleton global insights row
+        _GLOBAL_INSIGHTS_ID = "00000000-0000-0000-0000-000000000001"
+        client.table("global_insights").upsert(
+            {"id": _GLOBAL_INSIGHTS_ID, **payload}
+        ).execute()
+        logger.info("Supabase upsert OK → global_insights")
         return True
 
     except Exception as exc:
