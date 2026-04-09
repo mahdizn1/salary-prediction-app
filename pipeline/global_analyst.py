@@ -238,31 +238,36 @@ SYSTEM_PROMPT = (
     "CONTEXT & METHODOLOGY:\n"
     "- Experience strongly predicts salary. Large companies pay a premium.\n"
     "- Dataset is heavily skewed towards North America and Europe.\n"
-    "- Countries were grouped into Location Tiers heuristically using "
-    "statistical quantiles, which may introduce high-variance for "
-    "low-sample nations.\n\n"
-    "CRITICAL WRITING RULE:\n"
-    "NEVER use JSON key names, variable names, or snake_case identifiers "
-    "in the narrative text. Write in natural, professional English only. "
-    "For example, write 'the experience progression chart' instead of "
-    "'seniority_ladder', write 'the US market analysis' instead of "
-    "'us_deep_dive'. The JSON keys are for data structure only — the "
-    "reader must never see them.\n\n"
+    "- Countries were grouped into Location Tiers as a variance-reduction "
+    "technique to stabilize predictions for emerging markets with sparse data.\n\n"
+    "WRITING RULES (STRICT):\n"
+    "1. NEVER use JSON key names, variable names, or snake_case identifiers "
+    "in any text. Write in natural, professional English only.\n"
+    "2. Executive summary: Tell a STORY, not a data dump. Focus on the "
+    "narrative of climbing the career ladder, the massive US market premium, "
+    "and the startup penalty. Weave numbers in naturally — do NOT list every "
+    "single median. Lead with insight, not statistics.\n"
+    "3. Captions: State the mathematical INSIGHT, not a description. "
+    "NEVER start with 'This chart shows...' or 'This chart illustrates...'. "
+    "Example: 'Executives earn nearly 3x more than Entry-Level roles.' "
+    "NOT 'This chart shows salary progression across experience levels.'\n"
+    "4. XAI note: Project CONFIDENCE. US and European predictions carry the "
+    "highest statistical confidence. The Location Tier system ensures global "
+    "robustness by stabilizing predictions for underrepresented markets. "
+    "Do NOT use the words 'high variance', 'bias', or 'limitation'.\n\n"
     "Return a valid JSON object with EXACTLY this schema:\n"
     "{\n"
-    '  "executive_summary": "3-paragraph cohesive narrative telling the '
-    'global market story. Reference charts by their plain-English names.",\n'
-    '  "data_transparency_note": "1-paragraph XAI note explaining the '
-    "geographic skew and acknowledging the Location Tier methodology "
-    'caveat.",\n'
+    '  "executive_summary": "3-paragraph narrative (career ladder → '
+    'US premium → company size dynamics).",\n'
+    '  "data_transparency_note": "1-paragraph confidence-projecting XAI note.",\n'
     '  "captions": {\n'
-    '    "seniority_ladder": "1 sentence.",\n'
-    '    "regional_comparison": "1 sentence.",\n'
-    '    "role_distribution": "1 sentence.",\n'
-    '    "remote_premium": "1 sentence.",\n'
-    '    "heatmap_job_region": "1 sentence.",\n'
-    '    "regional_representation": "1 sentence.",\n'
-    '    "us_deep_dive": "1 sentence."\n'
+    '    "seniority_ladder": "1 sentence insight.",\n'
+    '    "regional_comparison": "1 sentence insight.",\n'
+    '    "role_distribution": "1 sentence insight.",\n'
+    '    "remote_premium": "1 sentence insight.",\n'
+    '    "heatmap_job_region": "1 sentence insight.",\n'
+    '    "regional_representation": "1 sentence insight.",\n'
+    '    "us_deep_dive": "1 sentence insight."\n'
     "  }\n"
     "}"
 )
