@@ -24,6 +24,7 @@ import os
 from pathlib import Path
 
 import google.generativeai as genai
+import joblib
 import pandas as pd
 from dotenv import load_dotenv
 from supabase import create_client, Client
@@ -40,12 +41,48 @@ genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
 SUPABASE_URL: str = os.environ.get("SUPABASE_URL", "")
 SUPABASE_KEY: str = os.environ.get("SUPABASE_KEY", "")
 
-PREDICTIONS_CSV = Path(__file__).resolve().parent.parent / "data" / "predictions.csv"
+# ── Data paths ──────────────────────────────────────────────────────────────
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DATASET_CSV = _PROJECT_ROOT / "data" / "ds_salaries.csv"
+MAPPINGS_PATH = _PROJECT_ROOT / "model" / "feature_mappings.joblib"
+
+# ── Country → Region mapping (mirrors orchestrator.py) ──────────────────────
+COUNTRY_REGION: dict[str, str] = {
+    "AE": "Middle East", "AS": "Asia", "AT": "Europe", "AU": "Oceania",
+    "BE": "Europe", "BR": "South America", "CA": "North America",
+    "CH": "Europe", "CL": "South America", "CN": "Asia", "CO": "South America",
+    "CZ": "Europe", "DE": "Europe", "DK": "Europe", "DZ": "Africa",
+    "EE": "Europe", "ES": "Europe", "FR": "Europe", "GB": "Europe",
+    "GR": "Europe", "HN": "Central America", "HR": "Europe", "HU": "Europe",
+    "IE": "Europe", "IL": "Middle East", "IN": "Asia", "IQ": "Middle East",
+    "IR": "Middle East", "IT": "Europe", "JP": "Asia", "KE": "Africa",
+    "LU": "Europe", "MD": "Europe", "MT": "Europe", "MX": "North America",
+    "MY": "Asia", "NG": "Africa", "NL": "Europe", "NZ": "Oceania",
+    "PK": "Asia", "PL": "Europe", "PT": "Europe", "RO": "Europe",
+    "RU": "Europe", "SG": "Asia", "SI": "Europe", "TR": "Middle East",
+    "UA": "Europe", "US": "North America", "VN": "Asia",
+}
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # LAYER 1: Pandas Aggregation
 # ═══════════════════════════════════════════════════════════════════════════════
+
+def _enrich_dataset(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Derive job_category and region from the raw ds_salaries.csv columns
+    using the saved feature mappings and the country→region lookup.
+    """
+    mappings = joblib.load(MAPPINGS_PATH)
+    job_category_map = mappings["job_category_map"]
+
+    df = df.copy()
+    df["job_category"] = df["job_title"].map(job_category_map)
+    df["region"] = df["company_location"].map(COUNTRY_REGION).fillna("Other")
+    # Drop rows with unmapped job titles (shouldn't happen, but safety)
+    df = df.dropna(subset=["job_category"])
+    return df
+
 
 def calculate_market_stats(df: pd.DataFrame) -> dict:
     """
@@ -57,9 +94,8 @@ def calculate_market_stats(df: pd.DataFrame) -> dict:
     Parameters
     ----------
     df : pd.DataFrame
-        The predictions CSV with columns: job_category, experience_level,
-        company_size, region, remote_ratio, predicted_salary, country_code,
-        location_tier.
+        The original ds_salaries.csv enriched with job_category and region.
+        Uses salary_in_usd as the salary column.
 
     Returns
     -------
@@ -67,13 +103,13 @@ def calculate_market_stats(df: pd.DataFrame) -> dict:
         Multi-level dictionary ready to be serialised as JSON for the LLM.
     """
     total = len(df)
-    global_median = float(df["predicted_salary"].median())
+    global_median = float(df["salary_in_usd"].median())
 
     # ── Seniority ladder ─────────────────────────────────────────────────
     exp_order = ["EN", "MI", "SE", "EX"]
     exp_labels = {"EN": "Entry-Level", "MI": "Mid-Level", "SE": "Senior", "EX": "Executive"}
     seniority = (
-        df.groupby("experience_level")["predicted_salary"]
+        df.groupby("experience_level")["salary_in_usd"]
         .agg(["median", "count"])
         .reindex(exp_order)
     )
@@ -84,7 +120,7 @@ def calculate_market_stats(df: pd.DataFrame) -> dict:
 
     # ── Regional comparison ──────────────────────────────────────────────
     regional = (
-        df.groupby("region")["predicted_salary"]
+        df.groupby("region")["salary_in_usd"]
         .agg(["median", "count"])
         .sort_values("median", ascending=False)
     )
@@ -100,12 +136,12 @@ def calculate_market_stats(df: pd.DataFrame) -> dict:
     # ── Category medians ─────────────────────────────────────────────────
     category_medians = {
         cat: round(float(med))
-        for cat, med in df.groupby("job_category")["predicted_salary"].median().items()
+        for cat, med in df.groupby("job_category")["salary_in_usd"].median().items()
     }
 
     # ── Remote vs on-site ────────────────────────────────────────────────
-    remote_full = df[df["remote_ratio"] == 100]["predicted_salary"].median()
-    onsite_full = df[df["remote_ratio"] == 0]["predicted_salary"].median()
+    remote_full = df[df["remote_ratio"] == 100]["salary_in_usd"].median()
+    onsite_full = df[df["remote_ratio"] == 0]["salary_in_usd"].median()
 
     # Executive remote premium
     ex_remote = df[(df["experience_level"] == "EX") & (df["remote_ratio"] == 100)]
@@ -121,11 +157,11 @@ def calculate_market_stats(df: pd.DataFrame) -> dict:
             "n": int((df["remote_ratio"] == 0).sum()),
         },
         "executive_remote": {
-            "median_salary": round(float(ex_remote["predicted_salary"].median())) if len(ex_remote) else 0,
+            "median_salary": round(float(ex_remote["salary_in_usd"].median())) if len(ex_remote) else 0,
             "n": len(ex_remote),
         },
         "executive_onsite": {
-            "median_salary": round(float(ex_onsite["predicted_salary"].median())) if len(ex_onsite) else 0,
+            "median_salary": round(float(ex_onsite["salary_in_usd"].median())) if len(ex_onsite) else 0,
             "n": len(ex_onsite),
         },
     }
@@ -134,7 +170,7 @@ def calculate_market_stats(df: pd.DataFrame) -> dict:
     size_order = ["S", "M", "L"]
     size_labels = {"S": "Small", "M": "Medium", "L": "Large"}
     cs_pivot = (
-        df.groupby(["experience_level", "company_size"])["predicted_salary"]
+        df.groupby(["experience_level", "company_size"])["salary_in_usd"]
         .agg(["median", "count"])
     )
     company_size_dynamics = {}
@@ -149,14 +185,14 @@ def calculate_market_stats(df: pd.DataFrame) -> dict:
                 }
 
     # ── US market deep dive ──────────────────────────────────────────────
-    us = df[df["country_code"] == "US"]
-    us_by_exp = us.groupby("experience_level")["predicted_salary"].agg(["median", "count"])
-    us_by_size = us.groupby("company_size")["predicted_salary"].agg(["median", "count"])
-    us_by_cat = us.groupby("job_category")["predicted_salary"].agg(["median", "count"])
+    us = df[df["company_location"] == "US"]
+    us_by_exp = us.groupby("experience_level")["salary_in_usd"].agg(["median", "count"])
+    us_by_size = us.groupby("company_size")["salary_in_usd"].agg(["median", "count"])
+    us_by_cat = us.groupby("job_category")["salary_in_usd"].agg(["median", "count"])
 
     us_market = {
         "total_us_rows": len(us),
-        "us_median_salary": round(float(us["predicted_salary"].median())) if len(us) else 0,
+        "us_median_salary": round(float(us["salary_in_usd"].median())) if len(us) else 0,
         "by_experience": {
             exp_labels.get(lvl, lvl): {"median_salary": round(float(row["median"])), "n": int(row["count"])}
             for lvl, row in us_by_exp.iterrows()
@@ -195,35 +231,38 @@ def calculate_market_stats(df: pd.DataFrame) -> dict:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# LAYER 2: Gemini 2.5 Flash — Structured JSON Narrative
+# LAYER 2: Gemini 2.0 Flash — Structured JSON Narrative
 # ═══════════════════════════════════════════════════════════════════════════════
 
 SYSTEM_PROMPT = (
     "You are an elite Senior Labor Economist and Data Scientist. "
     "You will receive a JSON payload containing precise, pre-calculated salary "
     "aggregates for the global Data Science market (~600 rows).\n\n"
-    "CONTEXT FROM PREVIOUS EDA:\n"
+    "CONTEXT FROM PREVIOUS EDA & METHODOLOGY:\n"
     "- Experience is the strongest predictor of salary, with a massive jump at "
     "the Executive level.\n"
-    "- Geography plays a massive role (High-Tier regions like NA vastly "
-    "out-earn Low-Tier regions).\n"
-    "- Large companies pay a premium, especially to senior talent, creating a "
-    "'startup penalty' for executives at small firms.\n"
+    "- Large companies pay a premium, especially to senior talent.\n"
     "- The dataset has a significant geographic skew towards North America "
-    "and Europe.\n\n"
+    "and Europe.\n"
+    "- Methodology Note: During feature engineering, countries were grouped into "
+    "Location Tiers (High/Mid/Low) using statistical quantiles (33rd/66th "
+    "percentiles) of their median salaries. Because of data sparsity in some "
+    "regions, countries with a sample size of 1 may be disproportionately "
+    "classified based on that single outlier.\n\n"
     "Your task is to write a cohesive data narrative and a professional "
-    "Data Transparency (XAI) note. Do NOT hallucinate numbers. ONLY use "
-    "the numbers provided in the payload.\n\n"
+    "Data Transparency (XAI) note.\n"
+    "Do NOT hallucinate numbers. ONLY use the numbers provided in the payload.\n\n"
     "Return a valid JSON object with EXACTLY this schema:\n"
     "{\n"
     '  "executive_summary": "A 3-paragraph cohesive narrative telling the '
     "global market story (Geography -> Experience -> Company Size). "
     'Explicitly reference the charts below.",\n'
     '  "data_transparency_note": "A 1-paragraph Explainable AI (XAI) note '
-    "explaining the dataset's geographic skew (North America/Europe) and how "
-    "it affects model confidence. Frame this professionally (e.g., "
-    "'Predictions for US-based roles carry the highest statistical "
-    "confidence'). This will serve as a transition into the US-specific "
+    "explaining the dataset's geographic skew (North America/Europe) and openly "
+    "acknowledging that using statistical quantiles for Location Tiers on sparse "
+    "data introduces potential high-variance classifications for underrepresented "
+    "countries. Frame this professionally as 'Known Technical Limitations' or "
+    "'Methodology Caveats'. This will serve as a transition into the US-specific "
     'market deep dive.",\n'
     '  "captions": {\n'
     '    "seniority_ladder": "One sentence caption pointing out the steepest jump.",\n'
@@ -269,7 +308,7 @@ def generate_summary(stats_dict: dict) -> dict:
 
     try:
         model = genai.GenerativeModel(
-            model_name="gemini-2.5-flash",
+            model_name="gemini-2.0-flash",
             system_instruction=SYSTEM_PROMPT,
         )
         response = model.generate_content(
@@ -296,23 +335,24 @@ def generate_summary(stats_dict: dict) -> dict:
 def run_global_analysis() -> bool:
     """
     End-to-end global analysis pipeline:
-    1. Load predictions.csv
-    2. Aggregate with Pandas
-    3. Generate narrative with Gemini
-    4. Upsert to Supabase global_insights table
+    1. Load ds_salaries.csv (original dataset)
+    2. Enrich with derived features (job_category, region)
+    3. Aggregate with Pandas
+    4. Generate narrative with Gemini
+    5. Upsert to Supabase global_insights table
 
     Returns
     -------
     bool
         True on success, False on any failure.
     """
-    # ── Step 1: Load data ────────────────────────────────────────────────
-    if not PREDICTIONS_CSV.exists():
-        logger.error("predictions.csv not found at %s", PREDICTIONS_CSV)
+    # ── Step 1: Load and enrich data ─────────────────────────────────────
+    if not DATASET_CSV.exists():
+        logger.error("ds_salaries.csv not found at %s", DATASET_CSV)
         return False
 
-    df = pd.read_csv(PREDICTIONS_CSV)
-    logger.info("Loaded %d rows from predictions.csv", len(df))
+    df = _enrich_dataset(pd.read_csv(DATASET_CSV))
+    logger.info("Loaded %d rows from ds_salaries.csv", len(df))
 
     # ── Step 2: Aggregate ────────────────────────────────────────────────
     stats = calculate_market_stats(df)
