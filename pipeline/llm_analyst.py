@@ -396,9 +396,9 @@ def generate_micro_narrative(
     # ── 5-band granular status ───────────────────────────────────────────
     if percentage_diff < -50:
         granular_status = "exceptionally below"
-    elif percentage_diff < -5:
+    elif percentage_diff < -15:
         granular_status = "below"
-    elif percentage_diff <= 5:
+    elif percentage_diff <= 15:
         granular_status = "on par with"
     elif percentage_diff <= 50:
         granular_status = "above"
