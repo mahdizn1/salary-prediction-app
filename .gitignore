@@ -29,5 +29,8 @@ build/
 # Zone identifiers (Windows WSL artifact)
 *.Zone.Identifier
 
+# Gemini dev cache (avoid committing API responses)
+data/gemini_dev_cache.json
+
 # Claude AI settings — track claude.md (project docs), ignore local tool config
 .claude/*.json

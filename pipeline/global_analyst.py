@@ -1,5 +1,5 @@
 """
-Global Analyst Module (Gemini 2.0 Flash)
+Global Analyst Module (Gemini 2.5 Flash)
 ──────────────────────────────────────
 Pure data processing + LLM module. No database logic, no execution flow.
 
@@ -8,7 +8,7 @@ Layer 1 — Pandas Aggregation:
     Nothing is left for the LLM to calculate — it only interprets.
 
 Layer 2 — Gemini Structured JSON:
-    generate_summary(stats_dict) feeds the full stats payload to Gemini 2.0 Flash
+    generate_summary(stats_dict) feeds the full stats payload to Gemini 2.5 Flash
     and forces a structured JSON response containing the executive summary,
     chart captions, and a Data Transparency (XAI) note.
 
@@ -42,6 +42,7 @@ genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATASET_CSV = _PROJECT_ROOT / "data" / "ds_salaries.csv"
 MAPPINGS_PATH = _PROJECT_ROOT / "model" / "feature_mappings.joblib"
+GEMINI_CACHE_FILE = _PROJECT_ROOT / "data" / "gemini_dev_cache.json"
 
 # ── Country → Region mapping (mirrors orchestrator.py) ──────────────────────
 COUNTRY_REGION: dict[str, str] = {
@@ -228,76 +229,67 @@ def calculate_market_stats(df: pd.DataFrame) -> dict:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# LAYER 2: Gemini 2.0 Flash — Structured JSON Narrative
+# LAYER 2: Gemini 2.5 Flash — Structured JSON Narrative
 # ═══════════════════════════════════════════════════════════════════════════════
 
 SYSTEM_PROMPT = (
-    "You are an elite Senior Labor Economist and Data Scientist. "
-    "You will receive a JSON payload containing precise, pre-calculated salary "
-    "aggregates for the global Data Science market (~600 rows).\n\n"
-    "CONTEXT FROM PREVIOUS EDA & METHODOLOGY:\n"
-    "- Experience is the strongest predictor of salary, with a massive jump at "
-    "the Executive level.\n"
-    "- Large companies pay a premium, especially to senior talent.\n"
-    "- The dataset has a significant geographic skew towards North America "
-    "and Europe.\n"
-    "- Methodology Note: During feature engineering, countries were grouped into "
-    "Location Tiers (High/Mid/Low) using statistical quantiles (33rd/66th "
-    "percentiles) of their median salaries. Because of data sparsity in some "
-    "regions, countries with a sample size of 1 may be disproportionately "
-    "classified based on that single outlier.\n\n"
-    "Your task is to write a cohesive data narrative and a professional "
-    "Data Transparency (XAI) note.\n"
-    "Do NOT hallucinate numbers. ONLY use the numbers provided in the payload.\n\n"
+    "You are an elite Senior Labor Economist. You will receive a JSON payload "
+    "of pre-calculated salary aggregates for the Data Science market.\n\n"
+    "CONTEXT & METHODOLOGY:\n"
+    "- Experience strongly predicts salary. Large companies pay a premium.\n"
+    "- Dataset is heavily skewed towards North America and Europe.\n"
+    "- Countries were grouped into Location Tiers heuristically using "
+    "statistical quantiles, which may introduce high-variance for "
+    "low-sample nations.\n\n"
     "Return a valid JSON object with EXACTLY this schema:\n"
     "{\n"
-    '  "executive_summary": "A 3-paragraph cohesive narrative telling the '
-    "global market story (Geography -> Experience -> Company Size). "
-    'Explicitly reference the charts below.",\n'
-    '  "data_transparency_note": "A 1-paragraph Explainable AI (XAI) note '
-    "explaining the dataset's geographic skew (North America/Europe) and openly "
-    "acknowledging that using statistical quantiles for Location Tiers on sparse "
-    "data introduces potential high-variance classifications for underrepresented "
-    "countries. Frame this professionally as 'Known Technical Limitations' or "
-    "'Methodology Caveats'. This will serve as a transition into the US-specific "
-    'market deep dive.",\n'
+    '  "executive_summary": "3-paragraph cohesive narrative telling the '
+    'global market story. Explicitly reference the charts below.",\n'
+    '  "data_transparency_note": "1-paragraph XAI note explaining the '
+    "geographic skew and acknowledging the Location Tier methodology "
+    'caveat.",\n'
     '  "captions": {\n'
-    '    "seniority_ladder": "One sentence caption pointing out the steepest jump.",\n'
-    '    "regional_comparison": "One sentence caption highlighting the top vs bottom region.",\n'
-    '    "role_distribution": "One sentence caption highlighting the most in-demand role.",\n'
-    '    "remote_premium": "One sentence caption on remote vs on-site pay.",\n'
-    '    "heatmap_job_region": "One sentence caption on the highest paying role/region combo.",\n'
-    '    "regional_representation": "One sentence caption highlighting the dominance '
-    'of North America and Europe in the training data.",\n'
-    '    "us_deep_dive": "One sentence caption summarizing the uniqueness of the '
-    'US market based on the data."\n'
+    '    "seniority_ladder": "1 sentence.",\n'
+    '    "regional_comparison": "1 sentence.",\n'
+    '    "role_distribution": "1 sentence.",\n'
+    '    "remote_premium": "1 sentence.",\n'
+    '    "heatmap_job_region": "1 sentence.",\n'
+    '    "regional_representation": "1 sentence.",\n'
+    '    "us_deep_dive": "1 sentence."\n'
     "  }\n"
     "}"
 )
 
-FALLBACK_RESPONSE = {
-    "executive_summary": "Market analysis temporarily unavailable.",
-    "data_transparency_note": "",
-    "captions": {},
-}
 
-
-def generate_summary(stats_dict: dict) -> dict:
+def generate_summary(stats_dict: dict, force_refresh: bool = False) -> dict | None:
     """
-    Sends the full aggregated stats payload to Gemini 2.0 Flash and returns
+    Sends the full aggregated stats payload to Gemini 2.5 Flash and returns
     a structured JSON response with the executive summary, XAI note, and
     chart captions.
+
+    Implements a local dev cache to avoid burning API quota during development.
+    Pass force_refresh=True to bypass the cache and hit the API.
 
     Parameters
     ----------
     stats_dict : dict
         The output of calculate_market_stats().
+    force_refresh : bool
+        If True, skip the cache and call Gemini.
 
     Returns
     -------
-    dict
+    dict | None
         Parsed JSON with keys: executive_summary, data_transparency_note, captions.
+        None on failure.
     """
+    # ── Dev cache check ──────────────────────────────────────────────────
+    if not force_refresh and GEMINI_CACHE_FILE.exists():
+        logger.info("Using local cached Gemini response to save API quota.")
+        with open(GEMINI_CACHE_FILE, "r") as f:
+            return json.load(f)
+
+    # ── API call ─────────────────────────────────────────────────────────
     prompt = (
         "Here is the aggregated market data payload:\n"
         f"{json.dumps(stats_dict, indent=2)}"
@@ -305,24 +297,29 @@ def generate_summary(stats_dict: dict) -> dict:
 
     try:
         model = genai.GenerativeModel(
-            model_name="gemini-2.0-flash",
+            model_name="gemini-2.5-flash",
             system_instruction=SYSTEM_PROMPT,
-        )
-        response = model.generate_content(
-            prompt,
             generation_config={"response_mime_type": "application/json"},
         )
-        parsed = json.loads(response.text)
-        logger.info("Gemini returned structured JSON with keys: %s", list(parsed.keys()))
-        return parsed
+        response = model.generate_content(prompt)
+        result = json.loads(response.text)
+        logger.info("Gemini returned structured JSON with keys: %s", list(result.keys()))
+
+        # ── Save to dev cache ────────────────────────────────────────────
+        GEMINI_CACHE_FILE.parent.mkdir(parents=True, exist_ok=True)
+        with open(GEMINI_CACHE_FILE, "w") as f:
+            json.dump(result, f, indent=2)
+        logger.info("Gemini response cached to %s", GEMINI_CACHE_FILE)
+
+        return result
 
     except json.JSONDecodeError as e:
         logger.error("Gemini returned invalid JSON: %s", e)
-        return FALLBACK_RESPONSE
+        return None
 
     except Exception as e:
         logger.error("Gemini API failed: %s", e)
-        return FALLBACK_RESPONSE
+        return None
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -367,11 +364,11 @@ def get_global_insights_payload() -> dict | None:
 
     # ── Generate narrative via Gemini ────────────────────────────────────
     response_json = generate_summary(stats)
-    summary = response_json.get("executive_summary", "")
-    if not summary or summary == FALLBACK_RESPONSE["executive_summary"]:
+    if response_json is None:
         logger.error("Gemini failed to produce a valid summary")
         return None
 
+    summary = response_json.get("executive_summary", "")
     logger.info("Executive summary generated (%d chars)", len(summary))
 
     return {
