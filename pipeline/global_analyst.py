@@ -1,15 +1,15 @@
 """
-Global Analyst Module (Gemini 2.5 Pro)
+Global Analyst Module (Gemini 2.5 Flash)
 ──────────────────────────────────────
 Generates the Executive Summary for the global data science salary market
-using Google's Gemini 2.5 Pro API.
+using Google's Gemini 2.5 Flash API.
 
 This module handles ONLY the macro-level market synthesis. Micro-narratives
 (per-record) remain on the local Ollama/Llama 3.2 instance in llm_analyst.py.
 
 Architecture:
     Micro-narratives  → Ollama (local, fast, per-record)
-    Executive summary → Gemini 2.5 Pro (cloud, advanced reasoning, one-shot)
+    Executive summary → Gemini 2.5 Flash (cloud, advanced reasoning, one-shot)
 """
 
 import logging
@@ -25,7 +25,7 @@ genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
 
 def generate_summary(stats: dict) -> str:
     """
-    Uses Gemini 2.5 Pro to write a 3-paragraph Executive Summary of the
+    Uses Gemini 2.5 Flash to write a 3-paragraph Executive Summary of the
     global data science salary market.
 
     Parameters
@@ -63,7 +63,7 @@ def generate_summary(stats: dict) -> str:
 
     try:
         model = genai.GenerativeModel(
-            model_name="gemini-2.5-pro",
+            model_name="gemini-2.5-flash",
             system_instruction=system_instruction,
         )
         response = model.generate_content(prompt)
