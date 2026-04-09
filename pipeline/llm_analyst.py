@@ -394,13 +394,15 @@ def generate_micro_narrative(
     percentage_diff = (delta / median * 100) if median else 0
 
     # ── 5-band granular status ───────────────────────────────────────────
-    if percentage_diff < -50:
+    # ── 5-band granular status (data-driven from EDA percentiles) ──────
+    # P10 avg = -64%, P25 avg = -39%, P75 avg = +50%, P90 avg = +96%
+    if percentage_diff < -64:
         granular_status = "exceptionally below"
-    elif percentage_diff < -15:
+    elif percentage_diff < -39:
         granular_status = "below"
-    elif percentage_diff <= 15:
-        granular_status = "on par with"
     elif percentage_diff <= 50:
+        granular_status = "on par with"
+    elif percentage_diff <= 96:
         granular_status = "above"
     else:
         granular_status = "exceptionally above"
