@@ -8,4 +8,7 @@ requests
 supabase
 ollama
 joblib
+streamlit
+plotly
+python-dotenv
 google-generativeai
