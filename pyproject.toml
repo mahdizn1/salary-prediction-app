@@ -14,6 +14,9 @@ dependencies = [
     "supabase",
     "ollama",
     "joblib",
+    "streamlit",
+    "plotly",
+    "python-dotenv",
 ]
 
 [tool.uv]
