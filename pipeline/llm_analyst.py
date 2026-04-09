@@ -106,6 +106,16 @@ COUNTRY_NAMES: dict[str, str] = {
     "VN": "Vietnam",
 }
 
+# ── Per-category percentile thresholds (P10, P40, P60, P90 as % from median) ─
+# Derived from EDA Step 5. Each tuple: (excep_below, below, above, excep_above)
+CATEGORY_THRESHOLDS: dict[str, tuple[int, int, int, int]] = {
+    "Data Analyst": (-60, -10, 14, 63),
+    "Data Engineer": (-58, -12, 18, 79),
+    "Data Scientist": (-65, -15, 19, 91),
+    "Machine Learning Engineer": (-74, -15, 20, 153),
+}
+_DEFAULT_THRESHOLDS = (-64, -13, 18, 96)  # global average fallback
+
 # ── Experience level labels ───────────────────────────────────────────────────
 EXP_LABELS: dict[str, str] = {
     "EN": "Entry-Level",
@@ -394,15 +404,17 @@ def generate_micro_narrative(
     percentage_diff = (delta / median * 100) if median else 0
 
     # ── 5-band granular status ───────────────────────────────────────────
-    # ── 5-band granular status (data-driven: P10/P40/P60/P90) ──────────
-    # On Par = middle 20% of distribution (P40→P60)
-    if percentage_diff < -64:
+    # ── 5-band granular status (per-category thresholds from EDA) ──────
+    lo_ext, lo_std, hi_std, hi_ext = CATEGORY_THRESHOLDS.get(
+        job_category, _DEFAULT_THRESHOLDS
+    )
+    if percentage_diff < lo_ext:
         granular_status = "exceptionally below"
-    elif percentage_diff < -13:
+    elif percentage_diff < lo_std:
         granular_status = "below"
-    elif percentage_diff <= 18:
+    elif percentage_diff <= hi_std:
         granular_status = "on par with"
-    elif percentage_diff <= 96:
+    elif percentage_diff <= hi_ext:
         granular_status = "above"
     else:
         granular_status = "exceptionally above"
