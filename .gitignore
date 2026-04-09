@@ -31,6 +31,7 @@ build/
 
 # Gemini dev cache (avoid committing API responses)
 data/gemini_dev_cache.json
+data/gemini_cache_iterations/
 
 # Claude AI settings — track claude.md (project docs), ignore local tool config
 .claude/*.json

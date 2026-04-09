@@ -241,10 +241,17 @@ SYSTEM_PROMPT = (
     "- Countries were grouped into Location Tiers heuristically using "
     "statistical quantiles, which may introduce high-variance for "
     "low-sample nations.\n\n"
+    "CRITICAL WRITING RULE:\n"
+    "NEVER use JSON key names, variable names, or snake_case identifiers "
+    "in the narrative text. Write in natural, professional English only. "
+    "For example, write 'the experience progression chart' instead of "
+    "'seniority_ladder', write 'the US market analysis' instead of "
+    "'us_deep_dive'. The JSON keys are for data structure only — the "
+    "reader must never see them.\n\n"
     "Return a valid JSON object with EXACTLY this schema:\n"
     "{\n"
     '  "executive_summary": "3-paragraph cohesive narrative telling the '
-    'global market story. Explicitly reference the charts below.",\n'
+    'global market story. Reference charts by their plain-English names.",\n'
     '  "data_transparency_note": "1-paragraph XAI note explaining the '
     "geographic skew and acknowledging the Location Tier methodology "
     'caveat.",\n'
