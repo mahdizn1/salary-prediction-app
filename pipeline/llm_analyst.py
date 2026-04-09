@@ -106,6 +106,14 @@ COUNTRY_NAMES: dict[str, str] = {
     "VN": "Vietnam",
 }
 
+# ── Experience level labels ───────────────────────────────────────────────────
+EXP_LABELS: dict[str, str] = {
+    "EN": "Entry-Level",
+    "MI": "Mid-Level",
+    "SE": "Senior",
+    "EX": "Executive",
+}
+
 # Key names llama3.2 has been observed to use instead of "narrative"
 _CANDIDATE_KEYS = ("narrative", "response", "insight", "analysis", "text", "content", "message")
 
@@ -180,14 +188,12 @@ def determine_primary_driver(combo: dict, granular_status: str) -> str:
 
 MICRO_SYSTEM_PROMPT = (
     "You are a robotic Compensation Data Formatter. "
-    "Your ONLY job is to output exactly two sentences. "
-    "Do not add conversational filler. Do not repeat phrases.\n\n"
-    "Sentence 1 MUST follow this exact template:\n"
+    "Your ONLY job is to output exactly ONE sentence. "
+    "Do not add conversational filler. Do not add a second sentence.\n\n"
+    "The sentence MUST follow this exact template:\n"
     "\"At $[PREDICTED], this [EXPERIENCE] [JOB] role in [LOCATION] is "
     "[GRANULAR_STATUS] the category median of $[MEDIAN].\"\n\n"
-    "Sentence 2 MUST follow this exact template:\n"
-    "\"This positioning is primarily driven by [PRIMARY_DRIVER].\"\n\n"
-    "Output MUST be a single valid JSON object: {\"narrative\": \"sentence 1. sentence 2.\"}"
+    "Output MUST be a single valid JSON object: {\"narrative\": \"<the single sentence>\"}"
 )
 
 GLOBAL_SYSTEM_PROMPT = (
@@ -375,10 +381,9 @@ def generate_micro_narrative(
     """
     job_title = payload.get("job_title", "Unknown")
     experience_level = payload.get("experience_level", "Unknown")
-    employment_type = payload.get("employment_type", "Unknown")
+    experience_label = EXP_LABELS.get(experience_level, experience_level)
     company_location = payload.get("company_location", "Unknown")
     country_name = COUNTRY_NAMES.get(company_location, company_location)
-    company_size = payload.get("company_size", "Unknown")
 
     # ── Pre-calculate facts in Python (not left to the LLM) ──────────────
     # Use per-category median when available; fall back to overall median.
@@ -406,15 +411,17 @@ def generate_micro_narrative(
     # ── Build the user message with injected facts ────────────────────────
     user_message = (
         f"JOB: {job_title}\n"
-        f"EXPERIENCE: {experience_level}\n"
+        f"EXPERIENCE: {experience_label}\n"
         f"LOCATION: {country_name}\n"
         f"PREDICTED: ${predicted_salary:,.0f}\n"
         f"MEDIAN: ${median:,.0f}\n"
         f"GRANULAR_STATUS: {granular_status}\n"
-        f"PRIMARY_DRIVER: {primary_driver}\n"
     )
 
-    return _call_ollama(MICRO_SYSTEM_PROMPT, user_message, job_title, FALLBACK_NARRATIVE)
+    # ── Sentence 1 from LLM, Sentence 2 built deterministically ─────────
+    sentence_1 = _call_ollama(MICRO_SYSTEM_PROMPT, user_message, job_title, FALLBACK_NARRATIVE)
+    sentence_2 = f"This positioning is primarily driven by {primary_driver}."
+    return f"{sentence_1} {sentence_2}"
 
 
 # ── Global summary (executive-level) ─────────────────────────────────────────
