@@ -32,6 +32,7 @@ import requests
 from supabase import create_client, Client
 
 from pipeline.generator import generate_combinations
+from pipeline.global_analyst import get_global_insights_payload
 from pipeline.llm_analyst import generate_micro_narrative, generate_global_summary
 
 # ── Load .env from the pipeline directory ─────────────────────────────────────
@@ -245,6 +246,38 @@ def call_llm(payload: dict, prediction: float) -> str:
         narrative,
     )
     return narrative
+
+
+def push_global_insights_to_db(payload: dict) -> bool:
+    """
+    Upserts the global insights payload into the Supabase `global_insights` table.
+
+    Parameters
+    ----------
+    payload : dict
+        The output of get_global_insights_payload() from global_analyst.
+
+    Returns
+    -------
+    bool
+        True on success, False on any failure.
+    """
+    if not SUPABASE_URL or not SUPABASE_KEY:
+        logger.error(
+            "Supabase credentials not set. "
+            "Export SUPABASE_URL and SUPABASE_KEY environment variables."
+        )
+        return False
+
+    try:
+        client: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
+        client.table("global_insights").upsert({"id": 1, **payload}).execute()
+        logger.info("Supabase upsert OK → global_insights (id=1)")
+        return True
+
+    except Exception as exc:
+        logger.error("Supabase upsert failed for global_insights: %s", exc)
+        return False
 
 
 def push_to_supabase(final_record: dict) -> bool:
@@ -467,6 +500,34 @@ def run_batch_predict(combinations: list[dict], output_path: str = "data/predict
     print(f"{'─' * 60}\n")
 
 
+def run_global_summary() -> None:
+    """
+    Generates the global executive summary via Gemini and persists to Supabase.
+    """
+    print("\nRunning GLOBAL SUMMARY step…\n")
+    payload = get_global_insights_payload()
+
+    if payload is None:
+        print("  FAIL  Global insights generation failed (check logs above)")
+        return
+
+    # Print results to console
+    print("── Executive Summary ──────────────────────────────────────")
+    print(payload["executive_summary"])
+    print("\n── Data Transparency Note ────────────────────────────────")
+    print(payload["data_transparency_note"])
+    print("\n── Chart Captions ────────────────────────────────────────")
+    for key, caption in payload.get("chart_captions", {}).items():
+        print(f"  {key}: {caption}")
+    print("───────────────────────────────────────────────────────────")
+
+    # Persist
+    if push_global_insights_to_db(payload):
+        print("\n  OK    Global insights upserted to Supabase")
+    else:
+        print("\n  FAIL  Supabase upsert failed (check logs above)")
+
+
 # ── CLI ────────────────────────────────────────────────────────────────────────
 
 def _resolve_combinations(args) -> list[dict]:
@@ -490,16 +551,17 @@ def main() -> None:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=(
             "Steps:\n"
-            "  predict       — FastAPI predictions only, print to console\n"
-            "  batch_csv     — predictions only, save to CSV (no LLM, no DB)\n"
-            "  analyze       — predict + LLM narrative (no DB)\n"
-            "  push_db       — full pipeline including Supabase insert\n"
-            "  full_pipeline — alias for push_db\n"
+            "  predict        — FastAPI predictions only, print to console\n"
+            "  batch_csv      — predictions only, save to CSV (no LLM, no DB)\n"
+            "  analyze        — predict + LLM narrative (no DB)\n"
+            "  push_db        — full pipeline including Supabase insert\n"
+            "  full_pipeline  — alias for push_db\n"
+            "  global_summary — generate executive summary via Gemini + upsert\n"
         ),
     )
     parser.add_argument(
         "--step",
-        choices=["predict", "batch_csv", "analyze", "push_db", "full_pipeline"],
+        choices=["predict", "batch_csv", "analyze", "push_db", "full_pipeline", "global_summary"],
         required=True,
         help="Pipeline step to execute",
     )
@@ -521,6 +583,11 @@ def main() -> None:
         help="Max number of generated combinations to process",
     )
     args = parser.parse_args()
+
+    if args.step == "global_summary":
+        run_global_summary()
+        return
+
     combos = _resolve_combinations(args)
 
     if args.step == "predict":

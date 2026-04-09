@@ -1,19 +1,21 @@
 """
-Global Analyst Module (Gemini 2.5 Flash)
+Global Analyst Module (Gemini 2.0 Flash)
 ──────────────────────────────────────
-Two-Layer Narrative Architecture + Explainable AI (XAI) Transparency Layer.
+Pure data processing + LLM module. No database logic, no execution flow.
 
 Layer 1 — Pandas Aggregation:
     calculate_market_stats(df) pre-computes every metric the dashboard needs.
     Nothing is left for the LLM to calculate — it only interprets.
 
 Layer 2 — Gemini Structured JSON:
-    generate_summary(stats_dict) feeds the full stats payload to Gemini 2.5 Flash
+    generate_summary(stats_dict) feeds the full stats payload to Gemini 2.0 Flash
     and forces a structured JSON response containing the executive summary,
     chart captions, and a Data Transparency (XAI) note.
 
-Persistence:
-    run_global_analysis() orchestrates aggregation → LLM → Supabase upsert.
+Public API:
+    get_global_insights_payload() → dict
+        Reads CSV, enriches, aggregates, calls Gemini, returns the final payload.
+        The Orchestrator calls this and handles persistence.
 
 Micro-narratives (per-record) remain on the local Ollama instance in llm_analyst.py.
 """
@@ -27,7 +29,6 @@ import google.generativeai as genai
 import joblib
 import pandas as pd
 from dotenv import load_dotenv
-from supabase import create_client, Client
 
 logger = logging.getLogger(__name__)
 
@@ -36,10 +37,6 @@ load_dotenv(Path(__file__).resolve().parent / ".env")
 
 # ── Configure Gemini ─────────────────────────────────────────────────────────
 genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
-
-# ── Supabase credentials ────────────────────────────────────────────────────
-SUPABASE_URL: str = os.environ.get("SUPABASE_URL", "")
-SUPABASE_KEY: str = os.environ.get("SUPABASE_KEY", "")
 
 # ── Data paths ──────────────────────────────────────────────────────────────
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -287,7 +284,7 @@ FALLBACK_RESPONSE = {
 
 def generate_summary(stats_dict: dict) -> dict:
     """
-    Sends the full aggregated stats payload to Gemini 2.5 Flash and returns
+    Sends the full aggregated stats payload to Gemini 2.0 Flash and returns
     a structured JSON response with the executive summary, XAI note, and
     chart captions.
 
@@ -329,32 +326,37 @@ def generate_summary(stats_dict: dict) -> dict:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# LAYER 3: Orchestration — Aggregate → LLM → Supabase
+# PUBLIC API — Called by the Orchestrator
 # ═══════════════════════════════════════════════════════════════════════════════
 
-def run_global_analysis() -> bool:
+def get_global_insights_payload() -> dict | None:
     """
-    End-to-end global analysis pipeline:
-    1. Load ds_salaries.csv (original dataset)
-    2. Enrich with derived features (job_category, region)
-    3. Aggregate with Pandas
-    4. Generate narrative with Gemini
-    5. Upsert to Supabase global_insights table
+    End-to-end data processing: CSV → enrich → aggregate → Gemini → payload.
+
+    Returns the final dictionary ready for the Orchestrator to persist,
+    or None on any failure.
 
     Returns
     -------
-    bool
-        True on success, False on any failure.
+    dict | None
+        On success: {
+            "executive_summary": str,
+            "data_transparency_note": str,
+            "chart_captions": dict,
+            "category_medians": dict,
+            "market_stats_json": dict,
+        }
+        On failure: None
     """
-    # ── Step 1: Load and enrich data ─────────────────────────────────────
+    # ── Load and enrich ──────────────────────────────────────────────────
     if not DATASET_CSV.exists():
         logger.error("ds_salaries.csv not found at %s", DATASET_CSV)
-        return False
+        return None
 
     df = _enrich_dataset(pd.read_csv(DATASET_CSV))
     logger.info("Loaded %d rows from ds_salaries.csv", len(df))
 
-    # ── Step 2: Aggregate ────────────────────────────────────────────────
+    # ── Aggregate ────────────────────────────────────────────────────────
     stats = calculate_market_stats(df)
     logger.info(
         "Aggregation complete — global median: $%s, %d regions, %d roles",
@@ -363,54 +365,19 @@ def run_global_analysis() -> bool:
         len(stats["role_distribution"]),
     )
 
-    # ── Step 3: Generate narrative via Gemini ────────────────────────────
+    # ── Generate narrative via Gemini ────────────────────────────────────
     response_json = generate_summary(stats)
     summary = response_json.get("executive_summary", "")
     if not summary or summary == FALLBACK_RESPONSE["executive_summary"]:
         logger.error("Gemini failed to produce a valid summary")
-        return False
+        return None
 
-    logger.info("Executive summary generated (%.0f chars)", len(summary))
+    logger.info("Executive summary generated (%d chars)", len(summary))
 
-    # ── Step 4: Upsert to Supabase ──────────────────────────────────────
-    if not SUPABASE_URL or not SUPABASE_KEY:
-        logger.error("Supabase credentials not set — skipping DB upsert")
-        # Still print the result for local testing
-        print("\n── Executive Summary ──────────────────────────────────────")
-        print(summary)
-        print("\n── Data Transparency Note ────────────────────────────────")
-        print(response_json.get("data_transparency_note", ""))
-        print("\n── Chart Captions ────────────────────────────────────────")
-        for key, caption in response_json.get("captions", {}).items():
-            print(f"  {key}: {caption}")
-        print("───────────────────────────────────────────────────────────")
-        return False
-
-    data = {
-        "id": 1,  # singleton row — always upsert the same record
+    return {
         "executive_summary": response_json.get("executive_summary", ""),
         "data_transparency_note": response_json.get("data_transparency_note", ""),
         "chart_captions": response_json.get("captions", {}),
         "category_medians": stats["category_medians"],
         "market_stats_json": stats,
     }
-
-    try:
-        client: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
-        client.table("global_insights").upsert(data).execute()
-        logger.info("Supabase upsert OK → global_insights (id=1)")
-        return True
-
-    except Exception as exc:
-        logger.error("Supabase upsert failed: %s", exc)
-        return False
-
-
-# ── CLI entry point ──────────────────────────────────────────────────────────
-if __name__ == "__main__":
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(levelname)s | %(name)s | %(message)s",
-    )
-    success = run_global_analysis()
-    raise SystemExit(0 if success else 1)
