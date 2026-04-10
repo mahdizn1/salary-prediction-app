@@ -134,16 +134,20 @@ st.markdown("""
         gap: 0 !important;
         align-items: center !important;
     }
+    [data-testid="stRadio"] > div {
+        gap: 10px !important;
+    }
     [data-testid="stRadio"] > div > label {
-        padding: 10px 28px !important;
-        border-radius: 8px !important;
-        font-weight: 500 !important;
+        padding: 10px 20px !important;
+        border-radius: 10px !important;
+        font-weight: 600 !important;
         font-size: 1.05rem !important;
-        color: #64748b !important;
+        color: #475569 !important;
         cursor: pointer !important;
         transition: all 0.15s ease !important;
-        border: none !important;
-        background: transparent !important;
+        border: 1px solid #e2e8f0 !important;
+        background: #ffffff !important;
+        box-shadow: 0 2px 4px rgba(15, 23, 42, 0.04) !important;
     }
     [data-testid="stRadio"] > div > label:hover {
         color: #0f172a !important;
@@ -153,7 +157,8 @@ st.markdown("""
     [data-testid="stRadio"] > div > label:has(input:checked) {
         color: #ffffff !important;
         background: #635BFF !important;
-        font-weight: 600 !important;
+        border-color: #635BFF !important;
+        box-shadow: 0 6px 14px rgba(99, 91, 255, 0.25) !important;
     }
     [data-testid="stRadio"] > div > label > div:first-child {
         display: none !important;
@@ -224,6 +229,7 @@ st.markdown("""
         padding: 12px 28px !important;
         letter-spacing: 0.01em !important;
         transition: all 0.2s ease !important;
+        color: #ffffff !important;
     }
     button[kind="primaryFormSubmit"]:hover,
     .stButton > button[kind="primary"]:hover {
@@ -372,6 +378,7 @@ _PLOTLY_LAYOUT = dict(
     xaxis=dict(tickfont=dict(size=13), title_font=dict(size=14)),
     yaxis=dict(tickfont=dict(size=13), title_font=dict(size=14)),
 )
+_PLOTLY_CONFIG = {"displayModeBar": False, "staticPlot": True, "responsive": True}
 
 
 # ── Database ──────────────────────────────────────────────────────────────────
@@ -688,7 +695,7 @@ def _chart_card(title: str, caption: str, fig):
             f'font-size:1rem;line-height:1.5;">{caption}</p>',
             unsafe_allow_html=True,
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG)
 
 
 def _remote_premium_chart(df: pd.DataFrame) -> go.Figure:
@@ -828,12 +835,12 @@ def _render_predictor(df: pd.DataFrame):
                               "value": median},
             },
         ))
-        fig.update_layout(
-            height=320, margin=dict(t=70, b=20, l=30, r=30),
-            paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
-            font=dict(family="Inter, sans-serif"),
-        )
-        st.plotly_chart(fig, use_container_width=True)
+    fig.update_layout(
+        height=320, margin=dict(t=70, b=20, l=30, r=30),
+        paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
+        font=dict(family="Inter, sans-serif"),
+    )
+    st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG)
 
     with col_n:
         st.markdown('<div class="section-card">', unsafe_allow_html=True)
@@ -906,7 +913,7 @@ def _chart_experience(job_df, job, current_exp):
         xaxis_title="Experience Level", yaxis_title="Median Salary (USD)",
         showlegend=False, margin=dict(t=50, b=20), **_PLOTLY_LAYOUT,
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG)
 
 
 def _chart_geography(job_df, job, current_country):
@@ -926,7 +933,7 @@ def _chart_geography(job_df, job, current_country):
         xaxis_title="Median Salary (USD)", yaxis_title="",
         showlegend=False, margin=dict(t=50, b=20), **_PLOTLY_LAYOUT,
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG)
 
 
 def _chart_company_size(job_df, job, current_size):
@@ -948,7 +955,7 @@ def _chart_company_size(job_df, job, current_size):
         xaxis_title="Company Size", yaxis_title="Median Salary (USD)",
         legend_title="Experience", margin=dict(t=50, b=20), **_PLOTLY_LAYOUT,
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG)
 
 
 def _chart_market_overview(job_df, job, pred_salary):
@@ -974,7 +981,7 @@ def _chart_market_overview(job_df, job, pred_salary):
         xaxis_title="Salary (USD)", yaxis_title="Count",
         margin=dict(t=50, b=20), **_PLOTLY_LAYOUT,
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG)
 
 
 def _chart_region_vs_global(job_df, job, current_country):
@@ -996,7 +1003,7 @@ def _chart_region_vs_global(job_df, job, current_country):
         xaxis_title="Median Salary (USD)", yaxis_title="",
         margin=dict(t=50, b=20), **_PLOTLY_LAYOUT,
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG)
 
 
 def _chart_exec_premium(job_df, job):
@@ -1016,7 +1023,7 @@ def _chart_exec_premium(job_df, job):
         xaxis_title="Company Size", yaxis_title="Median Executive Salary (USD)",
         margin=dict(t=50, b=20), **_PLOTLY_LAYOUT,
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG)
 
 
 if __name__ == "__main__":
