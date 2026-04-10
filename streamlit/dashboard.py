@@ -12,15 +12,17 @@ Data sources:
   - model/feature_mappings.joblib for job_title -> job_category
 """
 
-import streamlit as st
+import json
+import os
+from pathlib import Path
+
+import joblib
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-import os
-from pathlib import Path
+import streamlit as st
 from dotenv import load_dotenv
-from supabase import create_client, Client
-import joblib
+from supabase import Client, create_client
 
 # ── Environment ───────────────────────────────────────────────────────────────
 load_dotenv(Path(__file__).resolve().parent.parent / "pipeline" / ".env")
@@ -414,12 +416,15 @@ def load_csv() -> pd.DataFrame:
 
 
 @st.cache_data(ttl=3600)
-def fetch_global_insights() -> dict | None:
+def get_global_insights() -> dict | None:
+    """Fetch the latest global insights payload from Supabase."""
     try:
-        res = supabase.table("global_insights").select("*").eq("id", 1).execute()
-        return res.data[0] if res.data else None
+        res = supabase.table("global_insights").select("*").limit(1).execute()
+        if res.data:
+            return res.data[0]
     except Exception:
-        return None
+        st.warning("Unable to load Supabase global insights. Showing defaults.")
+    return None
 
 
 def query_prediction(filters: dict) -> dict | None:
@@ -495,7 +500,7 @@ def _primary_driver(exp, tier, size, status):
 # ══════════════════════════════════════════════════════════════════════════════
 def main():
     df = load_csv()
-    insights = fetch_global_insights()
+    insights = get_global_insights()
 
     # ── Salario branded top navbar (raw HTML) ────────────────────────────
     st.markdown("""
@@ -536,21 +541,41 @@ def _render_market(df: pd.DataFrame, insights: dict | None):
         st.error("Dataset unavailable. Ensure ds_salaries.csv is in data/.")
         return
 
-    if insights and insights.get("executive_summary"):
-        st.info(insights["executive_summary"])
-    else:
-        st.info(
-            f"The global data-science salary market has an overall median of "
-            f"**${OVERALL_MEDIAN:,}** across **{len(df):,}** records spanning "
-            f"**{df['company_location'].nunique()}** countries. Compensation "
-            f"varies significantly by role, seniority, and geography."
-        )
+    captions = insights.get("chart_captions", {}) if insights else {}
+    exec_summary = insights.get("executive_summary") if insights else None
+    transparency_note = insights.get("data_transparency_note") if insights else None
 
-    # ── Row 1 ────────────────────────────────────────────────────────────
+    def _caption(key: str, fallback: str) -> str:
+        if isinstance(captions, str):
+            try:
+                parsed = json.loads(captions)
+            except json.JSONDecodeError:
+                parsed = {}
+            return parsed.get(key, fallback)
+        return captions.get(key, fallback) if captions else fallback
+
+    summary_text = exec_summary or (
+        f"The global data-science salary market has an overall median of "
+        f"**${OVERALL_MEDIAN:,}** across **{len(df):,}** records spanning "
+        f"**{df['company_location'].nunique()}** countries. Compensation "
+        f"varies significantly by role, seniority, and geography."
+    )
+
+    st.markdown(
+        f"""
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;
+                    padding:18px 22px;margin-bottom:18px;font-size:1.15rem;
+                    line-height:1.65;color:#0f172a;">
+            {summary_text}
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    # ── Drivers: 2-column grid ─────────────────────────────────────────
     c1, c2 = st.columns(2)
 
     with c1:
-        st.subheader("Role Distribution")
         counts = df["job_category"].value_counts().reset_index()
         counts.columns = ["Category", "Count"]
         fig = px.pie(
@@ -562,10 +587,13 @@ def _render_market(df: pd.DataFrame, insights: dict | None):
             legend=dict(font=dict(size=13)),
             **_PLOTLY_LAYOUT,
         )
-        st.plotly_chart(fig, use_container_width=True)
+        _chart_card(
+            "Role Distribution",
+            _caption("role_distribution", "Role mix across the dataset."),
+            fig,
+        )
 
     with c2:
-        st.subheader("The Seniority Ladder")
         trend = (
             df.groupby("experience_level")["salary_in_usd"]
             .median().reindex(EXP_ORDER).reset_index()
@@ -581,13 +609,16 @@ def _render_market(df: pd.DataFrame, insights: dict | None):
             margin=dict(t=10, b=10),
             **_PLOTLY_LAYOUT,
         )
-        st.plotly_chart(fig, use_container_width=True)
+        _chart_card(
+            "The Seniority Ladder",
+            _caption("seniority_ladder", "Median salary climbs with experience."),
+            fig,
+        )
 
-    # ── Row 2 ────────────────────────────────────────────────────────────
+    # ── Additional drivers ─────────────────────────────────────────────
     c3, c4 = st.columns(2)
 
     with c3:
-        st.subheader("Regional Salary Comparison")
         reg = (
             df.groupby("region")["salary_in_usd"]
             .median().sort_values().reset_index()
@@ -603,10 +634,13 @@ def _render_market(df: pd.DataFrame, insights: dict | None):
             margin=dict(t=10, b=10),
             **_PLOTLY_LAYOUT,
         )
-        st.plotly_chart(fig, use_container_width=True)
+        _chart_card(
+            "Regional Salary Comparison",
+            _caption("regional_comparison", "Geographic pay spread across regions."),
+            fig,
+        )
 
     with c4:
-        st.subheader("Salary Ranges by Role")
         fig = px.box(
             df, x="job_category", y="salary_in_usd",
             color="job_category",
@@ -618,7 +652,76 @@ def _render_market(df: pd.DataFrame, insights: dict | None):
             margin=dict(t=10, b=10),
             **_PLOTLY_LAYOUT,
         )
+        _chart_card(
+            "Salary Ranges by Role",
+            _caption("salary_ranges_by_role", "Distribution spread within each role."),
+            fig,
+        )
+
+    # ── Featured: Remote Premium (full width) ──────────────────────────
+    remote_caption = _caption(
+        "remote_premium",
+        "Remote flexibility shifts median compensation versus on-site roles.",
+    )
+    remote_fig = _remote_premium_chart(df)
+    _chart_card("Remote Premium", remote_caption, remote_fig)
+
+    # ── XAI footer ─────────────────────────────────────────────────────
+    st.divider()
+    st.subheader("Data Methodology & Transparency")
+    footer_note = transparency_note or (
+        "Dataset skewed toward North America/Europe; location tiers were grouped "
+        "to stabilise estimates in emerging markets."
+    )
+    st.markdown(
+        f'<p style="font-size:0.9rem; color:#94a3b8; line-height:1.6;">{footer_note}</p>',
+        unsafe_allow_html=True,
+    )
+
+
+def _chart_card(title: str, caption: str, fig):
+    """Uniform card wrapper: title → caption → chart."""
+    with st.container(border=True):
+        st.subheader(title)
+        st.markdown(
+            f'<p style="color:#64748b;margin:4px 0 12px 0;'
+            f'font-size:1rem;line-height:1.5;">{caption}</p>',
+            unsafe_allow_html=True,
+        )
         st.plotly_chart(fig, use_container_width=True)
+
+
+def _remote_premium_chart(df: pd.DataFrame) -> go.Figure:
+    """Featured remote vs on-site premium chart."""
+    if df.empty or "remote_ratio" not in df.columns:
+        return go.Figure()
+
+    order = [0, 50, 100]
+    agg = (
+        df[df["remote_ratio"].isin(order)]
+        .groupby("remote_ratio")["salary_in_usd"]
+        .median()
+        .reindex(order)
+        .reset_index()
+    )
+    agg["label"] = agg["remote_ratio"].map(REMOTE_LABELS)
+
+    fig = go.Figure(go.Bar(
+        x=agg["label"],
+        y=agg["salary_in_usd"],
+        marker_color=[_SLATE, "#818cf8", _INDIGO],
+        text=[f"${v:,.0f}" if pd.notna(v) else "N/A" for v in agg["salary_in_usd"]],
+        textposition="outside",
+        textfont=dict(size=14, family="Inter"),
+    ))
+    fig.update_layout(
+        xaxis_title="Work Mode",
+        yaxis_title="Median Salary (USD)",
+        margin=dict(t=30, b=20),
+        showlegend=False,
+        **_PLOTLY_LAYOUT,
+    )
+    return fig
 
 
 # ══════════════════════════════════════════════════════════════════════════════

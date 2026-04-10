@@ -35,3 +35,7 @@ data/gemini_cache_iterations/
 
 # Claude AI settings — track claude.md (project docs), ignore local tool config
 .claude/*.json
+
+
+#codex
+Agent-handover.md
