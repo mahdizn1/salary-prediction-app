@@ -26,35 +26,69 @@ The LLMs **never calculate** — all statistics are pre-computed by Pandas. The 
 
 ## Technical Architecture
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    PIPELINE (offline)                        │
-│                                                             │
-│  ds_salaries.csv                                            │
-│       │                                                     │
-│       ▼                                                     │
-│  ┌──────────┐    ┌──────────────┐    ┌───────────────────┐  │
-│  │ FastAPI   │───▶│ Orchestrator │───▶│ Supabase          │  │
-│  │ /predict  │    │ 1,000+ combos│    │ precomputed_salaries│ │
-│  └──────────┘    └──────┬───────┘    │ global_insights    │  │
-│                         │            └───────────────────┘  │
-│              ┌──────────┴──────────┐                        │
-│              ▼                     ▼                        │
-│     ┌──────────────┐    ┌────────────────┐                  │
-│     │ Ollama Local │    │ Gemini Cloud   │                  │
-│     │ Llama 3.2    │    │ 2.5 Flash      │                  │
-│     │ micro-narr.  │    │ exec. summary  │                  │
-│     └──────────────┘    └────────────────┘                  │
-└─────────────────────────────────────────────────────────────┘
+### Pipeline 1 — Salary Prediction & Micro-Narratives
 
-┌─────────────────────────────────────────────────────────────┐
-│                   FRONTEND (online)                          │
-│                                                             │
-│  Streamlit Dashboard ──▶ Supabase (read-only)               │
-│  • Market Landscape tab (Gemini narratives + Plotly charts)  │
-│  • Salary Predictor tab (instant lookup + Glass Box engine)  │
-│  • Stripe-inspired CSS with Inter typeface                   │
-└─────────────────────────────────────────────────────────────┘
+```
+┌──────────────────────────────────────────────────────────────┐
+│                                                              │
+│  Generator ───▶ Synthetic combos ───▶ Orchestrator           │
+│  (generator.py)  (1,000+ profiles)    (batch inference)      │
+│                                        │          │          │
+│                                        ▼          ▼          │
+│                                 ┌──────────┐ ┌────────────┐  │
+│                                 │ FastAPI   │ │ Ollama     │  │
+│                                 │ /predict  │ │ Llama 3.2  │  │
+│                                 └─────┬────┘ └─────┬──────┘  │
+│                                       │            │          │
+│                                       ▼            ▼          │
+│                                  predictions + narratives     │
+│                                           │                   │
+│                                           ▼                   │
+│                                ┌────────────────────┐         │
+│                                │ Supabase            │         │
+│                                │ precomputed_salaries │        │
+│                                └────────────────────┘         │
+└──────────────────────────────────────────────────────────────┘
+```
+
+### Pipeline 2 — Global Narrative (Executive Summary)
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│                                                              │
+│  ds_salaries.csv ───▶ Global Analyst                         │
+│  (607 rows)           (global_analyst.py)                    │
+│                            │                                 │
+│                       EDA & Pandas                           │
+│                       aggregation                            │
+│                            │                                 │
+│                            ▼                                 │
+│                     ┌────────────────┐                       │
+│                     │ Gemini Cloud   │                       │
+│                     │ 2.5 Flash      │                       │
+│                     │ structured JSON│                       │
+│                     └───────┬────────┘                       │
+│                             │                                │
+│               executive summary + captions                   │
+│                             │                                │
+│                             ▼                                │
+│                    ┌─────────────────┐                       │
+│                    │ Supabase         │                       │
+│                    │ global_insights  │                       │
+│                    └─────────────────┘                       │
+└──────────────────────────────────────────────────────────────┘
+```
+
+### Frontend (online)
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│                                                              │
+│  Streamlit Dashboard ──▶ Supabase (read-only)                │
+│  • Market Landscape tab (Gemini narratives + Plotly charts)   │
+│  • Salary Predictor tab (instant lookup + Glass Box engine)   │
+│  • Stripe-inspired CSS with Inter typeface                    │
+└──────────────────────────────────────────────────────────────┘
 ```
 
 ### Key Components
@@ -157,7 +191,3 @@ salary-prediction-app/
 ```
 
 ---
-
-## License
-
-This project was developed as part of the AIE program curriculum.
