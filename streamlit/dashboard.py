@@ -142,7 +142,7 @@ st.markdown("""
         border-radius: 10px !important;
         font-weight: 600 !important;
         font-size: 1.05rem !important;
-        color: #475569 !important;
+        color: #1f2937 !important;
         cursor: pointer !important;
         transition: all 0.15s ease !important;
         border: 1px solid #e2e8f0 !important;
@@ -156,9 +156,9 @@ st.markdown("""
     [data-testid="stRadio"] > div > label[data-checked="true"],
     [data-testid="stRadio"] > div > label:has(input:checked) {
         color: #ffffff !important;
-        background: #635BFF !important;
-        border-color: #635BFF !important;
-        box-shadow: 0 6px 14px rgba(99, 91, 255, 0.25) !important;
+        background: #7d7aff !important;
+        border-color: #7d7aff !important;
+        box-shadow: 0 6px 14px rgba(125, 122, 255, 0.25) !important;
     }
     [data-testid="stRadio"] > div > label > div:first-child {
         display: none !important;
@@ -221,7 +221,7 @@ st.markdown("""
     /* ── Primary button ───────────────────────────────────────────────── */
     button[kind="primaryFormSubmit"],
     .stButton > button[kind="primary"] {
-        background: #635BFF !important;
+        background: #7d7aff !important;
         border: none !important;
         border-radius: 10px !important;
         font-weight: 700 !important;
@@ -233,8 +233,8 @@ st.markdown("""
     }
     button[kind="primaryFormSubmit"]:hover,
     .stButton > button[kind="primary"]:hover {
-        background: #5046E5 !important;
-        box-shadow: 0 6px 20px rgba(99, 91, 255, 0.35) !important;
+        background: #6f68e8 !important;
+        box-shadow: 0 6px 20px rgba(111, 104, 232, 0.35) !important;
         transform: translateY(-1px);
     }
 
@@ -542,7 +542,7 @@ def main():
 # MARKET LANDSCAPE
 # ══════════════════════════════════════════════════════════════════════════════
 def _render_market(df: pd.DataFrame, insights: dict | None):
-    st.caption("Macro-level trends from the original training dataset")
+    st.caption("Macro-level trends from the original dataset")
 
     if df.empty:
         st.error("Dataset unavailable. Ensure ds_salaries.csv is in data/.")
@@ -579,7 +579,7 @@ def _render_market(df: pd.DataFrame, insights: dict | None):
         unsafe_allow_html=True,
     )
 
-    # ── Drivers: 2-column grid ─────────────────────────────────────────
+    # ── Row 1: Role Distribution + Seniority Ladder ─────────────────────
     c1, c2 = st.columns(2)
 
     with c1:
@@ -622,7 +622,7 @@ def _render_market(df: pd.DataFrame, insights: dict | None):
             fig,
         )
 
-    # ── Additional drivers ─────────────────────────────────────────────
+    # ── Row 2: Regional Comparison + Heatmap (Job Category × Region) ──
     c3, c4 = st.columns(2)
 
     with c3:
@@ -648,30 +648,45 @@ def _render_market(df: pd.DataFrame, insights: dict | None):
         )
 
     with c4:
-        fig = px.box(
-            df, x="job_category", y="salary_in_usd",
-            color="job_category",
-            color_discrete_sequence=[_INDIGO, "#818cf8", "#a5b4fc", "#c7d2fe"],
-        )
-        fig.update_layout(
-            xaxis_title="", yaxis_title="Salary (USD)",
-            showlegend=False,
-            margin=dict(t=10, b=10),
-            **_PLOTLY_LAYOUT,
-        )
+        heatmap_fig = _heatmap_job_region(df)
         _chart_card(
-            "Salary Ranges by Role",
-            _caption("salary_ranges_by_role", "Distribution spread within each role."),
-            fig,
+            "Compensation by Role & Region",
+            _caption("heatmap_job_region",
+                     "Median compensation varies across roles and regions."),
+            heatmap_fig,
         )
 
-    # ── Featured: Remote Premium (full width) ──────────────────────────
-    remote_caption = _caption(
-        "remote_premium",
-        "Remote flexibility shifts median compensation versus on-site roles.",
+    # ── Row 3: Regional Representation + Remote Premium ───────────────
+    c5, c6 = st.columns(2)
+
+    with c5:
+        rep_fig = _regional_representation_chart(df)
+        _chart_card(
+            "Regional Representation",
+            _caption("regional_representation",
+                     "Distribution of data points across global regions."),
+            rep_fig,
+        )
+
+    with c6:
+        remote_fig = _remote_premium_chart(df)
+        _chart_card(
+            "Remote Premium",
+            _caption("remote_premium",
+                     "Remote flexibility shifts median compensation "
+                     "versus on-site roles."),
+            remote_fig,
+        )
+
+    # ── US Deep Dive (full width) ─────────────────────────────────────
+    st.divider()
+    st.subheader("United States Deep Dive")
+    st.caption(
+        _caption("us_deep_dive",
+                 "The US market exhibits higher compensation across "
+                 "experience levels, company sizes, and job categories.")
     )
-    remote_fig = _remote_premium_chart(df)
-    _chart_card("Remote Premium", remote_caption, remote_fig)
+    _render_us_deep_dive(df)
 
     # ── XAI footer ─────────────────────────────────────────────────────
     st.divider()
@@ -681,7 +696,11 @@ def _render_market(df: pd.DataFrame, insights: dict | None):
         "to stabilise estimates in emerging markets."
     )
     st.markdown(
-        f'<p style="font-size:0.9rem; color:#94a3b8; line-height:1.6;">{footer_note}</p>',
+        f"""<div style="background:#f8fafc;border:1px solid #e2e8f0;
+            border-radius:10px;padding:16px 20px;color:#94a3b8;
+            font-size:0.9rem;line-height:1.6;">
+            {footer_note}
+        </div>""",
         unsafe_allow_html=True,
     )
 
@@ -698,8 +717,73 @@ def _chart_card(title: str, caption: str, fig):
         st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG)
 
 
+def _heatmap_job_region(df: pd.DataFrame) -> go.Figure:
+    """Heatmap of median salary by Job Category × Region."""
+    if df.empty:
+        return go.Figure()
+
+    pivot = (
+        df.groupby(["job_category", "region"])["salary_in_usd"]
+        .median()
+        .unstack(fill_value=0)
+    )
+    # Sort regions by overall median descending for readability
+    region_order = (
+        df.groupby("region")["salary_in_usd"].median().sort_values(ascending=False).index
+    )
+    pivot = pivot.reindex(columns=[r for r in region_order if r in pivot.columns])
+
+    fig = go.Figure(go.Heatmap(
+        z=pivot.values,
+        x=pivot.columns.tolist(),
+        y=pivot.index.tolist(),
+        colorscale="Purp",
+        text=[[f"${v:,.0f}" if v > 0 else "—" for v in row] for row in pivot.values],
+        texttemplate="%{text}",
+        textfont=dict(size=11, family="Inter"),
+        hovertemplate="Role: %{y}<br>Region: %{x}<br>Median: %{text}<extra></extra>",
+        showscale=False,
+    ))
+    fig.update_layout(
+        margin=dict(t=10, b=10, l=10, r=10),
+        **_PLOTLY_LAYOUT,
+    )
+    fig.update_xaxes(tickangle=-35, tickfont=dict(size=11))
+    fig.update_yaxes(tickfont=dict(size=12), autorange="reversed")
+    return fig
+
+
+def _regional_representation_chart(df: pd.DataFrame) -> go.Figure:
+    """Horizontal bar showing data-point count per region."""
+    if df.empty:
+        return go.Figure()
+
+    counts = df["region"].value_counts().reset_index()
+    counts.columns = ["Region", "Count"]
+    counts["Pct"] = (counts["Count"] / counts["Count"].sum() * 100).round(1)
+    counts = counts.sort_values("Count")
+
+    fig = go.Figure(go.Bar(
+        y=counts["Region"],
+        x=counts["Count"],
+        orientation="h",
+        marker_color=_INDIGO,
+        text=[f"{c} ({p}%)" for c, p in zip(counts["Count"], counts["Pct"])],
+        textposition="outside",
+        textfont=dict(size=12, family="Inter"),
+    ))
+    fig.update_layout(
+        xaxis_title="Number of Records",
+        yaxis_title="",
+        margin=dict(t=10, b=10, l=10, r=10),
+        showlegend=False,
+        **_PLOTLY_LAYOUT,
+    )
+    return fig
+
+
 def _remote_premium_chart(df: pd.DataFrame) -> go.Figure:
-    """Featured remote vs on-site premium chart."""
+    """Remote vs on-site premium chart with annotation."""
     if df.empty or "remote_ratio" not in df.columns:
         return go.Figure()
 
@@ -721,14 +805,106 @@ def _remote_premium_chart(df: pd.DataFrame) -> go.Figure:
         textposition="outside",
         textfont=dict(size=14, family="Inter"),
     ))
+
+    # Annotation: premium percentage
+    onsite_med = agg.loc[agg["remote_ratio"] == 0, "salary_in_usd"].iloc[0]
+    remote_med = agg.loc[agg["remote_ratio"] == 100, "salary_in_usd"].iloc[0]
+    if pd.notna(onsite_med) and onsite_med > 0:
+        prem = ((remote_med - onsite_med) / onsite_med * 100)
+        fig.add_annotation(
+            x="Fully Remote", y=remote_med,
+            text=f"+{prem:.0f}% vs On-site",
+            showarrow=True, arrowhead=2, arrowcolor=_INDIGO,
+            font=dict(color=_INDIGO, size=13, family="Inter"),
+            bgcolor="#eef2ff", bordercolor=_INDIGO, borderwidth=1, borderpad=5,
+            ay=-40,
+        )
+
     fig.update_layout(
         xaxis_title="Work Mode",
         yaxis_title="Median Salary (USD)",
-        margin=dict(t=30, b=20),
+        margin=dict(t=40, b=20),
         showlegend=False,
         **_PLOTLY_LAYOUT,
     )
     return fig
+
+
+def _render_us_deep_dive(df: pd.DataFrame):
+    """US Deep Dive section: experience comparison + company size breakdown."""
+    us_df = df[df["company_location"] == "US"]
+    non_us_df = df[df["company_location"] != "US"]
+
+    if us_df.empty:
+        st.warning("No US data available.")
+        return
+
+    c1, c2 = st.columns(2)
+
+    with c1:
+        # Grouped bar: US vs Global median by experience level
+        us_exp = (
+            us_df.groupby("experience_level")["salary_in_usd"]
+            .median().reindex(EXP_ORDER).reset_index()
+        )
+        us_exp.columns = ["experience_level", "US"]
+        global_exp = (
+            df.groupby("experience_level")["salary_in_usd"]
+            .median().reindex(EXP_ORDER).reset_index()
+        )
+        global_exp.columns = ["experience_level", "Global"]
+        merged = us_exp.merge(global_exp, on="experience_level")
+        merged["label"] = merged["experience_level"].map(EXP_LABELS)
+
+        fig = go.Figure()
+        fig.add_trace(go.Bar(
+            x=merged["label"], y=merged["US"], name="United States",
+            marker_color=_INDIGO,
+            text=[f"${v:,.0f}" for v in merged["US"]],
+            textposition="outside", textfont=dict(size=11, family="Inter"),
+        ))
+        fig.add_trace(go.Bar(
+            x=merged["label"], y=merged["Global"], name="Global",
+            marker_color=_SLATE,
+            text=[f"${v:,.0f}" for v in merged["Global"]],
+            textposition="outside", textfont=dict(size=11, family="Inter"),
+        ))
+        fig.update_layout(
+            barmode="group",
+            xaxis_title="Experience Level",
+            yaxis_title="Median Salary (USD)",
+            legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+            margin=dict(t=40, b=20),
+            **_PLOTLY_LAYOUT,
+        )
+        _chart_card("US vs Global by Experience", "", fig)
+
+    with c2:
+        # Horizontal bar: US median by company size
+        us_size = (
+            us_df.groupby("company_size")["salary_in_usd"]
+            .median().reindex(SIZE_ORDER).reset_index()
+        )
+        us_size["label"] = us_size["company_size"].map(SIZE_LABELS)
+
+        fig = go.Figure(go.Bar(
+            y=us_size["label"],
+            x=us_size["salary_in_usd"],
+            orientation="h",
+            marker_color=[_SLATE, "#818cf8", _INDIGO],
+            text=[f"${v:,.0f}" if pd.notna(v) else "N/A"
+                  for v in us_size["salary_in_usd"]],
+            textposition="outside",
+            textfont=dict(size=13, family="Inter"),
+        ))
+        fig.update_layout(
+            xaxis_title="Median Salary (USD)",
+            yaxis_title="",
+            margin=dict(t=10, b=20),
+            showlegend=False,
+            **_PLOTLY_LAYOUT,
+        )
+        _chart_card("US Salary by Company Size", "", fig)
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -835,17 +1011,24 @@ def _render_predictor(df: pd.DataFrame):
                               "value": median},
             },
         ))
-    fig.update_layout(
-        height=320, margin=dict(t=70, b=20, l=30, r=30),
-        paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
-        font=dict(family="Inter, sans-serif"),
-    )
-    st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG)
+        fig.update_layout(
+            height=320, margin=dict(t=70, b=20, l=30, r=30),
+            paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
+            font=dict(family="Inter, sans-serif"),
+        )
+        st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG)
 
     with col_n:
         st.markdown('<div class="section-card">', unsafe_allow_html=True)
-        st.subheader("AI Narrative")
-        st.info(data.get("narrative", "Narrative unavailable."))
+        st.subheader("Insight Engine 🧠")
+        narrative = data.get("narrative", "Narrative unavailable.")
+        st.markdown(
+            f"""<div style="background:#eef2ff;border:1px solid #c7d2fe;
+                border-left:4px solid #635BFF;border-radius:0 10px 10px 0;
+                padding:14px 18px;font-size:1rem;line-height:1.6;
+                color:#1e293b;">{narrative}</div>""",
+            unsafe_allow_html=True,
+        )
         st.markdown('</div>', unsafe_allow_html=True)
 
     # ── Evidence (Glass Box) ─────────────────────────────────────────────
