@@ -377,6 +377,9 @@ _PLOTLY_LAYOUT = dict(
     title_font=dict(size=18, color="#0f172a", family="Inter, sans-serif"),
     xaxis=dict(tickfont=dict(size=13), title_font=dict(size=14)),
     yaxis=dict(tickfont=dict(size=13), title_font=dict(size=14)),
+    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+    margin=dict(l=80, r=20, t=40, b=40),
+    height=450,
 )
 _PLOTLY_CONFIG = {"displayModeBar": False, "staticPlot": True, "responsive": True}
 
@@ -579,114 +582,117 @@ def _render_market(df: pd.DataFrame, insights: dict | None):
         unsafe_allow_html=True,
     )
 
-    # ── Row 1: Role Distribution + Seniority Ladder ─────────────────────
-    c1, c2 = st.columns(2)
+    # ── Sub-tabs ───────────────────────────────────────────────────────
+    tab1, tab2, tab3 = st.tabs([
+        "📊 Roles & Experience", "🌍 Regional Benchmarks", "🏢 US Deep Dive",
+    ])
 
-    with c1:
-        counts = df["job_category"].value_counts().reset_index()
-        counts.columns = ["Category", "Count"]
-        fig = px.pie(
-            counts, names="Category", values="Count", hole=0.5,
-            color_discrete_sequence=[_INDIGO, "#818cf8", "#a5b4fc", "#c7d2fe"],
-        )
-        fig.update_layout(
-            margin=dict(t=10, b=10, l=10, r=10),
-            legend=dict(font=dict(size=13)),
-            **_PLOTLY_LAYOUT,
-        )
-        _chart_card(
-            "Role Distribution",
-            _caption("role_distribution", "Role mix across the dataset."),
-            fig,
-        )
+    with tab1:
+        _, center, _ = st.columns([1, 6, 1])
+        with center:
+            counts = df["job_category"].value_counts().reset_index()
+            counts.columns = ["Category", "Count"]
+            fig = px.pie(
+                counts, names="Category", values="Count", hole=0.5,
+                color_discrete_sequence=[_INDIGO, "#818cf8", "#a5b4fc", "#c7d2fe"],
+            )
+            fig.update_layout(**_PLOTLY_LAYOUT)
+            fig.update_layout(legend_font_size=13)
+            _chart_card(
+                "Role Distribution",
+                _caption("role_distribution", "Role mix across the dataset."),
+                fig,
+            )
 
-    with c2:
-        trend = (
-            df.groupby("experience_level")["salary_in_usd"]
-            .median().reindex(EXP_ORDER).reset_index()
-        )
-        trend["label"] = trend["experience_level"].map(EXP_LABELS)
-        fig = px.line(
-            trend, x="label", y="salary_in_usd",
-            markers=True, color_discrete_sequence=[_INDIGO],
-        )
-        fig.update_layout(
-            xaxis_title="Experience Level",
-            yaxis_title="Median Salary (USD)",
-            margin=dict(t=10, b=10),
-            **_PLOTLY_LAYOUT,
-        )
-        _chart_card(
-            "The Seniority Ladder",
-            _caption("seniority_ladder", "Median salary climbs with experience."),
-            fig,
-        )
+            st.markdown("---")
 
-    # ── Row 2: Regional Comparison + Heatmap (Job Category × Region) ──
-    c3, c4 = st.columns(2)
+            trend = (
+                df.groupby("experience_level")["salary_in_usd"]
+                .median().reindex(EXP_ORDER).reset_index()
+            )
+            trend["label"] = trend["experience_level"].map(EXP_LABELS)
+            fig = px.line(
+                trend, x="label", y="salary_in_usd",
+                markers=True, color_discrete_sequence=[_INDIGO],
+            )
+            fig.update_layout(
+                xaxis_title="Experience Level",
+                yaxis_title="Median Salary (USD)",
+                **_PLOTLY_LAYOUT,
+            )
+            fig.update_layout(margin=dict(l=80, r=20, t=40, b=80))
+            _chart_card(
+                "The Seniority Ladder",
+                _caption("seniority_ladder",
+                         "Median salary climbs with experience."),
+                fig,
+            )
 
-    with c3:
-        reg = (
-            df.groupby("region")["salary_in_usd"]
-            .median().sort_values().reset_index()
-        )
-        fig = px.bar(
-            reg, x="salary_in_usd", y="region",
-            orientation="h", color="salary_in_usd",
-            color_continuous_scale="Purp",
-        )
-        fig.update_layout(
-            xaxis_title="Median Salary (USD)", yaxis_title="",
-            coloraxis_showscale=False,
-            margin=dict(t=10, b=10),
-            **_PLOTLY_LAYOUT,
-        )
-        _chart_card(
-            "Regional Salary Comparison",
-            _caption("regional_comparison", "Geographic pay spread across regions."),
-            fig,
-        )
+    with tab2:
+        _, center, _ = st.columns([1, 6, 1])
+        with center:
+            reg = (
+                df.groupby("region")["salary_in_usd"]
+                .median().sort_values().reset_index()
+            )
+            fig = px.bar(
+                reg, x="salary_in_usd", y="region",
+                orientation="h", color="salary_in_usd",
+                color_continuous_scale="Purp",
+            )
+            fig.update_layout(
+                xaxis_title="Median Salary (USD)", yaxis_title="",
+                coloraxis_showscale=False,
+                **_PLOTLY_LAYOUT,
+            )
+            fig.update_layout(margin=dict(l=120, r=20, t=40, b=40))
+            _chart_card(
+                "Regional Salary Comparison",
+                _caption("regional_comparison",
+                         "Geographic pay spread across regions."),
+                fig,
+            )
 
-    with c4:
-        heatmap_fig = _heatmap_job_region(df)
-        _chart_card(
-            "Compensation by Role & Region",
-            _caption("heatmap_job_region",
-                     "Median compensation varies across roles and regions."),
-            heatmap_fig,
-        )
+            st.markdown("---")
 
-    # ── Row 3: Regional Representation + Remote Premium ───────────────
-    c5, c6 = st.columns(2)
+            heatmap_fig = _heatmap_job_region(df)
+            _chart_card(
+                "Compensation by Role & Region",
+                _caption("heatmap_job_region",
+                         "Median compensation varies across roles and regions."),
+                heatmap_fig,
+            )
 
-    with c5:
-        rep_fig = _regional_representation_chart(df)
-        _chart_card(
-            "Regional Representation",
-            _caption("regional_representation",
-                     "Distribution of data points across global regions."),
-            rep_fig,
-        )
+            st.markdown("---")
 
-    with c6:
-        remote_fig = _remote_premium_chart(df)
-        _chart_card(
-            "Remote Premium",
-            _caption("remote_premium",
-                     "Remote flexibility shifts median compensation "
-                     "versus on-site roles."),
-            remote_fig,
-        )
+            rep_fig = _regional_representation_chart(df)
+            _chart_card(
+                "Regional Representation",
+                _caption("regional_representation",
+                         "Distribution of data points across global regions."),
+                rep_fig,
+            )
 
-    # ── US Deep Dive (full width) ─────────────────────────────────────
-    st.divider()
-    st.subheader("United States Deep Dive")
-    st.caption(
-        _caption("us_deep_dive",
-                 "The US market exhibits higher compensation across "
-                 "experience levels, company sizes, and job categories.")
-    )
-    _render_us_deep_dive(df)
+            st.markdown("---")
+
+            remote_fig = _remote_premium_chart(df)
+            _chart_card(
+                "Remote Premium",
+                _caption("remote_premium",
+                         "Remote flexibility shifts median compensation "
+                         "versus on-site roles."),
+                remote_fig,
+            )
+
+    with tab3:
+        _, center, _ = st.columns([1, 6, 1])
+        with center:
+            st.caption(
+                _caption("us_deep_dive",
+                         "The US market exhibits higher compensation across "
+                         "experience levels, company sizes, and job categories.")
+            )
+            _render_us_deep_dive(df)
 
     # ── XAI footer ─────────────────────────────────────────────────────
     st.divider()
@@ -709,12 +715,16 @@ def _chart_card(title: str, caption: str, fig):
     """Uniform card wrapper: title → caption → chart."""
     with st.container(border=True):
         st.subheader(title)
-        st.markdown(
-            f'<p style="color:#64748b;margin:4px 0 12px 0;'
-            f'font-size:1rem;line-height:1.5;">{caption}</p>',
-            unsafe_allow_html=True,
+        if caption:
+            st.markdown(
+                f'<p style="color:#64748b;margin:4px 0 12px 0;'
+                f'font-size:1rem;line-height:1.5;">{caption}</p>',
+                unsafe_allow_html=True,
+            )
+        st.plotly_chart(
+            fig, use_container_width=True, config=_PLOTLY_CONFIG,
+            theme=None,
         )
-        st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG)
 
 
 def _heatmap_job_region(df: pd.DataFrame) -> go.Figure:
@@ -744,10 +754,8 @@ def _heatmap_job_region(df: pd.DataFrame) -> go.Figure:
         hovertemplate="Role: %{y}<br>Region: %{x}<br>Median: %{text}<extra></extra>",
         showscale=False,
     ))
-    fig.update_layout(
-        margin=dict(t=10, b=10, l=10, r=10),
-        **_PLOTLY_LAYOUT,
-    )
+    fig.update_layout(**_PLOTLY_LAYOUT)
+    fig.update_layout(margin=dict(l=180, r=20, t=40, b=80))
     fig.update_xaxes(tickangle=-35, tickfont=dict(size=11))
     fig.update_yaxes(tickfont=dict(size=12), autorange="reversed")
     return fig
@@ -775,10 +783,10 @@ def _regional_representation_chart(df: pd.DataFrame) -> go.Figure:
     fig.update_layout(
         xaxis_title="Number of Records",
         yaxis_title="",
-        margin=dict(t=10, b=10, l=10, r=10),
         showlegend=False,
         **_PLOTLY_LAYOUT,
     )
+    fig.update_layout(margin=dict(l=120, r=20, t=40, b=40))
     return fig
 
 
@@ -823,7 +831,6 @@ def _remote_premium_chart(df: pd.DataFrame) -> go.Figure:
     fig.update_layout(
         xaxis_title="Work Mode",
         yaxis_title="Median Salary (USD)",
-        margin=dict(t=40, b=20),
         showlegend=False,
         **_PLOTLY_LAYOUT,
     )
@@ -839,72 +846,68 @@ def _render_us_deep_dive(df: pd.DataFrame):
         st.warning("No US data available.")
         return
 
-    c1, c2 = st.columns(2)
+    # Grouped bar: US vs Global median by experience level
+    us_exp = (
+        us_df.groupby("experience_level")["salary_in_usd"]
+        .median().reindex(EXP_ORDER).reset_index()
+    )
+    us_exp.columns = ["experience_level", "US"]
+    global_exp = (
+        df.groupby("experience_level")["salary_in_usd"]
+        .median().reindex(EXP_ORDER).reset_index()
+    )
+    global_exp.columns = ["experience_level", "Global"]
+    merged = us_exp.merge(global_exp, on="experience_level")
+    merged["label"] = merged["experience_level"].map(EXP_LABELS)
 
-    with c1:
-        # Grouped bar: US vs Global median by experience level
-        us_exp = (
-            us_df.groupby("experience_level")["salary_in_usd"]
-            .median().reindex(EXP_ORDER).reset_index()
-        )
-        us_exp.columns = ["experience_level", "US"]
-        global_exp = (
-            df.groupby("experience_level")["salary_in_usd"]
-            .median().reindex(EXP_ORDER).reset_index()
-        )
-        global_exp.columns = ["experience_level", "Global"]
-        merged = us_exp.merge(global_exp, on="experience_level")
-        merged["label"] = merged["experience_level"].map(EXP_LABELS)
+    fig = go.Figure()
+    fig.add_trace(go.Bar(
+        x=merged["label"], y=merged["US"], name="United States",
+        marker_color=_INDIGO,
+        text=[f"${v:,.0f}" for v in merged["US"]],
+        textposition="outside", textfont=dict(size=11, family="Inter"),
+    ))
+    fig.add_trace(go.Bar(
+        x=merged["label"], y=merged["Global"], name="Global",
+        marker_color=_SLATE,
+        text=[f"${v:,.0f}" for v in merged["Global"]],
+        textposition="outside", textfont=dict(size=11, family="Inter"),
+    ))
+    fig.update_layout(
+        barmode="group",
+        xaxis_title="Experience Level",
+        yaxis_title="Median Salary (USD)",
+        **_PLOTLY_LAYOUT,
+    )
+    fig.update_layout(margin=dict(l=80, r=20, t=40, b=80))
+    _chart_card("US vs Global by Experience", "", fig)
 
-        fig = go.Figure()
-        fig.add_trace(go.Bar(
-            x=merged["label"], y=merged["US"], name="United States",
-            marker_color=_INDIGO,
-            text=[f"${v:,.0f}" for v in merged["US"]],
-            textposition="outside", textfont=dict(size=11, family="Inter"),
-        ))
-        fig.add_trace(go.Bar(
-            x=merged["label"], y=merged["Global"], name="Global",
-            marker_color=_SLATE,
-            text=[f"${v:,.0f}" for v in merged["Global"]],
-            textposition="outside", textfont=dict(size=11, family="Inter"),
-        ))
-        fig.update_layout(
-            barmode="group",
-            xaxis_title="Experience Level",
-            yaxis_title="Median Salary (USD)",
-            legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
-            margin=dict(t=40, b=20),
-            **_PLOTLY_LAYOUT,
-        )
-        _chart_card("US vs Global by Experience", "", fig)
+    st.markdown("---")
 
-    with c2:
-        # Horizontal bar: US median by company size
-        us_size = (
-            us_df.groupby("company_size")["salary_in_usd"]
-            .median().reindex(SIZE_ORDER).reset_index()
-        )
-        us_size["label"] = us_size["company_size"].map(SIZE_LABELS)
+    # Horizontal bar: US median by company size
+    us_size = (
+        us_df.groupby("company_size")["salary_in_usd"]
+        .median().reindex(SIZE_ORDER).reset_index()
+    )
+    us_size["label"] = us_size["company_size"].map(SIZE_LABELS)
 
-        fig = go.Figure(go.Bar(
-            y=us_size["label"],
-            x=us_size["salary_in_usd"],
-            orientation="h",
-            marker_color=[_SLATE, "#818cf8", _INDIGO],
-            text=[f"${v:,.0f}" if pd.notna(v) else "N/A"
-                  for v in us_size["salary_in_usd"]],
-            textposition="outside",
-            textfont=dict(size=13, family="Inter"),
-        ))
-        fig.update_layout(
-            xaxis_title="Median Salary (USD)",
-            yaxis_title="",
-            margin=dict(t=10, b=20),
-            showlegend=False,
-            **_PLOTLY_LAYOUT,
-        )
-        _chart_card("US Salary by Company Size", "", fig)
+    fig = go.Figure(go.Bar(
+        y=us_size["label"],
+        x=us_size["salary_in_usd"],
+        orientation="h",
+        marker_color=[_SLATE, "#818cf8", _INDIGO],
+        text=[f"${v:,.0f}" if pd.notna(v) else "N/A"
+              for v in us_size["salary_in_usd"]],
+        textposition="outside",
+        textfont=dict(size=13, family="Inter"),
+    ))
+    fig.update_layout(
+        xaxis_title="Median Salary (USD)",
+        yaxis_title="",
+        showlegend=False,
+        **_PLOTLY_LAYOUT,
+    )
+    _chart_card("US Salary by Company Size", "", fig)
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -1016,7 +1019,7 @@ def _render_predictor(df: pd.DataFrame):
             paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
             font=dict(family="Inter, sans-serif"),
         )
-        st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG)
+        st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG, theme=None)
 
     with col_n:
         st.markdown('<div class="section-card">', unsafe_allow_html=True)
@@ -1094,9 +1097,9 @@ def _chart_experience(job_df, job, current_exp):
     fig.update_layout(
         title=f"Experience Progression — {job}",
         xaxis_title="Experience Level", yaxis_title="Median Salary (USD)",
-        showlegend=False, margin=dict(t=50, b=20), **_PLOTLY_LAYOUT,
+        showlegend=False, **_PLOTLY_LAYOUT,
     )
-    st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG)
+    st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG, theme=None)
 
 
 def _chart_geography(job_df, job, current_country):
@@ -1114,9 +1117,9 @@ def _chart_geography(job_df, job, current_country):
     fig.update_layout(
         title=f"Regional Pay Distribution — {job}",
         xaxis_title="Median Salary (USD)", yaxis_title="",
-        showlegend=False, margin=dict(t=50, b=20), **_PLOTLY_LAYOUT,
+        showlegend=False, **_PLOTLY_LAYOUT,
     )
-    st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG)
+    st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG, theme=None)
 
 
 def _chart_company_size(job_df, job, current_size):
@@ -1136,9 +1139,9 @@ def _chart_company_size(job_df, job, current_size):
     )
     fig.update_layout(
         xaxis_title="Company Size", yaxis_title="Median Salary (USD)",
-        legend_title="Experience", margin=dict(t=50, b=20), **_PLOTLY_LAYOUT,
+        legend_title="Experience", **_PLOTLY_LAYOUT,
     )
-    st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG)
+    st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG, theme=None)
 
 
 def _chart_market_overview(job_df, job, pred_salary):
@@ -1162,9 +1165,9 @@ def _chart_market_overview(job_df, job, pred_salary):
     )
     fig.update_layout(
         xaxis_title="Salary (USD)", yaxis_title="Count",
-        margin=dict(t=50, b=20), **_PLOTLY_LAYOUT,
+        **_PLOTLY_LAYOUT,
     )
-    st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG)
+    st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG, theme=None)
 
 
 def _chart_region_vs_global(job_df, job, current_country):
@@ -1184,9 +1187,9 @@ def _chart_region_vs_global(job_df, job, current_country):
     fig.update_layout(
         title=f"Geographic Discount — {job} in {cur_region}",
         xaxis_title="Median Salary (USD)", yaxis_title="",
-        margin=dict(t=50, b=20), **_PLOTLY_LAYOUT,
+        **_PLOTLY_LAYOUT,
     )
-    st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG)
+    st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG, theme=None)
 
 
 def _chart_exec_premium(job_df, job):
@@ -1204,9 +1207,9 @@ def _chart_exec_premium(job_df, job):
     fig.update_layout(
         title=f"Executive Leadership Premium — {job}",
         xaxis_title="Company Size", yaxis_title="Median Executive Salary (USD)",
-        margin=dict(t=50, b=20), **_PLOTLY_LAYOUT,
+        **_PLOTLY_LAYOUT,
     )
-    st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG)
+    st.plotly_chart(fig, use_container_width=True, config=_PLOTLY_CONFIG, theme=None)
 
 
 if __name__ == "__main__":
